@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Camden Burke — Security Resume
 
-## Getting Started
+Interactive resume site built with Next.js, Three.js, and Tailwind CSS.
 
-First, run the development server:
+**Live site:** [https://camdenburke.co.uk](https://camdenburke.co.uk)
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Deploy (Vercel)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+This project is configured for [Vercel](https://vercel.com). Pushes to `main` trigger automatic deployments when the repo is connected.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Custom domain: camdenburke.co.uk
 
-## Learn More
+At your domain registrar, add these DNS records (values from your Vercel project → Settings → Domains):
 
-To learn more about Next.js, take a look at the following resources:
+| Type  | Name | Value                    |
+| ----- | ---- | ------------------------ |
+| `A`   | `@`  | `76.76.21.21`            |
+| `CNAME` | `www` | `cname.vercel-dns.com` |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Vercel will provision HTTPS automatically once DNS propagates (usually minutes, up to 48 hours).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Project structure
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `data/resume.js` — resume content (edit here to update copy)
+- `public/resume.pdf` — downloadable PDF
+- `components/` — UI, 3D hero, terminal effects
+- `pages/index.js` — main page
