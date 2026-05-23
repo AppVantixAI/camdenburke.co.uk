@@ -86,7 +86,7 @@ export default function Home() {
                 <a
                   href={resume.linkedin}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noreferrer"
                   className="border border-[#3a4a3c] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[#9cb8a0] hover:border-matrix/50 hover:text-matrix transition-all"
                 >
                   LinkedIn ↗
@@ -94,7 +94,7 @@ export default function Home() {
                 <a
                   href={resume.github}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noreferrer"
                   className="border border-[#3a4a3c] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[#9cb8a0] hover:border-matrix/50 hover:text-matrix transition-all"
                 >
                   GitHub ↗
@@ -121,7 +121,7 @@ export default function Home() {
               <p className="text-base leading-[1.9] text-[#9cb8a0] md:text-lg">{resume.summary}</p>
               <div className="space-y-6">
                 <div className="panel-border bg-panel p-6 font-mono text-xs">
-                  <p className="text-matrix mb-4">// top_skills</p>
+                  <p className="text-matrix mb-4">{'// top_skills'}</p>
                   <ul className="space-y-2 text-[#7a9a7e]">
                     {resume.topSkills.map((skill, i) => (
                       <li key={skill}>
@@ -134,7 +134,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div className="panel-border bg-panel p-6 font-mono text-xs">
-                  <p className="text-matrix mb-4">// homelab_stack</p>
+                  <p className="text-matrix mb-4">{'// homelab_stack'}</p>
                   <ul className="space-y-2 text-[#7a9a7e]">
                     {resume.homelabStack.map((item, i) => (
                       <li key={item}>
@@ -266,22 +266,36 @@ export default function Home() {
                 { label: 'EMAIL', value: resume.email, href: `mailto:${resume.email}` },
                 { label: 'LINKEDIN', value: 'camdenburkedev', href: resume.linkedin, external: true },
                 { label: 'GITHUB', value: 'cburke12', href: resume.github, external: true },
-              ].map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target={item.external ? '_blank' : undefined}
-                  rel={item.external ? 'noopener noreferrer' : undefined}
-                  className="group panel-border corner-brackets bg-panel p-6 transition-all hover:border-matrix/60 hover:-translate-y-1"
-                >
-                  <p className="font-mono text-[10px] tracking-widest text-matrix-dim group-hover:text-matrix">
-                    // {item.label}
-                  </p>
-                  <p className="mt-3 font-display text-lg font-semibold text-white break-all">
-                    {item.value}
-                  </p>
-                </a>
-              ))}
+              ].map((item) => {
+                const card = (
+                  <>
+                    <p className="font-mono text-[10px] tracking-widest text-matrix-dim group-hover:text-matrix">
+                      {'// '}{item.label}
+                    </p>
+                    <p className="mt-3 font-display text-lg font-semibold text-white break-all">
+                      {item.value}
+                    </p>
+                  </>
+                );
+                const className =
+                  'group panel-border corner-brackets bg-panel p-6 transition-all hover:border-matrix/60 hover:-translate-y-1';
+
+                return item.external ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={className}
+                  >
+                    {card}
+                  </a>
+                ) : (
+                  <a key={item.label} href={item.href} className={className}>
+                    {card}
+                  </a>
+                );
+              })}
             </ScrollReveal>
           </div>
         </section>

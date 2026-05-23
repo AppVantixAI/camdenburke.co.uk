@@ -9,7 +9,7 @@ export default function DossierCard({ refId, role, company, location, period, bu
       <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
         <div>
           <p className={`font-mono text-xs uppercase tracking-widest ${labelColor}`}>
-            // {company}
+            {'// '}{company}
           </p>
           <h3 className="mt-1 font-display text-2xl font-bold text-white">{role}</h3>
           {location && (

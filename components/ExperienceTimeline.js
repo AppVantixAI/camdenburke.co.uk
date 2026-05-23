@@ -56,7 +56,7 @@ export default function ExperienceTimeline() {
         <div className="flex flex-col gap-2 md:flex-row md:justify-between md:items-start">
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-matrix">
-              // {job.company}
+              {'// '}{job.company}
             </p>
             <h3 className="mt-1 font-display text-2xl md:text-3xl font-bold text-white">{job.role}</h3>
             <p className="mt-1 font-mono text-[11px] text-[#6a8070]">{job.location}</p>
