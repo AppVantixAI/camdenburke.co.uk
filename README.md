@@ -19,14 +19,19 @@ This project is configured for [Vercel](https://vercel.com). Pushes to `main` tr
 
 ### Custom domain: camdenburke.co.uk
 
-At your domain registrar, add these DNS records (values from your Vercel project → Settings → Domains):
+Your domain uses **Cloudflare** nameservers. In the Cloudflare dashboard → **DNS** → **Records**, add:
 
-| Type  | Name | Value                    |
-| ----- | ---- | ------------------------ |
-| `A`   | `@`  | `76.76.21.21`            |
-| `CNAME` | `www` | `cname.vercel-dns.com` |
+| Type    | Name | Content              | Proxy status |
+| ------- | ---- | -------------------- | ------------ |
+| `A`     | `@`  | `76.76.21.21`        | DNS only (grey cloud) |
+| `CNAME` | `www`| `cname.vercel-dns.com` | DNS only (grey cloud) |
 
-Vercel will provision HTTPS automatically once DNS propagates (usually minutes, up to 48 hours).
+Turn off Cloudflare proxy (grey cloud) for these records so Vercel can verify and issue SSL.
+
+Vercel project: [camdenburke-co-uk](https://vercel.com/app-vantix/camdenburke-co-uk)  
+GitHub repo: [AppVantixAI/camdenburke.co.uk](https://github.com/AppVantixAI/camdenburke.co.uk)
+
+Pushes to `master` auto-deploy via Vercel Git integration.
 
 ## Project structure
 
