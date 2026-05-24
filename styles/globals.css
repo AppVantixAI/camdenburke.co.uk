@@ -294,6 +294,28 @@ a {
   transition: transform 0.15s ease;
 }
 
+/* Desktop scene — WebGL canvas + CSS3D resume layer */
+.desktop-scene {
+  position: relative;
+  overflow: hidden;
+}
+
+.desktop-scene canvas {
+  display: block;
+  outline: none;
+  cursor: grab;
+}
+
+/* CSS3DRenderer root — do not force width:100% (breaks perspective sizing) */
+.desktop-scene > div {
+  width: auto !important;
+  height: auto !important;
+}
+
+.desktop-scene canvas:active {
+  cursor: grabbing;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
