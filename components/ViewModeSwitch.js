@@ -17,7 +17,7 @@ export default function ViewModeSwitch({ mode, onDesk, onFlat, className = '' })
         className={`${base} ${mode === 'desk' ? active : idle}`}
         aria-pressed={mode === 'desk'}
       >
-        3D Desk
+        Interactive Desk
       </button>
       <button
         type="button"
@@ -25,7 +25,7 @@ export default function ViewModeSwitch({ mode, onDesk, onFlat, className = '' })
         className={`${base} ${mode === 'flat' ? active : idle}`}
         aria-pressed={mode === 'flat'}
       >
-        Resume
+        Quick Resume
       </button>
     </div>
   );

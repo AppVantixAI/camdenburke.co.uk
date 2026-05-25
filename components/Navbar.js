@@ -29,34 +29,52 @@ export default function Navbar() {
         scrolled ? 'border-b border-matrix/20 bg-void/95 backdrop-blur-md' : 'bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
-        <a href="#" className="flex items-center gap-2 text-sm">
-          <span className="inline-block h-2 w-2 rounded-full bg-matrix animate-pulse-glow" />
-          <span className="text-matrix">root@</span>
-          <span className="text-white">camden</span>
-        </a>
+      <nav className="mx-auto max-w-6xl px-4 py-3 md:px-6">
+        <div className="flex items-center justify-between gap-4">
+          <a href="#" className="flex items-center gap-2 text-sm">
+            <span className="inline-block h-2 w-2 rounded-full bg-matrix animate-pulse-glow" />
+            <span className="text-matrix">camden</span>
+            <span className="hidden text-white sm:inline">/ {resume.targetRole}</span>
+          </a>
 
-        <p className="hidden text-[10px] tracking-widest text-matrix-dim sm:block">
-          UTC_LOCAL <span className="text-matrix">{time}</span>
-        </p>
+          <p className="hidden text-[10px] tracking-widest text-matrix-dim lg:block">
+            LOCAL_TIME <span className="text-matrix">{time}</span>
+          </p>
 
-        <ul className="hidden items-center gap-5 text-[11px] uppercase tracking-wider text-[#8aa88e] md:flex">
+          <ul className="hidden items-center gap-5 text-[11px] uppercase tracking-wider text-[#8aa88e] md:flex">
+            {resume.nav.map((item) => (
+              <li key={item.id}>
+                <a href={`#${item.id}`} className="hover:text-matrix transition-colors">
+                  [{item.label}]
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="/resume.pdf"
+            download
+            className="border border-matrix/40 bg-matrix/5 px-3 py-1.5 text-[10px] uppercase tracking-widest text-matrix hover:bg-matrix/15 transition-colors"
+          >
+            Resume PDF
+          </a>
+        </div>
+
+        <div className="resume-scroll-row mt-3 flex gap-2 overflow-x-auto pb-1 md:hidden">
           {resume.nav.map((item) => (
-            <li key={item.id}>
-              <a href={`#${item.id}`} className="hover:text-matrix transition-colors">
-                [{item.label}]
-              </a>
-            </li>
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className="shrink-0 border border-matrix/20 px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] text-[#8aa88e] transition-colors hover:text-matrix"
+            >
+              {item.label}
+            </a>
           ))}
-        </ul>
+        </div>
 
-        <a
-          href="/resume.pdf"
-          download
-          className="border border-matrix/40 bg-matrix/5 px-3 py-1.5 text-[10px] uppercase tracking-widest text-matrix hover:bg-matrix/15 transition-colors"
-        >
-          ↓ PDF
-        </a>
+        <p className="mt-2 text-[10px] tracking-widest text-matrix-dim md:hidden">
+          LOCAL_TIME <span className="text-matrix">{time}</span>
+        </p>
       </nav>
     </header>
   );

@@ -1,11 +1,15 @@
 import { useEffect, useRef } from 'react';
+import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion';
 
 const CHARS = '01アイウエオｱｲｳｴｵSECURE<>{}[]/\\|#@$';
 
 export default function CodeRain() {
   const canvasRef = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
+    if (prefersReducedMotion) return undefined;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -46,7 +50,9 @@ export default function CodeRain() {
       cancelAnimationFrame(frameId);
       window.removeEventListener('resize', resize);
     };
-  }, []);
+  }, [prefersReducedMotion]);
+
+  if (prefersReducedMotion) return null;
 
   return (
     <canvas

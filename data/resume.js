@@ -6,37 +6,125 @@ export const resume = {
   email: 'camdenburke20@gmail.com',
   linkedin: 'https://www.linkedin.com/in/camdenburkedev',
   github: 'https://github.com/cburke12',
+  siteRepo: 'https://github.com/AppVantixAI/camdenburke.co.uk',
+  targetRole: 'Security-Focused IT Support',
   headline:
-    'Help Desk Analyst | CompTIA Security+ | Cybersecurity | Pursuing Network+ & CySA+',
-  tagline: 'Support · Secure · Escalate',
-  clearanceId: 'CB-7734-SEC',
+    'Active Directory | Endpoint Troubleshooting | Security+',
+  tagline: 'identity support · endpoint triage · secure escalation',
+  availability: 'Open to IT support, cybersecurity, and identity-adjacent roles',
   tickerItems: [
     'ACTIVE DIRECTORY',
-    'TIER 1/2 SUPPORT',
+    'IDENTITY LIFECYCLE',
     'SECURITY+ CERTIFIED',
-    'SIEM & LOG ANALYSIS',
-    'CYBER THREAT INTELLIGENCE',
+    'TIER 1/2 TRIAGE',
+    'WINDOWS ENDPOINT SUPPORT',
     'WINDOWS SERVER 2025',
-    'INCIDENT RESPONSE',
-    'ZERO TRUST',
+    'INCIDENT ESCALATION',
+    'KNOWLEDGE BASE DOCUMENTATION',
+    'DNS & DOMAIN OPERATIONS',
     'HOMELAB ONLINE',
   ],
   heroStatus: [
+    { label: 'SPECIALTY', value: 'ACTIVE DIRECTORY / ENDPOINT SUPPORT', tone: 'secure' },
+    { label: 'USER ACCESS', value: 'PROVISIONING / CHANGES', tone: 'secure' },
     { label: 'SECURITY+', value: 'CERTIFIED', tone: 'secure' },
+    { label: 'HOME_LAB', value: 'WINDOWS SERVER 2025', tone: 'secure' },
     { label: 'NETWORK+', value: 'PURSUING', tone: 'warn' },
     { label: 'CYSA+', value: 'PURSUING', tone: 'warn' },
-    { label: 'HOME_LAB', value: 'ACTIVE', tone: 'secure' },
   ],
   securityPillars: [
-    'IT Service Management',
-    'Cyber Threat Intelligence',
-    'Log Analysis',
     'Active Directory',
-    'Tier 1/2 Support',
+    'Identity Lifecycle',
+    'Endpoint Troubleshooting',
+    'Incident Escalation',
+    'Windows Administration',
   ],
-  topSkills: ['IT Service Management', 'Cyber Threat Intelligence (CTI)', 'Log Analysis'],
+  topSkills: [
+    'Active Directory & access management',
+    'Endpoint troubleshooting & escalation',
+    'Windows Server home lab + PowerShell',
+  ],
+  recruiterLinks: [
+    { label: 'Projects', href: '#projects' },
+    { label: 'Resume PDF', href: '/resume.pdf', download: true },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/camdenburkedev', external: true },
+    { label: 'GitHub', href: 'https://github.com/cburke12', external: true },
+  ],
+  proofCards: [
+    {
+      title: 'Identity Support',
+      summary:
+        'Support onboarding, offboarding, account changes, permission updates, and group policy work in a Windows Active Directory environment.',
+      evidence: 'AD account lifecycle · permissions · GPO · secure access mindset',
+    },
+    {
+      title: 'Documentation & Escalation',
+      summary:
+        'Document repeatable support fixes, route nonstandard requests through SOPs, and keep account-related work easier to repeat and review.',
+      evidence: 'ticketing workflows · KB updates · escalation discipline',
+    },
+    {
+      title: 'Lab-Driven Growth',
+      summary:
+        'Build a Windows Server 2025 home lab with PowerShell automation to practice user administration and repeatable access-support workflows.',
+      evidence: 'Windows Server 2025 · PowerShell · account admin',
+    },
+  ],
+  caseStudies: [
+    {
+      title: 'Identity and account support',
+      summary:
+        'Current help desk work includes provisioning, deprovisioning, permission changes, and account troubleshooting in a Windows Active Directory environment.',
+      impact:
+        'Shows secure user administration, access support, and documentation habits that transfer across IT support and security-adjacent roles.',
+      tools: ['Active Directory', 'Windows Server', 'Ticketing System', 'Knowledge Base'],
+      evidence: [
+        'Support account provisioning and deprovisioning during onboarding and offboarding.',
+        'Handle permission updates, group membership changes, and group policy tasks in a Windows environment.',
+        'Document repeatable access-related fixes so common issues are easier to resolve and escalate cleanly.',
+      ],
+      links: [
+        { label: 'LinkedIn profile', href: 'https://www.linkedin.com/in/camdenburkedev', external: true },
+        { label: 'Resume PDF', href: '/resume.pdf', download: true },
+      ],
+    },
+    {
+      title: 'Windows Server home lab',
+      summary:
+        'Personal lab focused on Active Directory user administration, group management, and PowerShell-based repeatable workflows.',
+      impact:
+        'Shows hands-on Windows and identity practice beyond daily ticket work and supports growth into broader support and security responsibilities.',
+      tools: ['Windows Server 2025', 'Active Directory', 'PowerShell'],
+      evidence: [
+        'Practice user creation, account cleanup, and group membership changes in a non-production environment.',
+        'Use PowerShell for repeatable user and group tasks plus simple reporting workflows.',
+        'Keep the lab aligned with the same Windows identity concepts used in day-to-day support work.',
+      ],
+      links: [
+        { label: 'GitHub profile', href: 'https://github.com/cburke12', external: true },
+        { label: 'Portfolio source', href: 'https://github.com/AppVantixAI/camdenburke.co.uk', external: true },
+      ],
+    },
+    {
+      title: 'Documentation and escalation habits',
+      summary:
+        'Past support and platform work emphasized documenting recurring issues, clarifying escalation paths, and keeping technical work easier to review.',
+      impact:
+        'Useful across support and security-adjacent roles because repeatable documentation helps with consistency, review, and audit readiness.',
+      tools: ['Ticketing System', 'Knowledge Base', 'Vendor Escalation', 'Technical Documentation'],
+      evidence: [
+        'Document recurring technical issues so future tickets are easier to resolve with the same steps.',
+        'Coordinate nonstandard issues through vendor or escalation paths instead of guessing at high-impact changes.',
+        'Keep written remediation notes that make support work easier to review and reuse.',
+      ],
+      links: [
+        { label: 'Portfolio source', href: 'https://github.com/AppVantixAI/camdenburke.co.uk', external: true },
+        { label: 'LinkedIn profile', href: 'https://www.linkedin.com/in/camdenburkedev', external: true },
+      ],
+    },
+  ],
   summary:
-    "Help Desk Analyst at Altar'd State, building a strong foundation in IT support and service desk operations. I hold a CompTIA Security+ certification and am actively pursuing Network+ and CySA+ to deepen my expertise in cybersecurity, threat detection, and vulnerability management. I hold a B.S. in Graphic Information Technology (Full Stack Web Development, ASU 2024) and am completing a B.S. in Computer Science. Outside of work, I build hands-on home labs — most recently a full Active Directory environment on Windows Server 2025 with PowerShell automation. Passionate about continuous learning and growing within the IT and cybersecurity space.",
+    "Security+ certified IT support professional with hands-on Active Directory account administration, user access changes, endpoint troubleshooting, ticket triage, and escalation in a Windows environment. Building a Windows Server 2025 home lab with PowerShell automation while targeting IT support, cybersecurity, and identity-adjacent roles.",
   experience: [
     {
       company: "Altar'd State",
@@ -44,11 +132,11 @@ export const resume = {
       location: 'Knoxville, TN',
       period: 'May 2026 — Present',
       bullets: [
-        'Provide Tier 1/2 technical support across hardware, software, and network issues for internal users, maintaining SLA compliance in a Windows Active Directory environment.',
-        'Manage and resolve service desk tickets using internal ticketing system, documenting resolution steps to build knowledge base.',
-        'Support user account management, permissions, and group policies within Active Directory on Windows Server.',
-        'Troubleshoot endpoint connectivity, OS, and application issues; escalate complex incidents following established SOPs.',
-        'Assist with onboarding and offboarding processes including account provisioning and hardware setup.',
+        'Resolve user access, endpoint, application, and connectivity tickets in a Windows Active Directory environment while keeping work aligned to SLA expectations.',
+        'Support onboarding and offboarding tasks including account setup, permission changes, and access updates tied to the user lifecycle.',
+        'Handle Active Directory account maintenance, group membership updates, and group policy-related tasks for internal users.',
+        'Document recurring fixes and escalation paths in the ticketing system so access-related work is easier to repeat and review.',
+        'Escalate nonstandard or higher-risk issues through established SOPs when requests fall outside routine support scope.',
       ],
     },
     {
@@ -57,12 +145,11 @@ export const resume = {
       location: 'Lawrenceburg, TN',
       period: 'June 2024 — February 2026',
       bullets: [
-        'Co-founded and operate a sustainable lavender farm and e-commerce business; primary UX/UI designer and IT operations contact.',
-        'Designed and maintain the end-to-end UX/UI of the Shopify storefront, optimizing conversion flows, form UX, and trust signals.',
-        'Applied security-conscious design practices: identified and mitigated dark UX patterns that could be exploited for data harvesting or deceptive consent flows.',
-        'Managed DNS, domain records, and email routing to ensure business systems remain secure and available.',
-        'Configured payment integrations and third-party apps with attention to data exposure and input validation risks, including SQLi awareness in form-handling layers.',
-        'Serve as first point of contact for technical issues — diagnose, resolve, and escalate to platform vendors; documented recurring issues to reduce time-to-fix.',
+        'Ran day-to-day website and technical operations for a small e-commerce business while serving as the primary contact for platform issues.',
+        'Improved storefront UX and trust cues across the Shopify experience so customer flows were clearer and easier to complete.',
+        'Managed DNS, domain, and email-routing changes to keep business systems available and correctly configured.',
+        'Reviewed third-party apps and payment integrations for obvious data exposure and configuration risks before rollout.',
+        'Diagnosed recurring platform problems, coordinated vendor escalation, and documented fixes to reduce repeat troubleshooting.',
       ],
     },
     {
@@ -71,12 +158,11 @@ export const resume = {
       location: 'Nashville, TN',
       period: 'March 2024 — February 2026',
       bullets: [
-        'Manage website and digital infrastructure for a nonprofit supporting the autism community; own UX/UI design and backend platform operations.',
-        'Designed and maintained accessible, user-centered UX across the Shopify site with ethical UI patterns — avoiding manipulative dark UX flows.',
-        'Provide first-line technical support for login failures, browser compatibility issues, and form submission errors.',
-        'Manage domain registration and DNS configuration to ensure the site remains available and correctly routed.',
-        'Identified input handling vulnerabilities in web forms and coordinated remediation to reduce SQLi exposure risk.',
-        'Troubleshoot third-party plugin conflicts and document recurring technical issues to reduce repeat troubleshooting time.',
+        'Owned website operations and first-line platform support for a nonprofit while balancing UX updates with day-to-day reliability work.',
+        'Handled login failures, browser issues, and form submission problems before escalating to vendors when needed.',
+        'Managed domain and DNS configuration to keep the site reachable and correctly routed.',
+        'Reviewed web forms and plugin behavior for obvious input-handling and configuration risks.',
+        'Documented recurring plugin conflicts and fixes so similar issues could be resolved faster the next time.',
       ],
     },
     {
@@ -85,12 +171,11 @@ export const resume = {
       location: 'Tennessee, United States',
       period: 'August 2019 — August 2025',
       bullets: [
-        'Served across locations in Tennessee, London (UK), and Greenville, SC — high-volume customer service while pursuing dual B.S. degrees at ASU.',
-        'Recipient of Partner of the Quarter award for performance and reliability.',
-        'Go-to teammate for POS glitches, Wi-Fi connectivity, and device problems — often resolving before escalating to corporate support.',
-        'Trained new partners on store technology, workflows, and operational standards.',
-        'Managed competing priorities under pressure — transferable to phone and email-based IT support.',
-        'Completed Starbucks Coffee Academy Levels 100, 200, and 300.',
+        'Supported customers in high-volume environments across multiple locations while balancing full-time study.',
+        'Recognized with Partner of the Quarter for reliability and day-to-day performance.',
+        'Became a go-to teammate for POS, Wi-Fi, and device issues, often restoring service before escalation was needed.',
+        'Trained new staff on store technology and workflows so daily operations stayed consistent.',
+        'Built communication and troubleshooting habits under pressure that transfer directly to user support roles.',
       ],
     },
   ],
@@ -108,41 +193,44 @@ export const resume = {
   ],
   skillGroups: [
     {
-      title: 'Service Desk & ITSM',
-      skills: ['IT Service Management', 'Tier 1/2 Support', 'Ticketing Systems', 'SLA Compliance', 'Knowledge Base'],
-    },
-    {
-      title: 'Security & CTI',
-      skills: [
-        'CompTIA Security+',
-        'Cyber Threat Intelligence',
-        'Log Analysis',
-        'Threat Detection',
-        'Vulnerability Management',
-        'Incident Escalation',
-      ],
-    },
-    {
-      title: 'Identity & Infrastructure',
+      title: 'Identity & Access',
       skills: [
         'Active Directory',
-        'Group Policy',
-        'Windows Server',
-        'DNS',
-        'Endpoint Troubleshooting',
+        'User Provisioning',
+        'Deprovisioning',
+        'Permission Changes',
+        'Group-Based Access',
         'Onboarding / Offboarding',
       ],
     },
     {
-      title: 'Web & UX Security',
-      skills: ['Shopify', 'UX/UI Design', 'Form Security', 'SQLi Awareness', 'DNS Management', 'Dark UX Mitigation'],
+      title: 'Workflow & Documentation',
+      skills: [
+        'Ticket Triage',
+        'Tier 1/2 Support',
+        'SLA Awareness',
+        'Knowledge Base Writing',
+        'Incident Escalation',
+        'Support Documentation',
+      ],
+    },
+    {
+      title: 'Infrastructure',
+      skills: [
+        'Windows Server',
+        'DNS',
+        'Endpoint Troubleshooting',
+        'Hardware Setup',
+        'Browser Troubleshooting',
+        'Group Policy',
+      ],
     },
     {
       title: 'Automation & Labs',
-      skills: ['PowerShell', 'Windows Server 2025', 'Home Lab', 'Python', 'JavaScript', 'GitHub'],
+      skills: ['PowerShell', 'Windows Server 2025 Lab', 'GitHub', 'JavaScript', 'Python'],
     },
   ],
-  certificates: [
+  featuredCertifications: [
     {
       name: 'CompTIA Security+ ce',
       status: 'Certified',
@@ -161,6 +249,8 @@ export const resume = {
       detail: 'In progress',
       tone: 'warn',
     },
+  ],
+  additionalCredentials: [
     {
       name: 'SEO Certification',
       status: 'Certified',
@@ -189,15 +279,15 @@ export const resume = {
   homelabStack: [
     'Windows Server 2025 + Active Directory',
     'PowerShell automation',
-    'User account & GPO management',
+    'User account lifecycle & GPO management',
     'Endpoint connectivity troubleshooting',
     'Service desk ticket workflows',
-    'Security+ & CySA+ study environments',
+    'Security+ / Network+ / CySA+ study environments',
   ],
   nav: [
-    { id: 'about', label: 'About' },
+    { id: 'start-here', label: 'Start Here' },
     { id: 'experience', label: 'Experience' },
-    { id: 'education', label: 'Education' },
+    { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
     { id: 'contact', label: 'Contact' },
   ],

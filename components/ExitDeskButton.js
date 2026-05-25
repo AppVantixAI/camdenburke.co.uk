@@ -15,7 +15,7 @@ export default function ExitDeskButton() {
       onClick={exit}
       className="fixed top-4 right-4 z-[60] border border-matrix/50 bg-void/90 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-matrix backdrop-blur-sm hover:bg-matrix/15 transition-colors"
     >
-      ← Back to desk
+      ← Back to interactive desk
     </button>
   );
 }

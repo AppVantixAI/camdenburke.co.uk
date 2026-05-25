@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion';
 
 function createNetwork() {
   const group = new THREE.Group();
@@ -61,8 +62,11 @@ function createNetwork() {
 
 export default function HeroCanvas() {
   const containerRef = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
+    if (prefersReducedMotion) return undefined;
+
     const container = containerRef.current;
     if (!container) return;
 
@@ -132,7 +136,9 @@ export default function HeroCanvas() {
       container.removeChild(renderer.domElement);
       renderer.dispose();
     };
-  }, []);
+  }, [prefersReducedMotion]);
+
+  if (prefersReducedMotion) return null;
 
   return <div ref={containerRef} className="absolute inset-0" aria-hidden="true" />;
 }

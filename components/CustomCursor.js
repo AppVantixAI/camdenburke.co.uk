@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
+import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion';
 
 export default function CustomCursor() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [visible, setVisible] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
+    if (prefersReducedMotion) return undefined;
+
     const move = (e) => {
       setPos({ x: e.clientX, y: e.clientY });
       setVisible(true);
@@ -17,9 +21,9 @@ export default function CustomCursor() {
       window.removeEventListener('mousemove', move);
       document.body.removeEventListener('mouseleave', leave);
     };
-  }, []);
+  }, [prefersReducedMotion]);
 
-  if (!visible) return null;
+  if (!visible || prefersReducedMotion) return null;
 
   return (
     <>

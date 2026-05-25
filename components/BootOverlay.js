@@ -1,21 +1,27 @@
 import { useEffect, useState } from 'react';
+import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion';
 
 const BOOT_LINES = [
-  { text: 'SOC_KERNEL v2026.05 — initializing...', delay: 0 },
-  { text: 'Loading threat_intel modules........ OK', delay: 400 },
-  { text: 'Verifying Security+ credential...... OK', delay: 800 },
-  { text: 'Mounting AD home lab partition........ OK', delay: 1200 },
-  { text: 'Operator: Camden Burke', delay: 1600 },
-  { text: 'ACCESS GRANTED — welcome to the perimeter.', delay: 2000 },
+  { text: 'Loading portfolio shell...', delay: 0 },
+  { text: 'Verifying Security+ credential........ OK', delay: 400 },
+  { text: 'Loading Active Directory experience... OK', delay: 800 },
+  { text: 'Loading home lab evidence............ OK', delay: 1200 },
+  { text: 'Preparing recruiter view............. OK', delay: 1600 },
+  { text: 'Portfolio ready.', delay: 2000 },
 ];
 
 export default function BootOverlay({ onComplete }) {
   const [visible, setVisible] = useState(false);
   const [lines, setLines] = useState([]);
   const [fadeOut, setFadeOut] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    if (prefersReducedMotion) {
+      onComplete?.();
+      return undefined;
+    }
     if (sessionStorage.getItem('cb_boot_complete')) {
       onComplete?.();
       return;
@@ -38,7 +44,7 @@ export default function BootOverlay({ onComplete }) {
     }, 2800);
 
     return () => clearTimeout(done);
-  }, [onComplete]);
+  }, [onComplete, prefersReducedMotion]);
 
   const skip = () => {
     sessionStorage.setItem('cb_boot_complete', '1');
@@ -60,7 +66,7 @@ export default function BootOverlay({ onComplete }) {
       role="presentation"
     >
       <div className="w-full max-w-lg px-8">
-        <p className="mb-6 text-[10px] tracking-[0.5em] text-matrix-dim">SECURE BOOT SEQUENCE</p>
+        <p className="mb-6 text-[10px] tracking-[0.5em] text-matrix-dim">LOADING PORTFOLIO</p>
         <div className="space-y-2 text-sm text-matrix min-h-[180px]">
           {lines.map((line) => (
             <p key={line} className="animate-pulse">

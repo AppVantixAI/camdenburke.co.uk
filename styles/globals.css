@@ -18,6 +18,11 @@ a {
   text-decoration: none;
 }
 
+:focus-visible {
+  outline: 2px solid #39ff14;
+  outline-offset: 3px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -314,6 +319,55 @@ a {
 
 .desktop-scene canvas:active {
   cursor: grabbing;
+}
+
+.resume-scroll-row {
+  scrollbar-width: none;
+}
+
+.resume-scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .crt::before,
+  .crt::after,
+  .scan-beam,
+  .noise-overlay,
+  .badge-shine {
+    display: none;
+  }
+
+  .ticker-track,
+  .dossier-enter,
+  .glitch-text::before,
+  .glitch-text::after {
+    animation: none !important;
+  }
+
+  .reveal,
+  .reveal-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .panel-border:hover,
+  .skill-cell:hover {
+    transform: none;
+    text-shadow: none;
+  }
 }
 
 @tailwind base;

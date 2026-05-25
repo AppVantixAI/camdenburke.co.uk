@@ -27,6 +27,7 @@ import {
 } from '../lib/screenCalibration';
 import { createDeskRoom, addDeskLighting } from '../lib/createDeskRoom';
 import { dumpDeskScene } from '../lib/dumpDeskScene';
+import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion';
 
 const IFRAME_W = 1920;
 const IFRAME_H = 1080;
@@ -49,6 +50,7 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
   const [calibHud, setCalibHud] = useState(null);
   const calibApiRef = useRef({ togglePan: () => {} });
   const calibrating = isScreenCalibrationEnabled();
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   const setModeSafe = useCallback((m) => {
     modeRef.current = m;
@@ -141,7 +143,10 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
     mount.style.pointerEvents = 'auto';
     const controls = new OrbitControls(camera, mount);
     applyDeskCameraControls(controls, camera);
-    const removeIdleWobble = wireDeskIdleWobble(controls, () => modeRef.current === 'overview');
+    controls.autoRotate = !prefersReducedMotion;
+    const removeIdleWobble = prefersReducedMotion
+      ? null
+      : wireDeskIdleWobble(controls, () => modeRef.current === 'overview');
 
     const calibState = {
       displayScale: loadCalibratedDisplayScale(SCREEN_DISPLAY_SCALE),
@@ -267,7 +272,7 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
         },
         onComplete: () => {
           controls.enabled = true;
-          controls.autoRotate = true;
+          controls.autoRotate = !prefersReducedMotion;
           camera.fov = DEFAULT_DESK_FOV;
           camera.updateProjectionMatrix();
           setModeSafe('overview');
@@ -466,7 +471,7 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
       safeRemoveChild(mount, cssRenderer.domElement);
       sceneRef.current = null;
     };
-  }, [siteSrc, setModeSafe]);
+  }, [calibrating, prefersReducedMotion, siteSrc, setModeSafe]);
 
   const handleEnter = () => sceneRef.current?.enterDesk?.();
   const handleExit = () => sceneRef.current?.exitDesk?.();
@@ -517,7 +522,7 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
       {mode === 'loading' && (
         <div className="fixed inset-0 z-20 flex flex-col items-center justify-center bg-void/90">
           <p className="font-mono text-sm tracking-[0.35em] text-matrix animate-pulse">
-            LOADING WORKSTATION
+            LOADING INTERACTIVE DESK
           </p>
           <p className="mt-3 font-mono text-[10px] text-matrix-dim">Retro sci-fi desk · Sketchfab</p>
         </div>
@@ -526,10 +531,10 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
       {mode === 'overview' && !calibrating && (
         <div className="pointer-events-none fixed inset-0 z-20 flex flex-col items-center justify-end pb-10 px-6">
           <p className="font-mono text-center text-xs tracking-[0.3em] text-matrix">
-            CLICK MONITOR · ENTER WORKSTATION
+            CLICK MONITOR · OPEN FULLSCREEN RESUME
           </p>
           <p className="mt-2 font-mono text-[10px] text-matrix-dim">
-            drag to look around · live resume on screen
+            interactive desk mode · drag to look around
           </p>
           <div className="pointer-events-auto mt-6 flex flex-wrap items-center justify-center gap-3">
             <button
@@ -537,7 +542,7 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
               onClick={handleEnter}
               className="border border-matrix bg-matrix/15 px-8 py-3 font-mono text-xs uppercase tracking-[0.2em] text-matrix hover:bg-matrix/25 hover:shadow-[0_0_30px_rgba(57,255,20,0.25)] transition-all"
             >
-              Enter monitor
+              Open resume
             </button>
           </div>
         </div>
@@ -556,7 +561,7 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
           onClick={handleExit}
           className="fixed top-4 left-4 z-40 border border-matrix/40 bg-void/80 px-5 py-2.5 font-mono text-[10px] uppercase tracking-widest text-matrix backdrop-blur-md hover:bg-matrix/15 hover:shadow-[0_0_20px_rgba(57,255,20,0.2)] transition-all"
         >
-          ← Back to desk
+          ← Back to interactive desk
         </button>
       )}
     </div>

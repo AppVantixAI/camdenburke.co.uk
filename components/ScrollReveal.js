@@ -1,10 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
+import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion';
 
 export default function ScrollReveal({ children, className = '' }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
+    if (prefersReducedMotion) {
+      setVisible(true);
+      return undefined;
+    }
+
     const el = ref.current;
     if (!el) return;
 
@@ -20,7 +27,7 @@ export default function ScrollReveal({ children, className = '' }) {
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [prefersReducedMotion]);
 
   return (
     <div

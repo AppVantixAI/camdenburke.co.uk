@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { resume } from '../data/resume';
+import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion';
 
 export default function ThreatRadar() {
   const canvasRef = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -60,7 +62,7 @@ export default function ThreatRadar() {
         const bx = cx + b.x * radius;
         const by = cy + b.y * radius;
         const sweepDist = Math.abs(Math.atan2(by - cy, bx - cx) - sweep);
-        const lit = sweepDist < 0.5 || sweepDist > Math.PI * 2 - 0.5;
+        const lit = prefersReducedMotion || sweepDist < 0.5 || sweepDist > Math.PI * 2 - 0.5;
 
         ctx.beginPath();
         ctx.arc(bx, by, lit ? 5 : 3, 0, Math.PI * 2);
@@ -73,6 +75,8 @@ export default function ThreatRadar() {
           ctx.shadowBlur = 0;
         }
       });
+
+      if (prefersReducedMotion) return;
 
       angle += 0.02;
       frameId = requestAnimationFrame(draw);
@@ -91,7 +95,7 @@ export default function ThreatRadar() {
       cancelAnimationFrame(frameId);
       window.removeEventListener('resize', resize);
     };
-  }, []);
+  }, [prefersReducedMotion]);
 
   return (
     <div className="flex flex-col items-center">

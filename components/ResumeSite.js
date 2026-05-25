@@ -9,38 +9,36 @@ import ScrollReveal from './ScrollReveal';
 import SecurityBadge from './SecurityBadge';
 import ThreatTicker from './ThreatTicker';
 import ExperienceTimeline from './ExperienceTimeline';
+import ProofStrip from './ProofStrip';
+import CaseStudies from './CaseStudies';
 import { resume } from '../data/resume';
 
 const HeroCanvas = dynamic(() => import('../components/HeroCanvas'), { ssr: false });
 const CodeRain = dynamic(() => import('../components/CodeRain'), { ssr: false });
-const BootOverlay = dynamic(() => import('../components/BootOverlay'), { ssr: false });
 const TypingTerminal = dynamic(() => import('../components/TypingTerminal'), { ssr: false });
 const ThreatRadar = dynamic(() => import('../components/ThreatRadar'), { ssr: false });
-const CustomCursor = dynamic(() => import('../components/CustomCursor'), { ssr: false });
 const ExitDeskButton = dynamic(() => import('./ExitDeskButton'), { ssr: false });
 const ViewModeSwitch = dynamic(() => import('./ViewModeSwitch'), { ssr: false });
 
 export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode = 'flat' }) {
   useEffect(() => {
-    document.body.classList.add('custom-cursor-active');
-    return () => document.body.classList.remove('custom-cursor-active');
+    document.body.classList.remove('custom-cursor-active');
   }, []);
 
   return (
     <>
       <Head>
-        <title>{resume.name} — Security Resume</title>
+        <title>{resume.name} — {resume.targetRole}</title>
         <meta name="description" content={resume.summary} />
-        <meta property="og:title" content={`${resume.name} — Security Resume`} />
+        <meta property="og:title" content={`${resume.name} — ${resume.targetRole}`} />
         <meta property="og:description" content={resume.summary} />
         <meta property="og:url" content="https://camdenburke.co.uk" />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://camdenburke.co.uk" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#030806" />
       </Head>
 
-      <BootOverlay />
-      <CustomCursor />
       <ExitDeskButton />
 
       {showViewToggle && onGoDesk && (
@@ -60,12 +58,11 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
         <Navbar />
         <ThreatTicker />
 
-        {/* ——— HERO ——— */}
         <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-32 pb-16 md:px-8 md:pt-36">
           <HeroCanvas />
           <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-b from-void/20 via-void/80 to-void" />
 
-          <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[1fr_300px] xl:grid-cols-[1fr_340px] lg:items-center">
+          <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_360px] lg:items-center">
             <div className="panel-border corner-brackets bg-panel/90 p-6 md:p-10 backdrop-blur-sm">
               <TypingTerminal />
 
@@ -81,36 +78,54 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
                 <span className="text-matrix">&gt;</span> {resume.headline}
               </p>
 
+              <p className="mt-6 max-w-2xl text-base leading-8 text-[#c7ddca]">
+                {resume.summary}
+              </p>
+
+              <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.28em] text-matrix-dim">
+                {resume.availability}
+              </p>
+
               <div className="pointer-events-auto mt-8 flex flex-wrap gap-3">
-                <a
-                  href="#experience"
-                  className="border border-matrix bg-matrix/15 px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-matrix hover:bg-matrix/25 transition-all hover:shadow-[0_0_20px_rgba(57,255,20,0.2)]"
-                >
-                  View dossier
-                </a>
-                <a
-                  href="/resume.pdf"
-                  download
-                  className="border border-[#3a4a3c] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[#9cb8a0] hover:border-matrix/50 hover:text-matrix transition-all"
-                >
-                  Export PDF
-                </a>
-                <a
-                  href={resume.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="border border-[#3a4a3c] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[#9cb8a0] hover:border-matrix/50 hover:text-matrix transition-all"
-                >
-                  LinkedIn ↗
-                </a>
-                <a
-                  href={resume.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="border border-[#3a4a3c] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[#9cb8a0] hover:border-matrix/50 hover:text-matrix transition-all"
-                >
-                  GitHub ↗
-                </a>
+                {resume.recruiterLinks.map((link, index) => (
+                  link.external ? (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`px-5 py-2.5 font-mono text-xs uppercase tracking-widest transition-all ${
+                        index === 0
+                          ? 'border border-matrix bg-matrix/15 text-matrix hover:bg-matrix/25 hover:shadow-[0_0_20px_rgba(57,255,20,0.2)]'
+                          : 'border border-[#3a4a3c] text-[#9cb8a0] hover:border-matrix/50 hover:text-matrix'
+                      }`}
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      download={link.download || undefined}
+                      className={`px-5 py-2.5 font-mono text-xs uppercase tracking-widest transition-all ${
+                        index === 0
+                          ? 'border border-matrix bg-matrix/15 text-matrix hover:bg-matrix/25 hover:shadow-[0_0_20px_rgba(57,255,20,0.2)]'
+                          : 'border border-[#3a4a3c] text-[#9cb8a0] hover:border-matrix/50 hover:text-matrix'
+                      }`}
+                    >
+                      {link.label}
+                    </a>
+                  )
+                ))}
+                {showViewToggle && onGoDesk && (
+                  <button
+                    type="button"
+                    onClick={onGoDesk}
+                    className="border border-[#3a4a3c] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[#9cb8a0] transition-all hover:border-matrix/50 hover:text-matrix"
+                  >
+                    Open 3D desk
+                  </button>
+                )}
               </div>
             </div>
 
@@ -119,60 +134,36 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
 
           <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2">
             <div className="h-12 w-px bg-gradient-to-b from-matrix/60 to-transparent animate-pulse" />
-            <p className="font-mono text-[10px] tracking-[0.3em] text-matrix-dim">SCROLL TO DECRYPT</p>
+            <p className="font-mono text-[10px] tracking-[0.3em] text-matrix-dim">SCROLL TO REVIEW</p>
           </div>
         </section>
 
-        {/* ——— ABOUT ——— */}
-        <section id="about" className="relative z-10 scroll-mt-28 border-t border-matrix/10 px-4 py-24 md:px-8">
+        <section id="start-here" className="relative z-10 scroll-mt-28 border-t border-matrix/10 px-4 py-24 md:px-8">
           <div className="mx-auto max-w-6xl">
             <ScrollReveal>
-              <SectionHeader module="01" subtitle="PROFILE" title="Help desk · Security path" />
+              <SectionHeader module="01" subtitle="SUMMARY" title="Why this maps to support and security" />
+              <p className="mb-10 max-w-3xl text-base leading-[1.95] text-[#9cb8a0] md:text-lg">
+                My strongest overlap today is the combination of Active Directory support, endpoint
+                troubleshooting, documentation, and escalation in Windows environments. The goal of
+                this site is to show the technical work I can defend now while making room for
+                deeper lab artifacts as I keep building across support and security-focused roles.
+              </p>
             </ScrollReveal>
-            <ScrollReveal className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-              <p className="text-base leading-[1.9] text-[#9cb8a0] md:text-lg">{resume.summary}</p>
-              <div className="space-y-6">
-                <div className="panel-border bg-panel p-6 font-mono text-xs">
-                  <p className="text-matrix mb-4">{'// top_skills'}</p>
-                  <ul className="space-y-2 text-[#7a9a7e]">
-                    {resume.topSkills.map((skill, i) => (
-                      <li key={skill}>
-                        <span className="text-matrix">
-                          {i < resume.topSkills.length - 1 ? '├─' : '└─'}
-                        </span>{' '}
-                        {skill}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="panel-border bg-panel p-6 font-mono text-xs">
-                  <p className="text-matrix mb-4">{'// homelab_stack'}</p>
-                  <ul className="space-y-2 text-[#7a9a7e]">
-                    {resume.homelabStack.map((item, i) => (
-                      <li key={item}>
-                        <span className="text-matrix">
-                          {i < resume.homelabStack.length - 1 ? '├─' : '└─'}
-                        </span>{' '}
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+            <ScrollReveal>
+              <ProofStrip />
             </ScrollReveal>
           </div>
         </section>
 
-        {/* ——— EXPERIENCE ——— */}
         <section
           id="experience"
           className="relative z-10 scroll-mt-28 border-t border-matrix/10 bg-[#050c08]/80 px-4 py-24 md:px-8"
         >
           <div className="mx-auto max-w-6xl">
             <ScrollReveal>
-              <SectionHeader module="02" subtitle="FIELD_OPS" title="Operational history" />
+              <SectionHeader module="02" subtitle="EXPERIENCE" title="Professional experience" />
               <p className="mb-10 max-w-xl font-mono text-xs text-matrix-dim">
-                Select a node on the timeline to decrypt the full dossier.
+                Desktop keeps the interactive timeline. Mobile shows every role for faster recruiter scanning.
               </p>
             </ScrollReveal>
             <ScrollReveal>
@@ -181,11 +172,25 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
           </div>
         </section>
 
-        {/* ——— EDUCATION ——— */}
+        <section id="projects" className="relative z-10 scroll-mt-28 border-t border-matrix/10 px-4 py-24 md:px-8">
+          <div className="mx-auto max-w-6xl">
+            <ScrollReveal>
+              <SectionHeader module="03" subtitle="LABS" title="Projects & lab work" />
+              <p className="mb-10 max-w-3xl text-base leading-8 text-[#9cb8a0]">
+                These proof items connect current support work, home lab practice, and
+                documentation habits to the kinds of responsibilities hiring teams look for first.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal>
+              <CaseStudies />
+            </ScrollReveal>
+          </div>
+        </section>
+
         <section id="education" className="relative z-10 scroll-mt-28 px-4 py-24 md:px-8">
           <div className="mx-auto max-w-6xl">
             <ScrollReveal>
-              <SectionHeader module="03" subtitle="ACADEMICS" title="Education & certs" />
+              <SectionHeader module="04" subtitle="EDUCATION" title="Education & credentials" />
             </ScrollReveal>
             <ScrollReveal className="grid gap-6 md:grid-cols-2">
               {resume.education.map((edu) => (
@@ -198,7 +203,7 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
             </ScrollReveal>
 
             <ScrollReveal className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {resume.certificates.map((cert) => {
+              {resume.featuredCertifications.map((cert) => {
                 const isSecure = cert.tone === 'secure';
                 return (
                   <div
@@ -229,24 +234,39 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
                 );
               })}
             </ScrollReveal>
+
+            <ScrollReveal className="mt-8 panel-border bg-panel/70 p-6">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-matrix-dim">
+                Additional credentials
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {resume.additionalCredentials.map((cert) => (
+                  <span
+                    key={cert.name}
+                    className="border border-matrix/20 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#8fb494]"
+                  >
+                    {cert.name}
+                  </span>
+                ))}
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
-        {/* ——— SKILLS ——— */}
         <section
           id="skills"
           className="relative z-10 scroll-mt-28 border-t border-matrix/10 bg-[#050c08]/80 px-4 py-24 md:px-8"
         >
           <div className="mx-auto max-w-6xl">
             <ScrollReveal>
-              <SectionHeader module="04" subtitle="ARSENAL" title="Security skill matrix" />
+              <SectionHeader module="05" subtitle="SKILLS" title="Skills I can defend today" />
             </ScrollReveal>
 
             <ScrollReveal className="mb-14 flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-between">
               <div className="flex-1 w-full">
                 <p className="mb-8 max-w-2xl font-mono text-sm text-matrix-dim">
-                  Hover cells to illuminate capabilities. Radar sweep maps your threat surface by
-                  domain.
+                  These are grouped to match how cybersecurity and IT hiring teams usually scan
+                  experience: workflow, infrastructure, scripting, and support platforms.
                 </p>
                 <SkillMatrix />
               </div>
@@ -266,11 +286,10 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
           </div>
         </section>
 
-        {/* ——— CONTACT ——— */}
         <section id="contact" className="relative z-10 scroll-mt-28 px-4 py-24 md:px-8">
           <div className="mx-auto max-w-6xl">
             <ScrollReveal>
-              <SectionHeader module="05" subtitle="COMMS" title="Establish connection" />
+              <SectionHeader module="06" subtitle="CONTACT" title="Contact" />
             </ScrollReveal>
             <ScrollReveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {[
@@ -322,8 +341,7 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
    ╚═════╝╚═════╝`}
           </pre>
           <p>
-            SESSION END · {resume.name.toUpperCase()} · {resume.clearanceId} ·{' '}
-            {new Date().getFullYear()}
+            {resume.name.toUpperCase()} · {resume.targetRole.toUpperCase()} · {new Date().getFullYear()}
           </p>
         </footer>
       </div>
