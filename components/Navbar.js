@@ -59,8 +59,13 @@ export default function Navbar({
       className="flex min-h-[44px] min-w-0 items-center gap-2 text-sm"
     >
       <span className="inline-block h-2 w-2 shrink-0 rounded-full bg-matrix animate-pulse-glow" />
-      <span className="truncate text-matrix">camden</span>
-      <span className="hidden truncate text-white 2xl:inline">/ Help Desk · Security</span>
+      <span className="truncate font-display text-sm font-bold tracking-tight text-white sm:text-base">
+        <span className="text-white">Camden</span>{' '}
+        <span className="text-matrix">Burke</span>
+      </span>
+      <span className="hidden truncate font-mono text-[10px] text-[#6a8070] lg:inline">
+        / Help Desk · Security
+      </span>
     </a>
   );
 

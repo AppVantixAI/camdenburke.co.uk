@@ -7,6 +7,7 @@ import SecurityBadge from './SecurityBadge';
 import ExperienceTimeline from './ExperienceTimeline';
 import FeaturedLab from './FeaturedLab';
 import MetaChip from './MetaChip';
+import HeroName from './HeroName';
 import { resume } from '../data/resume';
 
 const SITE_URL = 'https://camdenburke.co.uk';
@@ -82,17 +83,15 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
             <div className="hero-panel panel-border corner-brackets bg-panel/90 p-6 pl-7 backdrop-blur-sm md:p-10 md:pl-11">
               <div className="pointer-events-none absolute -right-16 top-0 h-48 w-48 rounded-full bg-matrix/[0.05] blur-3xl" />
 
-              <div className="relative flex flex-wrap gap-2.5">
+              <HeroName />
+
+              <div className="relative mt-5 flex flex-wrap gap-2.5">
                 {resume.heroChips.map((chip) => (
                   <MetaChip key={chip.label} label={chip.label} value={chip.value} tone={chip.tone} />
                 ))}
               </div>
 
-              <h1 className="relative mt-5 font-display text-3xl font-bold tracking-tight text-white md:text-[2.35rem] md:leading-tight">
-                {resume.name}
-              </h1>
-
-              <p className="relative mt-5 max-w-2xl font-body text-base font-medium leading-8 text-white md:text-lg md:leading-9">
+              <p className="relative mt-6 max-w-2xl font-body text-base font-medium leading-8 text-white md:mt-7 md:text-lg md:leading-9">
                 {resume.valueProposition}
               </p>
 
