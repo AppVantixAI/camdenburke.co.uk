@@ -3,12 +3,14 @@ import { resume } from '../data/resume';
 import { useActiveSection } from '../lib/useActiveSection';
 import ViewModeSwitch from './ViewModeSwitch';
 
+const navLinkClass =
+  'hover:text-matrix transition-colors whitespace-nowrap';
+
 export default function Navbar({
   showViewToggle = false,
   viewMode = 'flat',
   onGoDesk,
   onGoFlat,
-  compactViewSwitch = false,
 }) {
   const headerRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
@@ -49,6 +51,47 @@ export default function Navbar({
     return () => observer.disconnect();
   }, [showViewToggle]);
 
+  const brand = (
+    <a href="#" className="flex min-h-[44px] min-w-0 items-center gap-2 text-sm lg:shrink-0">
+      <span className="inline-block h-2 w-2 shrink-0 rounded-full bg-matrix animate-pulse-glow" />
+      <span className="truncate text-matrix">camden</span>
+      <span className="hidden truncate text-white sm:inline">/ {resume.targetRole}</span>
+    </a>
+  );
+
+  const actions = (
+    <div className="flex shrink-0 items-center gap-2">
+      {showViewToggle && onGoDesk && (
+        <ViewModeSwitch
+          mode={viewMode}
+          onDesk={onGoDesk}
+          onFlat={onGoFlat || (() => {})}
+          compact
+          className="hidden md:inline-flex"
+        />
+      )}
+      <a
+        href="/resume.pdf"
+        download
+        className="inline-flex min-h-[44px] items-center border border-matrix/40 bg-matrix/5 px-4 py-2 text-xs uppercase tracking-widest text-matrix transition-colors hover:bg-matrix/15 active:scale-95 md:px-3 md:py-1.5 md:text-[10px]"
+      >
+        Resume PDF
+      </a>
+    </div>
+  );
+
+  const desktopNavLinks = (
+    <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs uppercase tracking-wider text-[#8aa88e] md:text-[11px]">
+      {resume.nav.map((item) => (
+        <li key={item.id}>
+          <a href={`#${item.id}`} className={navLinkClass}>
+            [{item.label}]
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
     <header
       ref={headerRef}
@@ -57,80 +100,63 @@ export default function Navbar({
       }`}
     >
       <nav className="mx-auto max-w-6xl px-4 py-3 md:px-6">
-        <div className="flex items-center justify-between gap-3">
-          <a href="#" className="flex min-h-[44px] min-w-0 shrink items-center gap-2 text-sm">
-            <span className="inline-block h-2 w-2 shrink-0 rounded-full bg-matrix animate-pulse-glow" />
-            <span className="truncate text-matrix">camden</span>
-            <span className="hidden truncate text-white sm:inline">/ {resume.targetRole}</span>
-          </a>
+        {/* Mobile */}
+        <div className="md:hidden">
+          <div className="flex items-center justify-between gap-3">
+            {brand}
+            {actions}
+          </div>
 
-          <p className="hidden shrink-0 text-xs tracking-widest text-matrix-dim lg:block md:text-[10px]">
-            LOCAL_TIME <span className="text-matrix">{time}</span>
-          </p>
-
-          <ul className="hidden min-w-0 items-center gap-4 text-xs uppercase tracking-wider text-[#8aa88e] md:flex md:text-[11px]">
-            {resume.nav.map((item) => (
-              <li key={item.id} className="shrink-0">
-                <a href={`#${item.id}`} className="hover:text-matrix transition-colors">
-                  [{item.label}]
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <div className="flex shrink-0 items-center gap-2">
-            {showViewToggle && onGoDesk && (
+          {showViewToggle && onGoDesk && (
+            <div className="mt-3">
               <ViewModeSwitch
                 mode={viewMode}
                 onDesk={onGoDesk}
                 onFlat={onGoFlat || (() => {})}
-                compact={compactViewSwitch}
-                className="hidden md:inline-flex"
+                compact
+                className="w-full max-w-xs"
               />
-            )}
-            <a
-              href="/resume.pdf"
-              download
-              className="inline-flex min-h-[44px] items-center border border-matrix/40 bg-matrix/5 px-4 py-2 text-xs uppercase tracking-widest text-matrix transition-colors hover:bg-matrix/15 active:scale-95 md:px-3 md:py-1.5 md:text-[10px]"
-            >
-              Resume PDF
-            </a>
+            </div>
+          )}
+
+          <div className="resume-scroll-fade relative mt-3">
+            <div className="resume-scroll-row flex gap-2 overflow-x-auto pb-1">
+              {resume.nav.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`inline-flex min-h-[44px] shrink-0 items-center border px-4 py-2 text-xs uppercase tracking-[0.22em] transition-colors active:scale-95 ${
+                    activeId === item.id
+                      ? 'border-matrix/50 bg-matrix/10 text-matrix'
+                      : 'border-matrix/20 text-[#8aa88e] hover:text-matrix'
+                  }`}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
           </div>
+
+          <p className="mt-2 text-xs tracking-widest text-matrix-dim">
+            LOCAL_TIME <span className="text-matrix">{time}</span>
+          </p>
         </div>
 
-        {showViewToggle && onGoDesk && (
-          <div className="mt-3 md:hidden">
-            <ViewModeSwitch
-              mode={viewMode}
-              onDesk={onGoDesk}
-              onFlat={onGoFlat || (() => {})}
-              compact
-              className="w-full max-w-xs"
-            />
+        {/* Tablet: brand + actions, then nav on second row */}
+        <div className="hidden md:block lg:hidden">
+          <div className="flex items-center justify-between gap-4">
+            {brand}
+            {actions}
           </div>
-        )}
-
-        <div className="resume-scroll-fade relative mt-3 md:hidden">
-          <div className="resume-scroll-row flex gap-2 overflow-x-auto pb-1">
-            {resume.nav.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                className={`inline-flex min-h-[44px] shrink-0 items-center border px-4 py-2 text-xs uppercase tracking-[0.22em] transition-colors active:scale-95 md:text-[10px] ${
-                  activeId === item.id
-                    ? 'border-matrix/50 bg-matrix/10 text-matrix'
-                    : 'border-matrix/20 text-[#8aa88e] hover:text-matrix'
-                }`}
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
+          <div className="mt-3 border-t border-matrix/10 pt-3">{desktopNavLinks}</div>
         </div>
 
-        <p className="mt-2 text-xs tracking-widest text-matrix-dim md:hidden md:text-[10px]">
-          LOCAL_TIME <span className="text-matrix">{time}</span>
-        </p>
+        {/* Desktop: three-column grid keeps nav centered without overlap */}
+        <div className="hidden lg:grid lg:grid-cols-[minmax(0,1.1fr)_auto_minmax(0,1.1fr)] lg:items-center lg:gap-4">
+          <div className="min-w-0 justify-self-start">{brand}</div>
+          <div className="justify-self-center px-2">{desktopNavLinks}</div>
+          <div className="justify-self-end">{actions}</div>
+        </div>
       </nav>
     </header>
   );

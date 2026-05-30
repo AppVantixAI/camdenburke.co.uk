@@ -57,7 +57,6 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
           viewMode={viewMode}
           onGoDesk={onGoDesk}
           onGoFlat={() => {}}
-          compactViewSwitch={isMobile}
         />
         <ThreatTicker />
 
