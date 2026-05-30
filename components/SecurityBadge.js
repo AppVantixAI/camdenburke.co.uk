@@ -7,11 +7,11 @@ const statusTone = {
 
 export default function SecurityBadge() {
   return (
-    <aside className="security-badge panel-border relative overflow-hidden bg-panel/90 p-0 backdrop-blur-sm">
+    <aside className="security-badge panel-border relative order-first overflow-hidden bg-panel/90 p-0 backdrop-blur-sm lg:order-none">
       <div className="badge-shine pointer-events-none absolute inset-0" aria-hidden="true" />
 
       <div className="relative border-b border-matrix/20 bg-gradient-to-r from-matrix/10 to-transparent px-5 py-3">
-        <p className="font-mono text-[9px] tracking-[0.4em] text-matrix-dim">RECRUITER SNAPSHOT</p>
+        <p className="font-mono text-xs tracking-[0.4em] text-matrix-dim md:text-[9px]">RECRUITER SNAPSHOT</p>
         <p className="font-mono text-lg font-bold text-white tracking-wider">{resume.targetRole}</p>
       </div>
 
@@ -23,7 +23,7 @@ export default function SecurityBadge() {
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-matrix animate-pulse-glow" />
         </div>
 
-        <div className="min-w-0 flex-1 font-mono text-[10px]">
+        <div className="min-w-0 flex-1 font-mono text-xs md:text-[10px]">
           <p className="text-white font-semibold text-sm truncate">{resume.name}</p>
           <p className="text-matrix-dim mt-0.5 leading-relaxed">{resume.headline.split('|')[0].trim()}</p>
           <p className="mt-2 text-[#6a8070]">{resume.location}</p>
@@ -37,7 +37,7 @@ export default function SecurityBadge() {
             key={item.label}
             className="grid grid-cols-[auto,minmax(0,1fr)] items-start gap-x-3 gap-y-1 border border-matrix/10 px-2 py-1.5"
           >
-            <span className="text-[9px] tracking-[0.2em] text-[#6a8070]">
+            <span className="text-xs tracking-[0.2em] text-[#6a8070] md:text-[9px]">
               {item.label.replace(/_/g, ' ')}
             </span>
             <span className={`justify-self-end text-right font-semibold leading-tight ${statusTone[item.tone]}`}>

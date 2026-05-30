@@ -1,9 +1,12 @@
-export default function ViewModeSwitch({ mode, onDesk, onFlat, className = '' }) {
+export default function ViewModeSwitch({ mode, onDesk, onFlat, className = '', compact = false }) {
   const base =
-    'px-4 py-2 font-mono text-[10px] uppercase tracking-widest transition-all border-l border-matrix/20 first:border-l-0';
+    'inline-flex min-h-[44px] items-center px-4 py-2 font-mono text-xs uppercase tracking-widest transition-all border-l border-matrix/20 first:border-l-0 active:scale-95 md:min-h-0 md:py-2 md:text-[10px]';
   const active = 'bg-matrix/20 text-matrix';
   const idle =
     'bg-transparent text-[#8aa88e] hover:bg-matrix/10 hover:text-matrix';
+
+  const deskLabel = compact ? 'Desk' : 'Interactive Desk';
+  const flatLabel = compact ? 'Resume' : 'Quick Resume';
 
   return (
     <div
@@ -17,7 +20,7 @@ export default function ViewModeSwitch({ mode, onDesk, onFlat, className = '' })
         className={`${base} ${mode === 'desk' ? active : idle}`}
         aria-pressed={mode === 'desk'}
       >
-        Interactive Desk
+        {deskLabel}
       </button>
       <button
         type="button"
@@ -25,7 +28,7 @@ export default function ViewModeSwitch({ mode, onDesk, onFlat, className = '' })
         className={`${base} ${mode === 'flat' ? active : idle}`}
         aria-pressed={mode === 'flat'}
       >
-        Quick Resume
+        {flatLabel}
       </button>
     </div>
   );

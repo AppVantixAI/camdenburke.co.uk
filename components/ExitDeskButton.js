@@ -13,7 +13,7 @@ export default function ExitDeskButton() {
     <button
       type="button"
       onClick={exit}
-      className="fixed top-4 right-4 z-[60] border border-matrix/50 bg-void/90 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-matrix backdrop-blur-sm hover:bg-matrix/15 transition-colors"
+      className="fixed top-[max(1rem,env(safe-area-inset-top))] right-4 z-[60] inline-flex min-h-[44px] items-center border border-matrix/50 bg-void/90 px-4 py-2 font-mono text-xs uppercase tracking-widest text-matrix backdrop-blur-sm transition-colors hover:bg-matrix/15 active:scale-95 md:text-[10px]"
     >
       ← Back to interactive desk
     </button>

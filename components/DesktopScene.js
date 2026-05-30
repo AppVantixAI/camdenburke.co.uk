@@ -28,6 +28,7 @@ import {
 import { createDeskRoom, addDeskLighting } from '../lib/createDeskRoom';
 import { dumpDeskScene } from '../lib/dumpDeskScene';
 import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion';
+import { useIsMobile } from '../lib/useIsMobile';
 
 const IFRAME_W = 1920;
 const IFRAME_H = 1080;
@@ -51,6 +52,7 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
   const calibApiRef = useRef({ togglePan: () => {} });
   const calibrating = isScreenCalibrationEnabled();
   const prefersReducedMotion = usePrefersReducedMotion();
+  const isMobile = useIsMobile();
 
   const setModeSafe = useCallback((m) => {
     modeRef.current = m;
@@ -88,13 +90,19 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
     const camera = new THREE.PerspectiveCamera(DEFAULT_DESK_FOV, width / height, 0.1, 80);
     camera.position.set(0.4, 1.55, 3.4);
 
-    const webglRenderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
-    webglRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    const isMobileViewport =
+      typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches;
+
+    const webglRenderer = new THREE.WebGLRenderer({
+      antialias: !isMobileViewport,
+      powerPreference: isMobileViewport ? 'default' : 'high-performance',
+    });
+    webglRenderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobileViewport ? 1 : 2));
     webglRenderer.setSize(width, height);
     webglRenderer.outputEncoding = THREE.sRGBEncoding;
     webglRenderer.toneMapping = THREE.ACESFilmicToneMapping;
     webglRenderer.toneMappingExposure = 1.1;
-    webglRenderer.shadowMap.enabled = true;
+    webglRenderer.shadowMap.enabled = !isMobileViewport;
     webglRenderer.shadowMap.type = THREE.PCFSoftShadowMap;
     webglRenderer.domElement.style.position = 'absolute';
     webglRenderer.domElement.style.top = '0';
@@ -493,7 +501,8 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
           mode={viewMode}
           onDesk={handleSelectDesk}
           onFlat={onGoFlat}
-          className="fixed top-4 right-4 z-50 pointer-events-auto"
+          compact={isMobile}
+          className="fixed right-4 z-50 pointer-events-auto top-[max(1rem,env(safe-area-inset-top))] md:top-4"
         />
       )}
 
@@ -531,16 +540,18 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
       {mode === 'overview' && !calibrating && (
         <div className="pointer-events-none fixed inset-0 z-20 flex flex-col items-center justify-end pb-10 px-6">
           <p className="font-mono text-center text-xs tracking-[0.3em] text-matrix">
-            CLICK MONITOR · OPEN FULLSCREEN RESUME
+            {isMobile ? 'TAP MONITOR · OPEN FULLSCREEN RESUME' : 'CLICK MONITOR · OPEN FULLSCREEN RESUME'}
           </p>
-          <p className="mt-2 font-mono text-[10px] text-matrix-dim">
-            interactive desk mode · drag to look around
+          <p className="mt-2 font-mono text-xs text-matrix-dim md:text-[10px]">
+            {isMobile
+              ? 'interactive desk mode · swipe to look around'
+              : 'interactive desk mode · drag to look around'}
           </p>
           <div className="pointer-events-auto mt-6 flex flex-wrap items-center justify-center gap-3">
             <button
               type="button"
               onClick={handleEnter}
-              className="border border-matrix bg-matrix/15 px-8 py-3 font-mono text-xs uppercase tracking-[0.2em] text-matrix hover:bg-matrix/25 hover:shadow-[0_0_30px_rgba(57,255,20,0.25)] transition-all"
+              className="inline-flex min-h-[44px] items-center border border-matrix bg-matrix/15 px-8 py-3 font-mono text-xs uppercase tracking-[0.2em] text-matrix transition-all hover:bg-matrix/25 hover:shadow-[0_0_30px_rgba(57,255,20,0.25)] active:scale-95"
             >
               Open resume
             </button>
@@ -559,7 +570,7 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
         <button
           type="button"
           onClick={handleExit}
-          className="fixed top-4 left-4 z-40 border border-matrix/40 bg-void/80 px-5 py-2.5 font-mono text-[10px] uppercase tracking-widest text-matrix backdrop-blur-md hover:bg-matrix/15 hover:shadow-[0_0_20px_rgba(57,255,20,0.2)] transition-all"
+          className="fixed top-[max(1rem,env(safe-area-inset-top))] left-4 z-40 inline-flex min-h-[44px] items-center border border-matrix/40 bg-void/80 px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-matrix backdrop-blur-md transition-all hover:bg-matrix/15 hover:shadow-[0_0_20px_rgba(57,255,20,0.2)] active:scale-95 md:text-[10px]"
         >
           ← Back to interactive desk
         </button>

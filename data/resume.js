@@ -45,8 +45,8 @@ export const resume = {
     'Windows Server home lab + PowerShell',
   ],
   recruiterLinks: [
-    { label: 'Projects', href: '#projects' },
     { label: 'Resume PDF', href: '/resume.pdf', download: true },
+    { label: 'Projects', href: '#projects' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/camdenburkedev', external: true },
     { label: 'GitHub', href: 'https://github.com/cburke12', external: true },
   ],
@@ -288,6 +288,7 @@ export const resume = {
     { id: 'start-here', label: 'Start Here' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
+    { id: 'education', label: 'Education' },
     { id: 'skills', label: 'Skills' },
     { id: 'contact', label: 'Contact' },
   ],

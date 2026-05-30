@@ -11,16 +11,23 @@ import ThreatTicker from './ThreatTicker';
 import ExperienceTimeline from './ExperienceTimeline';
 import ProofStrip from './ProofStrip';
 import CaseStudies from './CaseStudies';
+import LazyThreatRadar from './LazyThreatRadar';
 import { resume } from '../data/resume';
+import { useIsMobile } from '../lib/useIsMobile';
 
 const HeroCanvas = dynamic(() => import('../components/HeroCanvas'), { ssr: false });
 const CodeRain = dynamic(() => import('../components/CodeRain'), { ssr: false });
 const TypingTerminal = dynamic(() => import('../components/TypingTerminal'), { ssr: false });
-const ThreatRadar = dynamic(() => import('../components/ThreatRadar'), { ssr: false });
 const ExitDeskButton = dynamic(() => import('./ExitDeskButton'), { ssr: false });
 const ViewModeSwitch = dynamic(() => import('./ViewModeSwitch'), { ssr: false });
 
+function isPrimaryCta(link) {
+  return link.label === 'Resume PDF';
+}
+
 export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode = 'flat' }) {
+  const isMobile = useIsMobile();
+
   useEffect(() => {
     document.body.classList.remove('custom-cursor-active');
   }, []);
@@ -46,27 +53,30 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
           mode={viewMode}
           onDesk={onGoDesk}
           onFlat={() => {}}
-          className="fixed top-4 right-4 z-[60] pointer-events-auto"
+          compact={isMobile}
+          className="fixed right-4 z-[60] pointer-events-auto top-[calc(var(--header-height,52px)+0.5rem)] md:top-4"
         />
       )}
 
       <div className="crt min-h-screen bg-void text-[#b8d4bc]">
         <div className="noise-overlay" />
         <div className="scan-beam" />
-        <CodeRain />
+        {!isMobile && <CodeRain />}
         <div className="pointer-events-none fixed inset-0 z-[1] bg-hex bg-[length:28px_49px] animate-drift opacity-60" />
         <Navbar />
         <ThreatTicker />
 
-        <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-32 pb-16 md:px-8 md:pt-36">
-          <HeroCanvas />
+        <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pb-16 pt-[calc(var(--header-height,52px)+2rem)] md:px-8 md:pt-[calc(var(--header-height,52px)+var(--ticker-height,0px)+2rem)]">
+          {!isMobile && <HeroCanvas />}
           <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-b from-void/20 via-void/80 to-void" />
 
           <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_360px] lg:items-center">
             <div className="panel-border corner-brackets bg-panel/90 p-6 md:p-10 backdrop-blur-sm">
-              <TypingTerminal />
+              <div className="hidden md:block">
+                <TypingTerminal />
+              </div>
 
-              <p className="mt-8 font-mono text-xs uppercase tracking-[0.4em] text-amber">
+              <p className="mt-0 font-mono text-xs uppercase tracking-[0.4em] text-amber md:mt-8">
                 {resume.tagline}
               </p>
 
@@ -87,15 +97,15 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
               </p>
 
               <div className="pointer-events-auto mt-8 flex flex-wrap gap-3">
-                {resume.recruiterLinks.map((link, index) => (
+                {resume.recruiterLinks.map((link) => (
                   link.external ? (
                     <a
                       key={link.label}
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
-                      className={`px-5 py-2.5 font-mono text-xs uppercase tracking-widest transition-all ${
-                        index === 0
+                      className={`inline-flex min-h-[44px] items-center px-5 py-2.5 font-mono text-xs uppercase tracking-widest transition-all active:scale-95 ${
+                        isPrimaryCta(link)
                           ? 'border border-matrix bg-matrix/15 text-matrix hover:bg-matrix/25 hover:shadow-[0_0_20px_rgba(57,255,20,0.2)]'
                           : 'border border-[#3a4a3c] text-[#9cb8a0] hover:border-matrix/50 hover:text-matrix'
                       }`}
@@ -107,8 +117,8 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
                       key={link.label}
                       href={link.href}
                       download={link.download || undefined}
-                      className={`px-5 py-2.5 font-mono text-xs uppercase tracking-widest transition-all ${
-                        index === 0
+                      className={`inline-flex min-h-[44px] items-center px-5 py-2.5 font-mono text-xs uppercase tracking-widest transition-all active:scale-95 ${
+                        isPrimaryCta(link)
                           ? 'border border-matrix bg-matrix/15 text-matrix hover:bg-matrix/25 hover:shadow-[0_0_20px_rgba(57,255,20,0.2)]'
                           : 'border border-[#3a4a3c] text-[#9cb8a0] hover:border-matrix/50 hover:text-matrix'
                       }`}
@@ -121,7 +131,7 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
                   <button
                     type="button"
                     onClick={onGoDesk}
-                    className="border border-[#3a4a3c] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[#9cb8a0] transition-all hover:border-matrix/50 hover:text-matrix"
+                    className="inline-flex min-h-[44px] items-center border border-[#3a4a3c] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[#9cb8a0] transition-all hover:border-matrix/50 hover:text-matrix active:scale-95"
                   >
                     Open 3D desk
                   </button>
@@ -132,13 +142,13 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
             <SecurityBadge />
           </div>
 
-          <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2">
+          <div className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex">
             <div className="h-12 w-px bg-gradient-to-b from-matrix/60 to-transparent animate-pulse" />
-            <p className="font-mono text-[10px] tracking-[0.3em] text-matrix-dim">SCROLL TO REVIEW</p>
+            <p className="font-mono text-xs tracking-[0.3em] text-matrix-dim md:text-[10px]">SCROLL TO REVIEW</p>
           </div>
         </section>
 
-        <section id="start-here" className="relative z-10 scroll-mt-28 border-t border-matrix/10 px-4 py-24 md:px-8">
+        <section id="start-here" className="section-anchor relative z-10 border-t border-matrix/10 px-4 py-24 md:px-8">
           <div className="mx-auto max-w-6xl">
             <ScrollReveal>
               <SectionHeader module="01" subtitle="SUMMARY" title="Why this maps to support and security" />
@@ -157,7 +167,7 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
 
         <section
           id="experience"
-          className="relative z-10 scroll-mt-28 border-t border-matrix/10 bg-[#050c08]/80 px-4 py-24 md:px-8"
+          className="section-anchor relative z-10 border-t border-matrix/10 bg-[#050c08]/80 px-4 py-24 md:px-8"
         >
           <div className="mx-auto max-w-6xl">
             <ScrollReveal>
@@ -172,7 +182,7 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
           </div>
         </section>
 
-        <section id="projects" className="relative z-10 scroll-mt-28 border-t border-matrix/10 px-4 py-24 md:px-8">
+        <section id="projects" className="section-anchor relative z-10 border-t border-matrix/10 px-4 py-24 md:px-8">
           <div className="mx-auto max-w-6xl">
             <ScrollReveal>
               <SectionHeader module="03" subtitle="LABS" title="Projects & lab work" />
@@ -187,7 +197,7 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
           </div>
         </section>
 
-        <section id="education" className="relative z-10 scroll-mt-28 px-4 py-24 md:px-8">
+        <section id="education" className="section-anchor relative z-10 px-4 py-24 md:px-8">
           <div className="mx-auto max-w-6xl">
             <ScrollReveal>
               <SectionHeader module="04" subtitle="EDUCATION" title="Education & credentials" />
@@ -219,7 +229,7 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
                       <div className="flex flex-wrap items-center gap-2">
                         <p className="font-display text-base font-bold text-white">{cert.name}</p>
                         <span
-                          className={`font-mono text-[10px] uppercase tracking-widest px-2 py-0.5 border ${
+                          className={`font-mono text-xs uppercase tracking-widest px-2 py-0.5 border md:text-[10px] ${
                             isSecure
                               ? 'text-matrix border-matrix/40'
                               : 'text-amber border-amber/40'
@@ -236,14 +246,14 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
             </ScrollReveal>
 
             <ScrollReveal className="mt-8 panel-border bg-panel/70 p-6">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-matrix-dim">
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-matrix-dim md:text-[10px]">
                 Additional credentials
               </p>
               <div className="mt-4 flex flex-wrap gap-3">
                 {resume.additionalCredentials.map((cert) => (
                   <span
                     key={cert.name}
-                    className="border border-matrix/20 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#8fb494]"
+                    className="border border-matrix/20 px-3 py-1.5 font-mono text-xs uppercase tracking-[0.18em] text-[#8fb494] md:text-[10px]"
                   >
                     {cert.name}
                   </span>
@@ -255,7 +265,7 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
 
         <section
           id="skills"
-          className="relative z-10 scroll-mt-28 border-t border-matrix/10 bg-[#050c08]/80 px-4 py-24 md:px-8"
+          className="section-anchor relative z-10 border-t border-matrix/10 bg-[#050c08]/80 px-4 py-24 md:px-8"
         >
           <div className="mx-auto max-w-6xl">
             <ScrollReveal>
@@ -270,13 +280,13 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
                 </p>
                 <SkillMatrix />
               </div>
-              <ThreatRadar />
+              <LazyThreatRadar />
             </ScrollReveal>
 
             <ScrollReveal className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {resume.skillGroups.map((group) => (
                 <div key={group.title} className="border-l-2 border-matrix/40 pl-4">
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-matrix">
+                  <p className="font-mono text-xs uppercase tracking-widest text-matrix md:text-[10px]">
                     {group.title}
                   </p>
                   <p className="mt-1 text-sm text-[#7a9a7e]">{group.skills.join(' · ')}</p>
@@ -286,7 +296,7 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
           </div>
         </section>
 
-        <section id="contact" className="relative z-10 scroll-mt-28 px-4 py-24 md:px-8">
+        <section id="contact" className="section-anchor relative z-10 px-4 py-24 md:px-8">
           <div className="mx-auto max-w-6xl">
             <ScrollReveal>
               <SectionHeader module="06" subtitle="CONTACT" title="Contact" />
@@ -300,7 +310,7 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
               ].map((item) => {
                 const card = (
                   <>
-                    <p className="font-mono text-[10px] tracking-widest text-matrix-dim group-hover:text-matrix">
+                    <p className="font-mono text-xs tracking-widest text-matrix-dim group-hover:text-matrix md:text-[10px]">
                       {'// '}{item.label}
                     </p>
                     <p className="mt-3 font-display text-lg font-semibold text-white break-all">
@@ -331,7 +341,7 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
           </div>
         </section>
 
-        <footer className="relative z-10 border-t border-matrix/10 px-4 py-10 text-center font-mono text-[10px] tracking-widest text-matrix-dim">
+        <footer className="relative z-10 border-t border-matrix/10 px-4 py-10 text-center font-mono text-xs tracking-widest text-matrix-dim md:text-[10px]">
           <pre className="mx-auto mb-4 max-w-md text-[8px] leading-tight text-matrix/30 hidden sm:block" aria-hidden="true">
 {`   ██████╗██████╗ 
   ██╔════╝██╔══██╗
