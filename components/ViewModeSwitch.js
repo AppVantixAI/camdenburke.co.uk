@@ -1,12 +1,15 @@
-export default function ViewModeSwitch({ mode, onDesk, onFlat, className = '', compact = false }) {
+/** Shared labels for resume ↔ desk toggles (navbar + 3D scene). */
+export const VIEW_MODE_LABELS = {
+  desk: 'Desk',
+  resume: 'Resume',
+};
+
+export default function ViewModeSwitch({ mode, onDesk, onFlat, className = '' }) {
   const base =
     'inline-flex min-h-[44px] flex-1 items-center justify-center px-3 py-2 font-mono text-xs uppercase tracking-widest transition-all border-l border-matrix/20 first:border-l-0 active:scale-95 md:min-h-[36px] md:flex-none md:px-3 md:py-1.5 md:text-[10px] md:tracking-[0.12em]';
   const active = 'bg-matrix/20 text-matrix';
   const idle =
     'bg-transparent text-[#8aa88e] hover:bg-matrix/10 hover:text-matrix';
-
-  const deskLabel = compact ? 'Desk' : 'Interactive Desk';
-  const flatLabel = compact ? 'Resume' : 'Quick Resume';
 
   return (
     <div
@@ -20,7 +23,7 @@ export default function ViewModeSwitch({ mode, onDesk, onFlat, className = '', c
         className={`${base} ${mode === 'desk' ? active : idle}`}
         aria-pressed={mode === 'desk'}
       >
-        {deskLabel}
+        {VIEW_MODE_LABELS.desk}
       </button>
       <button
         type="button"
@@ -28,7 +31,7 @@ export default function ViewModeSwitch({ mode, onDesk, onFlat, className = '', c
         className={`${base} ${mode === 'flat' ? active : idle}`}
         aria-pressed={mode === 'flat'}
       >
-        {flatLabel}
+        {VIEW_MODE_LABELS.resume}
       </button>
     </div>
   );

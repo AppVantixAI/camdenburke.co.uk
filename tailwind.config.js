@@ -16,6 +16,7 @@ module.exports = {
       },
       fontFamily: {
         display: ['Syne', 'system-ui', 'sans-serif'],
+        body: ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       animation: {

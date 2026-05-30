@@ -3,7 +3,7 @@ import { resume } from '../data/resume';
 export default function CaseStudies() {
   return (
     <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      {resume.caseStudies.map((study) => (
+      {(resume.caseStudies ?? []).map((study) => (
         <article key={study.title} className="panel-border corner-brackets bg-panel/85 p-6">
           <p className="font-mono text-xs uppercase tracking-[0.35em] text-matrix md:text-[10px]">Proof Item</p>
           <h3 className="mt-3 font-display text-2xl font-bold text-white">{study.title}</h3>

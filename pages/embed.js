@@ -38,10 +38,10 @@ export default function Embed() {
           {resume.name}
         </h1>
         <p style={{ margin: '0.5rem 0 1rem', fontSize: '0.75rem', color: '#39ff14' }}>
-          {resume.headline}
+          {resume.subheadline}
         </p>
         <p style={{ fontSize: '0.7rem', lineHeight: 1.7, color: '#8faa92', maxWidth: '28rem' }}>
-          {resume.summary.slice(0, 220)}…
+          {resume.valueProposition.slice(0, 220)}…
         </p>
         <div style={{ marginTop: '1.25rem', display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
           {resume.heroStatus.map((s) => (

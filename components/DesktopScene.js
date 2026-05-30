@@ -481,7 +481,6 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
     };
   }, [calibrating, prefersReducedMotion, siteSrc, setModeSafe]);
 
-  const handleEnter = () => sceneRef.current?.enterDesk?.();
   const handleExit = () => sceneRef.current?.exitDesk?.();
 
   const handleSelectDesk = () => {
@@ -501,7 +500,6 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
           mode={viewMode}
           onDesk={handleSelectDesk}
           onFlat={onGoFlat}
-          compact={isMobile}
           className={`fixed z-50 pointer-events-auto right-4 ${
             mode === 'immersed' || !isMobile
               ? 'top-[max(1rem,env(safe-area-inset-top))]'
@@ -543,41 +541,19 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
 
       {mode === 'overview' && !calibrating && (
         <div className="pointer-events-none fixed inset-0 z-20 flex flex-col items-center justify-end pb-[max(2.5rem,env(safe-area-inset-bottom))] px-6">
-          <p className="font-mono text-center text-xs tracking-[0.3em] text-matrix">
-            {isMobile ? 'TAP MONITOR · OPEN FULLSCREEN RESUME' : 'CLICK MONITOR · OPEN FULLSCREEN RESUME'}
+          <p className="font-mono text-center text-xs tracking-[0.3em] text-matrix/90">
+            {isMobile ? 'Tap monitor to open resume' : 'Click monitor to open resume'}
           </p>
-          <p className="mt-2 font-mono text-xs text-matrix-dim md:text-[10px]">
-            {isMobile
-              ? 'interactive desk mode · swipe to look around'
-              : 'interactive desk mode · drag to look around'}
+          <p className="mt-2 font-mono text-[10px] text-matrix-dim/80">
+            {isMobile ? 'Swipe to look around · Esc to exit fullscreen' : 'Drag to look around · Esc to exit fullscreen'}
           </p>
-          <div className="pointer-events-auto mt-6 flex flex-wrap items-center justify-center gap-3">
-            <button
-              type="button"
-              onClick={handleEnter}
-              className="inline-flex min-h-[44px] items-center border border-matrix bg-matrix/15 px-8 py-3 font-mono text-xs uppercase tracking-[0.2em] text-matrix transition-all hover:bg-matrix/25 hover:shadow-[0_0_30px_rgba(57,255,20,0.25)] active:scale-95"
-            >
-              Open resume
-            </button>
-          </div>
         </div>
       )}
 
       {mode === 'focusing' && (
-        <div className="pointer-events-none fixed inset-0 z-20 flex flex-col items-center justify-center gap-3">
-          <div className="h-px w-48 bg-gradient-to-r from-transparent via-matrix to-transparent animate-pulse" />
-          <p className="font-mono text-sm tracking-[0.4em] text-matrix">SYNCING DISPLAY</p>
+        <div className="pointer-events-none fixed inset-0 z-20 flex items-center justify-center">
+          <div className="h-px w-32 bg-gradient-to-r from-transparent via-matrix/60 to-transparent animate-pulse" />
         </div>
-      )}
-
-      {mode === 'immersed' && (
-        <button
-          type="button"
-          onClick={handleExit}
-          className="fixed top-[max(1rem,env(safe-area-inset-top))] left-4 z-40 inline-flex min-h-[44px] max-w-[calc(100%-5.5rem)] items-center border border-matrix/40 bg-void/80 px-4 py-2.5 font-mono text-xs uppercase tracking-widest text-matrix backdrop-blur-md transition-all hover:bg-matrix/15 hover:shadow-[0_0_20px_rgba(57,255,20,0.2)] active:scale-95 sm:max-w-none sm:px-5 md:text-[10px]"
-        >
-          ← Back to interactive desk
-        </button>
       )}
     </div>
   );

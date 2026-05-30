@@ -7,47 +7,51 @@ const statusTone = {
 
 export default function SecurityBadge() {
   return (
-    <aside className="security-badge panel-border relative order-first overflow-hidden bg-panel/90 p-0 backdrop-blur-sm lg:order-none">
+    <aside className="security-badge panel-border relative overflow-hidden bg-panel/90 backdrop-blur-sm">
       <div className="badge-shine pointer-events-none absolute inset-0" aria-hidden="true" />
 
-      <div className="relative border-b border-matrix/20 bg-gradient-to-r from-matrix/10 to-transparent px-5 py-3">
-        <p className="font-mono text-xs tracking-[0.4em] text-matrix-dim md:text-[9px]">RECRUITER SNAPSHOT</p>
-        <p className="font-mono text-lg font-bold text-white tracking-wider">{resume.targetRole}</p>
+      <div className="relative border-b border-matrix/20 px-5 py-5">
+        <p className="font-mono text-[10px] tracking-wide text-matrix-dim">
+          Recruiter snapshot
+        </p>
+        <p className="mt-3 font-body text-sm leading-relaxed text-[#c7ddca]">{resume.targetRoles}</p>
       </div>
 
-      <div className="relative flex gap-4 p-5">
-        <div className="relative h-24 w-20 shrink-0 border border-matrix/30 bg-void">
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-matrix/20 to-void">
-            <span className="font-display text-2xl font-bold text-matrix">CB</span>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-matrix animate-pulse-glow" />
-        </div>
-
-        <div className="min-w-0 flex-1 font-mono text-xs md:text-[10px]">
-          <p className="text-white font-semibold text-sm truncate">{resume.name}</p>
-          <p className="text-matrix-dim mt-0.5 leading-relaxed">{resume.headline.split('|')[0].trim()}</p>
-          <p className="mt-2 text-[#6a8070]">{resume.location}</p>
-          <p className="mt-1 text-matrix-dim truncate">{resume.email}</p>
-        </div>
-      </div>
-
-      <div className="px-5 pb-4 space-y-2">
+      <div className="relative space-y-0 px-5 py-1">
         {resume.heroStatus.map((item) => (
           <div
             key={item.label}
-            className="grid grid-cols-[auto,minmax(0,1fr)] items-start gap-x-3 gap-y-1 border border-matrix/10 px-2 py-1.5"
+            className="flex items-start justify-between gap-4 border-b border-matrix/10 py-3 last:border-0"
           >
-            <span className="text-xs tracking-[0.2em] text-[#6a8070] md:text-[9px]">
-              {item.label.replace(/_/g, ' ')}
-            </span>
-            <span className={`justify-self-end text-right font-semibold leading-tight ${statusTone[item.tone]}`}>
+            <span className="shrink-0 font-mono text-[11px] text-[#6a8070]">{item.label}</span>
+            <span
+              className={`min-w-0 text-right font-mono text-[11px] font-medium leading-snug break-words ${statusTone[item.tone]}`}
+            >
               {item.value}
             </span>
           </div>
         ))}
       </div>
 
-      <div className="barcode-strip h-8 border-t border-matrix/15" aria-hidden="true" />
+      <div className="relative border-t border-matrix/15 px-5 py-4">
+        <p className="font-mono text-[10px] tracking-wide text-matrix-dim">
+          Work authorization
+        </p>
+        <p className="mt-2 font-body text-sm leading-relaxed text-[#9cb8a0]">
+          {resume.workAuthorization}
+        </p>
+      </div>
+
+      <div className="relative border-t border-matrix/15 px-5 pb-5 pt-4">
+        <p className="font-mono text-[10px] tracking-wide text-matrix-dim">Top skills</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {resume.scanSkills.map((skill) => (
+            <span key={skill} className="meta-chip shrink-0 whitespace-nowrap">
+              <span className="meta-chip__value">{skill}</span>
+            </span>
+          ))}
+        </div>
+      </div>
     </aside>
   );
 }

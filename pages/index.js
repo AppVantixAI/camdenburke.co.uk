@@ -50,11 +50,11 @@ export default function Home() {
               aria-modal="true"
             >
               <p id="desk-prompt-title" className="font-display text-xl font-bold text-white">
-                Open 3D desk on mobile?
+                Open Desk on mobile?
               </p>
               <p className="mt-3 text-sm leading-7 text-[#9cb8a0]">
-                The interactive desk works best on desktop. It may load slowly and use more battery on
-                a phone. You can always return to the quick resume view.
+                The Desk view works best on desktop. It may load slowly and use more battery on
+                a phone. You can always return to Resume.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <button

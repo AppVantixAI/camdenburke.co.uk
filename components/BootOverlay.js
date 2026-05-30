@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion';
 
 const BOOT_LINES = [
-  { text: 'Loading portfolio shell...', delay: 0 },
+  { text: 'Loading desk shell...', delay: 0 },
   { text: 'Verifying Security+ credential........ OK', delay: 400 },
   { text: 'Loading Active Directory experience... OK', delay: 800 },
   { text: 'Loading home lab evidence............ OK', delay: 1200 },
   { text: 'Preparing recruiter view............. OK', delay: 1600 },
-  { text: 'Portfolio ready.', delay: 2000 },
+  { text: 'Desk ready.', delay: 2000 },
 ];
 
 export default function BootOverlay({ onComplete }) {
@@ -66,7 +66,7 @@ export default function BootOverlay({ onComplete }) {
       role="presentation"
     >
       <div className="w-full max-w-lg px-8">
-        <p className="mb-6 text-[10px] tracking-[0.5em] text-matrix-dim">LOADING PORTFOLIO</p>
+        <p className="mb-6 text-[10px] tracking-[0.5em] text-matrix-dim">LOADING DESK</p>
         <div className="space-y-2 text-sm text-matrix min-h-[180px]">
           {lines.map((line) => (
             <p key={line} className="animate-pulse">

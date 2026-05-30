@@ -1,7 +1,7 @@
 import { resume } from '../data/resume';
 
 export default function ThreatTicker() {
-  const items = [...resume.tickerItems, ...resume.tickerItems];
+  const items = [...(resume.tickerItems ?? []), ...(resume.tickerItems ?? [])];
 
   return (
     <div

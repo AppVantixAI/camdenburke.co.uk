@@ -60,7 +60,7 @@ export default function Navbar({
     >
       <span className="inline-block h-2 w-2 shrink-0 rounded-full bg-matrix animate-pulse-glow" />
       <span className="truncate text-matrix">camden</span>
-      <span className="hidden truncate text-white 2xl:inline">/ {resume.targetRole}</span>
+      <span className="hidden truncate text-white 2xl:inline">/ Help Desk · Security</span>
     </a>
   );
 
@@ -92,7 +92,6 @@ export default function Navbar({
           closeMenu();
           (onGoFlat || (() => {}))();
         }}
-        compact
         className={className}
       />
     );

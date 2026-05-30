@@ -11,11 +11,11 @@ export default function ExperienceTimeline() {
         {resume.experience.map((entry) => (
           <article key={`${entry.company}-${entry.role}`} className="panel-border corner-brackets bg-panel p-6">
             <div className="flex flex-col gap-2">
-              <p className="font-mono text-xs uppercase tracking-widest text-matrix">
-                {'// '}
-                {entry.company}
-              </p>
+              <p className="font-mono text-xs text-matrix">{entry.company}</p>
               <h3 className="font-display text-2xl font-bold text-white">{entry.role}</h3>
+              {entry.context && (
+                <p className="font-mono text-xs text-matrix-dim">{entry.context}</p>
+              )}
               <p className="font-mono text-[11px] text-[#6a8070]">{entry.location}</p>
               <time className="font-mono text-xs text-amber">{entry.period}</time>
             </div>
@@ -56,13 +56,6 @@ export default function ExperienceTimeline() {
                     )}
                   </span>
                   <span>
-                    <span
-                      className={`block text-[10px] tracking-wider ${
-                        active === i ? 'text-matrix' : 'text-matrix-dim'
-                      }`}
-                    >
-                      REF-0{i + 1}
-                    </span>
                     <span className="block text-white font-medium mt-0.5">{entry.company}</span>
                     <span className="block text-[#6a8070] mt-0.5">{entry.period}</span>
                   </span>
@@ -78,11 +71,11 @@ export default function ExperienceTimeline() {
         >
           <div className="flex flex-col gap-2 md:flex-row md:justify-between md:items-start">
             <div>
-              <p className="font-mono text-xs uppercase tracking-widest text-matrix">
-                {'// '}
-                {job.company}
-              </p>
+              <p className="font-mono text-xs text-matrix">{job.company}</p>
               <h3 className="mt-1 font-display text-2xl md:text-3xl font-bold text-white">{job.role}</h3>
+              {job.context && (
+                <p className="mt-1 font-mono text-xs text-matrix-dim">{job.context}</p>
+              )}
               <p className="mt-1 font-mono text-[11px] text-[#6a8070]">{job.location}</p>
             </div>
             <time className="font-mono text-xs text-amber mt-2 md:mt-0">{job.period}</time>
