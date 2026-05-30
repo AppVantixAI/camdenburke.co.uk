@@ -1,6 +1,6 @@
 export default function ViewModeSwitch({ mode, onDesk, onFlat, className = '', compact = false }) {
   const base =
-    'inline-flex min-h-[44px] items-center px-4 py-2 font-mono text-xs uppercase tracking-widest transition-all border-l border-matrix/20 first:border-l-0 active:scale-95 md:min-h-0 md:py-2 md:text-[10px]';
+    'inline-flex min-h-[44px] flex-1 items-center justify-center px-3 py-2 font-mono text-xs uppercase tracking-widest transition-all border-l border-matrix/20 first:border-l-0 active:scale-95 md:min-h-0 md:flex-none md:px-4 md:py-2 md:text-[10px]';
   const active = 'bg-matrix/20 text-matrix';
   const idle =
     'bg-transparent text-[#8aa88e] hover:bg-matrix/10 hover:text-matrix';
@@ -10,7 +10,7 @@ export default function ViewModeSwitch({ mode, onDesk, onFlat, className = '', c
 
   return (
     <div
-      className={`inline-flex overflow-hidden rounded-sm border border-matrix/40 bg-void/90 shadow-[0_0_24px_rgba(0,0,0,0.5)] backdrop-blur-md ${className}`}
+      className={`flex overflow-hidden rounded-sm border border-matrix/40 bg-void/90 shadow-[0_0_24px_rgba(0,0,0,0.5)] backdrop-blur-md md:inline-flex ${className}`}
       role="group"
       aria-label="View mode"
     >

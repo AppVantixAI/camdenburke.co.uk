@@ -19,7 +19,6 @@ const HeroCanvas = dynamic(() => import('../components/HeroCanvas'), { ssr: fals
 const CodeRain = dynamic(() => import('../components/CodeRain'), { ssr: false });
 const TypingTerminal = dynamic(() => import('../components/TypingTerminal'), { ssr: false });
 const ExitDeskButton = dynamic(() => import('./ExitDeskButton'), { ssr: false });
-const ViewModeSwitch = dynamic(() => import('./ViewModeSwitch'), { ssr: false });
 
 function isPrimaryCta(link) {
   return link.label === 'Resume PDF';
@@ -48,22 +47,18 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
 
       <ExitDeskButton />
 
-      {showViewToggle && onGoDesk && (
-        <ViewModeSwitch
-          mode={viewMode}
-          onDesk={onGoDesk}
-          onFlat={() => {}}
-          compact={isMobile}
-          className="fixed right-4 z-[60] pointer-events-auto top-[calc(var(--header-height,52px)+0.5rem)] md:top-4"
-        />
-      )}
-
       <div className="crt min-h-screen bg-void text-[#b8d4bc]">
         <div className="noise-overlay" />
         <div className="scan-beam" />
         {!isMobile && <CodeRain />}
         <div className="pointer-events-none fixed inset-0 z-[1] bg-hex bg-[length:28px_49px] animate-drift opacity-60" />
-        <Navbar />
+        <Navbar
+          showViewToggle={showViewToggle}
+          viewMode={viewMode}
+          onGoDesk={onGoDesk}
+          onGoFlat={() => {}}
+          compactViewSwitch={isMobile}
+        />
         <ThreatTicker />
 
         <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pb-16 pt-[calc(var(--header-height,52px)+2rem)] md:px-8 md:pt-[calc(var(--header-height,52px)+var(--ticker-height,0px)+2rem)]">
@@ -127,7 +122,7 @@ export default function ResumeSite({ showViewToggle = false, onGoDesk, viewMode 
                     </a>
                   )
                 ))}
-                {showViewToggle && onGoDesk && (
+                {showViewToggle && onGoDesk && !isMobile && (
                   <button
                     type="button"
                     onClick={onGoDesk}

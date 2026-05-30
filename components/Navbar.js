@@ -1,8 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { resume } from '../data/resume';
 import { useActiveSection } from '../lib/useActiveSection';
+import ViewModeSwitch from './ViewModeSwitch';
 
-export default function Navbar() {
+export default function Navbar({
+  showViewToggle = false,
+  viewMode = 'flat',
+  onGoDesk,
+  onGoFlat,
+  compactViewSwitch = false,
+}) {
   const headerRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
   const [time, setTime] = useState('');
@@ -40,7 +47,7 @@ export default function Navbar() {
     const observer = new ResizeObserver(updateHeight);
     observer.observe(header);
     return () => observer.disconnect();
-  }, []);
+  }, [showViewToggle]);
 
   return (
     <header
@@ -50,20 +57,20 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto max-w-6xl px-4 py-3 md:px-6">
-        <div className="flex items-center justify-between gap-4">
-          <a href="#" className="flex min-h-[44px] items-center gap-2 text-sm">
-            <span className="inline-block h-2 w-2 rounded-full bg-matrix animate-pulse-glow" />
-            <span className="text-matrix">camden</span>
-            <span className="hidden text-white sm:inline">/ {resume.targetRole}</span>
+        <div className="flex items-center justify-between gap-3">
+          <a href="#" className="flex min-h-[44px] min-w-0 shrink items-center gap-2 text-sm">
+            <span className="inline-block h-2 w-2 shrink-0 rounded-full bg-matrix animate-pulse-glow" />
+            <span className="truncate text-matrix">camden</span>
+            <span className="hidden truncate text-white sm:inline">/ {resume.targetRole}</span>
           </a>
 
-          <p className="hidden text-xs tracking-widest text-matrix-dim md:text-[10px] lg:block">
+          <p className="hidden shrink-0 text-xs tracking-widest text-matrix-dim lg:block md:text-[10px]">
             LOCAL_TIME <span className="text-matrix">{time}</span>
           </p>
 
-          <ul className="hidden items-center gap-5 text-xs uppercase tracking-wider text-[#8aa88e] md:flex md:text-[11px]">
+          <ul className="hidden min-w-0 items-center gap-4 text-xs uppercase tracking-wider text-[#8aa88e] md:flex md:text-[11px]">
             {resume.nav.map((item) => (
-              <li key={item.id}>
+              <li key={item.id} className="shrink-0">
                 <a href={`#${item.id}`} className="hover:text-matrix transition-colors">
                   [{item.label}]
                 </a>
@@ -71,14 +78,37 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <a
-            href="/resume.pdf"
-            download
-            className="inline-flex min-h-[44px] items-center border border-matrix/40 bg-matrix/5 px-4 py-2 text-xs uppercase tracking-widest text-matrix transition-colors hover:bg-matrix/15 active:scale-95 md:px-3 md:py-1.5 md:text-[10px]"
-          >
-            Resume PDF
-          </a>
+          <div className="flex shrink-0 items-center gap-2">
+            {showViewToggle && onGoDesk && (
+              <ViewModeSwitch
+                mode={viewMode}
+                onDesk={onGoDesk}
+                onFlat={onGoFlat || (() => {})}
+                compact={compactViewSwitch}
+                className="hidden md:inline-flex"
+              />
+            )}
+            <a
+              href="/resume.pdf"
+              download
+              className="inline-flex min-h-[44px] items-center border border-matrix/40 bg-matrix/5 px-4 py-2 text-xs uppercase tracking-widest text-matrix transition-colors hover:bg-matrix/15 active:scale-95 md:px-3 md:py-1.5 md:text-[10px]"
+            >
+              Resume PDF
+            </a>
+          </div>
         </div>
+
+        {showViewToggle && onGoDesk && (
+          <div className="mt-3 md:hidden">
+            <ViewModeSwitch
+              mode={viewMode}
+              onDesk={onGoDesk}
+              onFlat={onGoFlat || (() => {})}
+              compact
+              className="w-full max-w-xs"
+            />
+          </div>
+        )}
 
         <div className="resume-scroll-fade relative mt-3 md:hidden">
           <div className="resume-scroll-row flex gap-2 overflow-x-auto pb-1">

@@ -357,6 +357,10 @@ a {
   padding-right: env(safe-area-inset-right, 0px);
 }
 
+.view-mode-switch-root {
+  max-width: calc(100vw - 2rem);
+}
+
 .section-anchor {
   scroll-margin-top: calc(var(--header-height, 52px) + var(--ticker-height, 0px) + 1rem);
 }

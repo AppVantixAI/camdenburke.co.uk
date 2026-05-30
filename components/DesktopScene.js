@@ -502,7 +502,11 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
           onDesk={handleSelectDesk}
           onFlat={onGoFlat}
           compact={isMobile}
-          className="fixed right-4 z-50 pointer-events-auto top-[max(1rem,env(safe-area-inset-top))] md:top-4"
+          className={`fixed z-50 pointer-events-auto right-4 ${
+            mode === 'immersed' || !isMobile
+              ? 'top-[max(1rem,env(safe-area-inset-top))]'
+              : 'bottom-[max(6.5rem,env(safe-area-inset-bottom))]'
+          }`}
         />
       )}
 
@@ -538,7 +542,7 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
       )}
 
       {mode === 'overview' && !calibrating && (
-        <div className="pointer-events-none fixed inset-0 z-20 flex flex-col items-center justify-end pb-10 px-6">
+        <div className="pointer-events-none fixed inset-0 z-20 flex flex-col items-center justify-end pb-[max(2.5rem,env(safe-area-inset-bottom))] px-6">
           <p className="font-mono text-center text-xs tracking-[0.3em] text-matrix">
             {isMobile ? 'TAP MONITOR · OPEN FULLSCREEN RESUME' : 'CLICK MONITOR · OPEN FULLSCREEN RESUME'}
           </p>
@@ -570,7 +574,7 @@ export default function DesktopScene({ siteSrc = '/site', onGoFlat, onGoDesk, vi
         <button
           type="button"
           onClick={handleExit}
-          className="fixed top-[max(1rem,env(safe-area-inset-top))] left-4 z-40 inline-flex min-h-[44px] items-center border border-matrix/40 bg-void/80 px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-matrix backdrop-blur-md transition-all hover:bg-matrix/15 hover:shadow-[0_0_20px_rgba(57,255,20,0.2)] active:scale-95 md:text-[10px]"
+          className="fixed top-[max(1rem,env(safe-area-inset-top))] left-4 z-40 inline-flex min-h-[44px] max-w-[calc(100%-5.5rem)] items-center border border-matrix/40 bg-void/80 px-4 py-2.5 font-mono text-xs uppercase tracking-widest text-matrix backdrop-blur-md transition-all hover:bg-matrix/15 hover:shadow-[0_0_20px_rgba(57,255,20,0.2)] active:scale-95 sm:max-w-none sm:px-5 md:text-[10px]"
         >
           ← Back to interactive desk
         </button>
