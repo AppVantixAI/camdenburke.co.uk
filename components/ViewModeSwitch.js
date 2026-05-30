@@ -1,6 +1,6 @@
 export default function ViewModeSwitch({ mode, onDesk, onFlat, className = '', compact = false }) {
   const base =
-    'inline-flex min-h-[44px] flex-1 items-center justify-center px-3 py-2 font-mono text-xs uppercase tracking-widest transition-all border-l border-matrix/20 first:border-l-0 active:scale-95 md:min-h-0 md:flex-none md:px-4 md:py-2 md:text-[10px]';
+    'inline-flex min-h-[44px] flex-1 items-center justify-center px-3 py-2 font-mono text-xs uppercase tracking-widest transition-all border-l border-matrix/20 first:border-l-0 active:scale-95 md:min-h-[36px] md:flex-none md:px-3 md:py-1.5 md:text-[10px] md:tracking-[0.12em]';
   const active = 'bg-matrix/20 text-matrix';
   const idle =
     'bg-transparent text-[#8aa88e] hover:bg-matrix/10 hover:text-matrix';

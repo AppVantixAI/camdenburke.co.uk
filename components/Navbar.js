@@ -4,7 +4,7 @@ import { useActiveSection } from '../lib/useActiveSection';
 import ViewModeSwitch from './ViewModeSwitch';
 
 const navLinkClass =
-  'hover:text-matrix transition-colors whitespace-nowrap';
+  'inline-flex min-h-[36px] items-center px-1 hover:text-matrix transition-colors';
 
 export default function Navbar({
   showViewToggle = false,
@@ -45,9 +45,9 @@ export default function Navbar({
       return undefined;
     }
 
-    const closeMenu = () => setMenuOpen(false);
-    window.addEventListener('resize', closeMenu);
-    return () => window.removeEventListener('resize', closeMenu);
+    const onClose = () => setMenuOpen(false);
+    window.addEventListener('resize', onClose);
+    return () => window.removeEventListener('resize', onClose);
   }, [menuOpen]);
 
   const closeMenu = () => setMenuOpen(false);
@@ -56,11 +56,11 @@ export default function Navbar({
     <a
       href="#"
       onClick={closeMenu}
-      className="flex min-h-[44px] min-w-0 items-center gap-2 text-sm xl:shrink-0"
+      className="flex min-h-[44px] min-w-0 items-center gap-2 text-sm"
     >
       <span className="inline-block h-2 w-2 shrink-0 rounded-full bg-matrix animate-pulse-glow" />
       <span className="truncate text-matrix">camden</span>
-      <span className="hidden truncate text-white xl:inline">/ {resume.targetRole}</span>
+      <span className="hidden truncate text-white 2xl:inline">/ {resume.targetRole}</span>
     </a>
   );
 
@@ -98,11 +98,16 @@ export default function Navbar({
     );
 
   const desktopNavLinks = (
-    <ul className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[11px] uppercase tracking-wider text-[#8aa88e] xl:gap-x-4 xl:text-[11px]">
+    <ul className="mx-auto flex max-w-full flex-wrap items-center justify-center gap-x-1 gap-y-1 sm:gap-x-2 md:gap-x-3">
       {resume.nav.map((item) => (
         <li key={item.id}>
-          <a href={`#${item.id}`} className={navLinkClass}>
-            [{item.label}]
+          <a
+            href={`#${item.id}`}
+            className={`${navLinkClass} text-[10px] uppercase tracking-[0.14em] sm:text-[11px] sm:tracking-wider ${
+              activeId === item.id ? 'text-matrix' : 'text-[#8aa88e]'
+            }`}
+          >
+            {item.label}
           </a>
         </li>
       ))}
@@ -119,7 +124,7 @@ export default function Navbar({
       }`}
     >
       <nav className="mx-auto max-w-6xl px-4 md:px-6">
-        {/* Mobile: single compact row + collapsible menu */}
+        {/* Mobile */}
         <div className="md:hidden">
           <div className="flex items-center justify-between gap-2 py-2">
             {brand}
@@ -141,10 +146,7 @@ export default function Navbar({
           </div>
 
           {menuOpen && (
-            <div
-              id="mobile-nav-panel"
-              className="border-t border-matrix/10 pb-3 pt-2"
-            >
+            <div id="mobile-nav-panel" className="border-t border-matrix/10 pb-3 pt-2">
               <div className="grid grid-cols-2 gap-2">
                 {resume.nav.map((item) => (
                   <a
@@ -166,26 +168,16 @@ export default function Navbar({
           )}
         </div>
 
-        {/* Tablet / small desktop: two rows to avoid overlap */}
-        <div className="hidden py-3 md:block xl:hidden">
+        {/* Desktop: always two rows so brand/actions never collide with nav */}
+        <div className="hidden md:block md:py-3">
           <div className="flex items-center justify-between gap-4">
-            {brand}
+            <div className="min-w-0 flex-1 pr-4">{brand}</div>
             <div className="flex shrink-0 items-center gap-2">
-              {viewSwitch('inline-flex')}
+              {viewSwitch('inline-flex shrink-0')}
               {pdfButton(false)}
             </div>
           </div>
           <div className="mt-3 border-t border-matrix/10 pt-3">{desktopNavLinks}</div>
-        </div>
-
-        {/* Large desktop: three-column grid */}
-        <div className="hidden py-3 xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:items-center xl:gap-6">
-          <div className="min-w-0 justify-self-start">{brand}</div>
-          <div className="justify-self-center px-2">{desktopNavLinks}</div>
-          <div className="flex shrink-0 items-center justify-self-end gap-2">
-            {viewSwitch('inline-flex')}
-            {pdfButton(false)}
-          </div>
         </div>
       </nav>
     </header>
