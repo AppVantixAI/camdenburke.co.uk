@@ -30,7 +30,7 @@ export function Hero() {
   const videoScale = useTransform(smooth, [0, 1], [1.08, 1.28]);
   const contentY = useTransform(smooth, [0, 1], ["0%", "22%"]);
   const opacity = useTransform(smooth, [0, 0.55, 0.9], [1, 0.35, 0]);
-  const titleTrack = useTransform(smooth, [0, 0.7], [0, 8]);
+  const titleTrack = useTransform(smooth, [0, 0.7], [0, 6]);
   const titleTracking = useTransform(titleTrack, (v) => `${v / 100}em`);
 
   useEffect(() => {
@@ -89,27 +89,35 @@ export function Hero() {
       >
         <div className="max-w-4xl">
           <motion.p
-            className="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/80"
+            className="font-mono text-[11px] uppercase tracking-[0.28em] text-amber"
             initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.eyebrow}
           </motion.p>
           <motion.h1
-            className="mt-5 font-display text-4xl font-semibold uppercase leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-7xl lg:text-8xl"
+            className="mt-4 font-display text-5xl font-semibold uppercase leading-[0.95] tracking-tight text-ink sm:text-6xl md:text-8xl lg:text-[7.25rem]"
             style={reduce ? undefined : { letterSpacing: titleTracking }}
             initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
           >
-            {site.headline}
+            {site.name}
           </motion.h1>
           <motion.p
-            className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg"
+            className="mt-6 max-w-2xl font-display text-xl font-medium leading-snug text-ink sm:text-2xl md:text-3xl md:leading-snug"
             initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {site.headline}
+          </motion.p>
+          <motion.p
+            className="mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg"
+            initial={false}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.subhead}
           </motion.p>
@@ -117,7 +125,7 @@ export function Hero() {
             className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
             initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, delay: 0.52, ease: [0.16, 1, 0.3, 1] }}
           >
             <a
               href={site.primaryCtaHref}
@@ -142,7 +150,10 @@ export function Hero() {
         transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
       >
         <span>Scroll</span>
-        <span className="h-8 w-px bg-gradient-to-b from-ink/50 to-transparent" aria-hidden />
+        <span
+          className="h-8 w-px bg-gradient-to-b from-ink/50 to-transparent"
+          aria-hidden
+        />
       </motion.a>
     </section>
   );

@@ -17,10 +17,15 @@ export const site = {
   metaTitle: "Camden Burke — CEO & Founder · AppVantix",
   description:
     "Camden Burke is CEO & Founder of AppVantix. Coding since twelve. Focused on artificial intelligence and cybersecurity. Get to know the founder.",
+  /** Optional: drop a photo at /public/portrait.jpg and set this path. */
+  portraitSrc: "",
+  initials: "CB",
   eyebrow: "CEO & Founder · AppVantix",
-  headline: "I don't reinvent the wheel. I build the car.",
+  /** Brand-first H1 is the name; this is the supporting line. */
+  headline: "I build software companies with AI and security in the foundation.",
   subhead:
-    "I've been writing software since I was twelve. Today I lead AppVantix — with artificial intelligence and security built into how we work. This is who I am.",
+    "Coding since twelve. Today I lead AppVantix and FormForge — and I answer for the work.",
+  creedLine: "I don't reinvent the wheel. I build the car.",
   primaryCta: "Read my story",
   primaryCtaHref: "#letter",
   secondaryCta: "Say hello",
@@ -30,31 +35,70 @@ export const site = {
 } as const;
 
 export const nav = [
-  { href: "#letter", label: "Story" },
-  { href: "#creed", label: "Principles" },
-  { href: "#credentials", label: "Background" },
+  { href: "#presence", label: "Presence" },
   { href: "#constellation", label: "Companies" },
+  { href: "#creed", label: "Principles" },
+  { href: "#letter", label: "Story" },
+  { href: "#notes", label: "Notes" },
   { href: "#offer", label: "Contact" },
 ] as const;
 
 export const proof = {
   items: [
-    { value: "12", label: "When I started coding" },
+    { value: "12", label: "Started coding" },
     { value: "Sec+", label: "CompTIA certified" },
     { value: "ASU", label: "B.S., completed 2024" },
     { value: "CEO", label: "AppVantix founder" },
   ],
 } as const;
 
+export const presence = {
+  eyebrow: "Presence",
+  title: "The person behind the companies.",
+  body: "I set direction. I hire the people who build. I stay accountable for where AppVantix and FormForge go — especially on AI and security.",
+  signoff: "If you want to know who you're dealing with, start here.",
+} as const;
+
+export const record = {
+  eyebrow: "On the record",
+  title: "Where you can verify me.",
+  items: [
+    {
+      label: "AppVantix",
+      meta: "Company I founded and run",
+      href: "https://appvantix.com",
+    },
+    {
+      label: "FormForge",
+      meta: "Flagship product for manufacturers",
+      href: "https://appvantix.com/formforge",
+    },
+    {
+      label: "LinkedIn",
+      meta: "Professional profile",
+      href: "https://www.linkedin.com/in/camdenburkedev",
+    },
+    {
+      label: "GitHub",
+      meta: "Code and open work",
+      href: "https://github.com/cburke12",
+    },
+    {
+      label: "CompTIA Security+",
+      meta: "SY0-701 · valid through March 2029",
+      href: "https://www.comptia.org/certifications/security",
+    },
+  ],
+} as const;
+
 export const letter = {
   eyebrow: "My story",
-  title: "I fell in love with code young — and I never left the work.",
+  title: "I started young. I never left the work.",
   paragraphs: [
-    "I've been coding since I was twelve. Swift was my first language. Winning an award at a CodeDay at Lipscomb made it real — this wasn't a hobby anymore. It was the path.",
-    "I built what needed building. Python bots. Sites on the side. Apps on every platform I could reach. See a need, fill a need. That still governs how I move.",
-    "When artificial intelligence became useful — not theoretical — I went in. How the models work. Automation. Then MCPs arrived, and the game changed: models with hands. Plain language in. Real work out.",
-    "Today I'm CEO and Founder of AppVantix. I lead the companies, including FormForge. I hire the people who build. I stay accountable for where we're going — especially on AI and security.",
-    "I don't make excuses when the other side plays the game. If you want to know who you're dealing with, you're in the right place.",
+    "I've been coding since I was twelve. Swift was first. An award at a CodeDay at Lipscomb made it clear — this was the path, not a hobby.",
+    "I built what needed building. Python bots. Sites. Apps across every platform I could reach. See a need, fill a need. That still governs how I move.",
+    "When AI became useful — not theoretical — I went in. Models. Automation. Then MCPs: models with hands. Plain language in. Real work out.",
+    "Today I'm CEO and Founder of AppVantix. I lead the companies, including FormForge. I hire the builders. I own the outcome — especially on AI and security.",
   ],
   signoff: "— Camden",
 } as const;
@@ -66,37 +110,6 @@ export const creed = {
     "Don't reinvent the wheel. Just build the damn car.",
     "See a need, fill a need.",
     "Winners don't make excuses when the other side plays the game.",
-  ],
-} as const;
-
-export const credentials = {
-  eyebrow: "Background",
-  title: "Competence, on the record.",
-  items: [
-    {
-      label: "Role",
-      title: "CEO & Founder",
-      meta: "AppVantix LLC",
-      body: "I set direction, make the product bets, and answer for how we show up. Leadership isn't a title I borrowed — it's the job I do.",
-    },
-    {
-      label: "Focus",
-      title: "Artificial Intelligence & Cybersecurity",
-      meta: "Where I put my attention",
-      body: "From models and automation to MCPs with real leverage. Security isn't an afterthought — it's how responsible software gets built.",
-    },
-    {
-      label: "Education",
-      title: "B.S. Graphic Information Technology",
-      meta: "Full Stack Web Development · Arizona State University · 2024",
-      body: "I wanted the full-stack foundation so I could lead technical work with judgment — not guesswork.",
-    },
-    {
-      label: "Certification",
-      title: "CompTIA Security+ ce",
-      meta: "SY0-701 · Valid through March 2029",
-      body: "Identity, access, and customer data aren't optional in B2B. I treat them accordingly.",
-    },
   ],
 } as const;
 
@@ -115,7 +128,7 @@ export const constellation = {
     {
       name: "FormForge",
       role: "Flagship",
-      body: "Our product for manufacturers. I lead the company. The team builds. The standard is the same: ship with integrity.",
+      body: "Configurable manufacturing software that turns rules into STEP and STL — so shops stop waiting on one-off CAD. I lead the company. The team builds.",
       href: "https://appvantix.com/formforge",
       cta: "Visit FormForge",
       image: "/product-rules.jpg",
@@ -123,10 +136,50 @@ export const constellation = {
   ],
 } as const;
 
-export const reel = {
-  eyebrow: "In motion",
-  title: "A look at the work.",
-  body: "Industries and products around the companies I lead.",
+export const notes = {
+  eyebrow: "Notes",
+  title: "A few things I believe.",
+  body: "Short pieces. No newsletter pitch. Read what you need.",
+  indexHref: "/notes",
+  indexCta: "All notes",
+  items: [
+    {
+      slug: "build-the-car",
+      title: "Don't reinvent the wheel. Build the car.",
+      date: "2026-07",
+      excerpt:
+        "Reuse what works. Put your energy into the machine that moves.",
+      body: [
+        "Most teams waste years polishing parts that already exist. Frameworks. Protocols. Patterns that have been proven.",
+        "I don't reinvent the wheel. I assemble the car — the product, the company, the system that gets someone from need to outcome.",
+        "That means judgment: know what to borrow, what to buy, and what only you can build. The car is the point. Everything else is parts.",
+      ],
+    },
+    {
+      slug: "security-in-the-foundation",
+      title: "Security belongs in the foundation.",
+      date: "2026-07",
+      excerpt:
+        "In B2B, identity and customer data aren't optional. Treat them accordingly.",
+      body: [
+        "You can ship features fast and bolt security on later. You can also lose the trust that makes B2B possible.",
+        "I treat security as architecture, not a checklist after launch. CompTIA Security+ is on paper because the work demands it — not because a badge looks good in a bio.",
+        "If you're building with AI, the surface area grows. Models with hands need boundaries. That's not fear. That's competence.",
+      ],
+    },
+    {
+      slug: "models-with-hands",
+      title: "Models with hands.",
+      date: "2026-07",
+      excerpt:
+        "MCPs changed the game: plain language in, real work out.",
+      body: [
+        "When AI became useful — not theoretical — the interesting question stopped being “can it write?” and became “can it do?”",
+        "MCPs gave models hands. Tools. Context. Real systems. That is leverage worth building companies around — if you keep judgment and security in the loop.",
+        "I don't chase demos. I chase work that ships and holds up when something breaks.",
+      ],
+    },
+  ],
 } as const;
 
 export const offer = {
@@ -208,3 +261,9 @@ export const personSchema = {
     url: site.companyUrl,
   },
 } as const;
+
+export type Note = (typeof notes.items)[number];
+
+export function getNote(slug: string): Note | undefined {
+  return notes.items.find((item) => item.slug === slug);
+}

@@ -55,7 +55,7 @@ export function Letter() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 space-y-10">
+        <div className="mt-16 space-y-8 md:space-y-10">
           {letter.paragraphs.map((paragraph, index) => (
             <LetterLine
               key={paragraph.slice(0, 28)}
