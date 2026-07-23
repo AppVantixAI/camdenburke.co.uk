@@ -7,11 +7,17 @@ Personal brand site for Camden Burke.
 
 ## Positioning
 
-- **Camden Burke** — personal / founder brand (owns the first viewport)
-- **AppVantix** — agency that builds and operates SaaS businesses
-- **FormForge** — flagship configure-to-order SaaS product
+Personal CEO hub with three clear conversion paths:
 
-Primary conversion: FormForge demo. Secondary: `hello@appvantix.com`.
+1. **Reach out** — email Camden for work / partnerships  
+2. **AppVantix** — the company  
+3. **FormForge** — flagship product (page + demo)
+
+- **Camden Burke** — founder brand (hero-level name)
+- **AppVantix** — company that builds and operates SaaS
+- **FormForge** — configure-to-order product for manufacturers
+
+Primary CTA: reach out. Paths live on `#paths` early in the page.
 
 Design: AppVantix **Industrial Clarity** (Syne + Figtree, mist/signal palette).
 

@@ -49,7 +49,7 @@ export function Header() {
           href={site.primaryCtaHref}
           className="border border-ink/50 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink transition hover:border-ink hover:bg-ink/5"
         >
-          {site.primaryCta}
+          Reach out
         </a>
       </div>
     </motion.header>

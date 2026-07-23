@@ -11,11 +11,11 @@ export default function HomePage() {
     <div id="top">
       <Hero />
       <Proof />
-      <Letter />
-      <Credentials />
-      <Constellation />
-      <VideoReel />
       <Offer />
+      <Letter />
+      <Constellation />
+      <Credentials />
+      <VideoReel />
     </div>
   );
 }

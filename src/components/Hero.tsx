@@ -103,13 +103,21 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
           >
-            {site.headline}
+            {site.name}
           </motion.h1>
+          <motion.p
+            className="mt-5 max-w-3xl font-display text-xl font-medium leading-snug tracking-tight text-ink sm:text-2xl md:text-3xl md:leading-snug"
+            initial={reduce ? false : { opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {site.headline}
+          </motion.p>
           <motion.p
             className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg"
             initial={reduce ? false : { opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.subhead}
           </motion.p>
@@ -117,7 +125,7 @@ export function Hero() {
             className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
             initial={reduce ? false : { opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, delay: 0.52, ease: [0.16, 1, 0.3, 1] }}
           >
             <a
               href={site.primaryCtaHref}
@@ -132,14 +140,6 @@ export function Hero() {
               {site.secondaryCta}
             </a>
           </motion.div>
-          <motion.p
-            className="mt-12 font-display text-xl font-medium text-ink md:text-2xl"
-            initial={reduce ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.7 }}
-          >
-            {site.name}
-          </motion.p>
         </div>
       </motion.div>
 

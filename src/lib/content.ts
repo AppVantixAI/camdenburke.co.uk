@@ -1,4 +1,4 @@
-/** Personal CEO site — SpaceX video + Hormozi proof/offer + Day-1 letter structure */
+/** Personal CEO hub — three paths: reach out · AppVantix · FormForge */
 
 export const site = {
   name: "Camden Burke",
@@ -10,52 +10,100 @@ export const site = {
   formforgeUrl: "https://appvantix.com/formforge",
   demoUrl: "https://appvantix.com/demo",
   email: "hello@appvantix.com",
-  emailHref: "mailto:hello@appvantix.com",
+  emailHref: "mailto:hello@appvantix.com?subject=Work%20with%20Camden",
   linkedin: "https://www.linkedin.com/in/camdenburkedev",
   github: "https://github.com/cburke12",
   location: "Knoxville · Remote worldwide",
-  metaTitle: "Camden Burke — CEO & Founder · AI & Security",
+  metaTitle: "Camden Burke — CEO & Founder, AppVantix",
   description:
-    "Camden Burke is CEO & Founder of AppVantix — AI and cybersecurity focused. ASU B.S. Graphic Information Technology (Full Stack), CompTIA Security+. Leads product companies including FormForge.",
-  eyebrow: "CEO & Founder · AI & Security",
-  headline: "I lead companies that ship.",
+    "Camden Burke is CEO & Founder of AppVantix. Reach out for work, explore AppVantix, or see FormForge — configure-to-order software for manufacturers.",
+  eyebrow: "CEO & Founder · AppVantix",
+  headline: "I build and lead product companies.",
   subhead:
-    "Not a CAD desk. Not a slide deck. I am the founder accountable for strategy, security, and AI-native product companies — starting with AppVantix.",
-  primaryCta: "I'm ready",
-  primaryCtaHref: "mailto:hello@appvantix.com?subject=Ready%20to%20talk",
-  secondaryCta: "Watch the reel",
-  secondaryCtaHref: "#reel",
+    "AppVantix is the company. FormForge is a flagship product. If you want to work with me, start a conversation — or go straight to the business and the products.",
+  primaryCta: "Reach out",
+  primaryCtaHref: "mailto:hello@appvantix.com?subject=Work%20with%20Camden",
+  secondaryCta: "Three ways in",
+  secondaryCtaHref: "#paths",
   videoSrc: "/hero-reel.mp4",
   videoPoster: "/hero-poster.jpg",
 } as const;
 
 export const nav = [
+  { href: "#paths", label: "Work with me" },
   { href: "#letter", label: "Letter" },
-  { href: "#credentials", label: "Credentials" },
   { href: "#constellation", label: "Companies" },
+  { href: "#credentials", label: "Credentials" },
   { href: "#reel", label: "Reel" },
-  { href: "#offer", label: "Contact" },
 ] as const;
 
 export const proof = {
   items: [
-    { value: "CEO", label: "Founder-led" },
-    { value: "AI", label: "+ Security focus" },
+    { value: "CEO", label: "Founder-led companies" },
+    { value: "AI", label: "+ Security operating lens" },
     { value: "Sec+", label: "CompTIA certified" },
     { value: "ASU", label: "Full-stack degree" },
   ],
 } as const;
 
+/** Three conversion paths — equal clarity, reach-out weighted as primary */
+export const paths = {
+  eyebrow: "What do you need?",
+  title: "Three ways in.",
+  body: "Reach out for work. Visit the company. Or go straight to a product. Pick the door that matches why you’re here.",
+  items: [
+    {
+      label: "01",
+      title: "Reach out for work",
+      detail:
+        "Partnerships, builds, press, or a founder conversation. Write me — I read it.",
+      cta: "Email Camden",
+      href: "mailto:hello@appvantix.com?subject=Work%20with%20Camden",
+      external: false,
+      primary: true,
+      secondaryCta: null,
+      secondaryHref: null,
+    },
+    {
+      label: "02",
+      title: "Explore AppVantix",
+      detail:
+        "The company I run. We invent and operate SaaS businesses — AI and security in the operating model.",
+      cta: "Visit AppVantix",
+      href: "https://appvantix.com",
+      external: true,
+      primary: false,
+      secondaryCta: null,
+      secondaryHref: null,
+    },
+    {
+      label: "03",
+      title: "See FormForge",
+      detail:
+        "Flagship product: configure-to-order software for manufacturers. Product page or book a demo.",
+      cta: "Visit FormForge",
+      href: "https://appvantix.com/formforge",
+      external: true,
+      primary: false,
+      secondaryCta: "Book a demo",
+      secondaryHref: "https://appvantix.com/demo",
+    },
+  ],
+} as const;
+
 export const letter = {
-  eyebrow: "Day 1",
-  title: "A short letter from the CEO.",
+  eyebrow: "From the CEO",
+  title: "A short note.",
   paragraphs: [
-    "I am CEO and Founder of AppVantix. My job is leadership — vision, capital allocation, product direction, and the security posture of what we ship. I am not a CAD modeler. I hire and lead the people who build.",
-    "AppVantix invents and operates software businesses. FormForge is a flagship product company under that umbrella — software for manufacturers — led from the executive seat, not from a drafting table.",
-    "I hold a B.S. in Graphic Information Technology (Full Stack) from Arizona State University (2024) and CompTIA Security+. Cybersecurity and AI are how I evaluate risk, architecture, and leverage — not hobbies on a résumé.",
-    "Day 1 every quarter: clear writing, long-term bets, proof before posture. Customers and operators get a founder who owns the outcome.",
+    "I am CEO and Founder of AppVantix. My job is leadership — vision, product direction, and the security posture of what we ship. I hire and lead the people who build.",
+    "AppVantix invents and operates software businesses. FormForge is a flagship under that umbrella: configure-to-order for manufacturers. If quoting still runs through one-off CAD, that product is for you.",
+    "If you want to work with me, email. If you want the company or a product, the doors are open above. Either way — clear next step, no theater.",
   ],
   signoff: "— Camden Burke, CEO & Founder",
+  cta: "Email Camden",
+  ctaHref: "mailto:hello@appvantix.com?subject=Work%20with%20Camden",
+  secondaryCta: "Back to three ways in",
+  secondaryCtaHref: "#paths",
 } as const;
 
 export const credentials = {
@@ -90,21 +138,21 @@ export const credentials = {
 } as const;
 
 export const constellation = {
-  eyebrow: "Companies",
-  title: "What I lead.",
+  eyebrow: "Companies & products",
+  title: "Where to go next.",
   items: [
     {
       name: "AppVantix",
-      role: "CEO & Founder",
-      body: "The company I run. We build and operate SaaS businesses — AI and security in the operating model.",
+      role: "The company",
+      body: "CEO & Founder seat. We build and operate SaaS businesses — AI and security in how we run.",
       href: "https://appvantix.com",
       cta: "Visit AppVantix",
       image: "/hero-formforge.jpg",
     },
     {
       name: "FormForge",
-      role: "Flagship product company",
-      body: "A product I lead as CEO — configure-to-order software for manufacturers. The team ships the CAD and rules; I own the company.",
+      role: "Flagship product",
+      body: "Configure-to-order software for manufacturers. Explore the product or book a demo.",
       href: "https://appvantix.com/formforge",
       cta: "Visit FormForge",
       image: "/product-rules.jpg",
@@ -115,19 +163,7 @@ export const constellation = {
 export const reel = {
   eyebrow: "Reel",
   title: "Companies in motion.",
-  body: "The industries we serve and the products we operate — under founder leadership, not as a modeling portfolio.",
-} as const;
-
-export const offer = {
-  eyebrow: "Next step",
-  title: "Talk to the founder.",
-  body: "Partners, press, operators — write me. Want a product demo? Book it. Want the CEO? Start here.",
-  primaryCta: "Email Camden",
-  primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
-  secondaryCta: "LinkedIn",
-  secondaryCtaHref: "https://www.linkedin.com/in/camdenburkedev",
-  tertiaryCta: "Product demo",
-  tertiaryCtaHref: "https://appvantix.com/demo",
+  body: "A look at the industries and products under founder leadership — then pick a path: email, AppVantix, or FormForge.",
 } as const;
 
 export const personSchema = {
@@ -157,6 +193,7 @@ export const personSchema = {
     "Cybersecurity",
     "Artificial Intelligence",
     "SaaS",
+    "Configure-to-order",
     "Executive Leadership",
     "Full Stack Web Development",
   ],

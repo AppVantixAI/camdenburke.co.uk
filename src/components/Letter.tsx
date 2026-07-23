@@ -69,6 +69,20 @@ export function Letter() {
           <p className="mt-16 font-display text-xl font-medium text-ink md:text-2xl">
             {letter.signoff}
           </p>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href={letter.ctaHref}
+              className="inline-flex items-center justify-center bg-amber px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-void transition hover:bg-amber-deep"
+            >
+              {letter.cta}
+            </a>
+            <a
+              href={letter.secondaryCtaHref}
+              className="inline-flex items-center justify-center border border-ink/40 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-ink transition hover:border-ink"
+            >
+              {letter.secondaryCta}
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>

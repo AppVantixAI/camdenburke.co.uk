@@ -13,20 +13,28 @@ export function Footer() {
             {site.email}
           </a>
           <a
+            href={site.companyUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="transition hover:text-ink"
+          >
+            AppVantix
+          </a>
+          <a
+            href={site.formforgeUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="transition hover:text-ink"
+          >
+            FormForge
+          </a>
+          <a
             href={site.linkedin}
             target="_blank"
             rel="noreferrer"
             className="transition hover:text-ink"
           >
             LinkedIn
-          </a>
-          <a
-            href={site.github}
-            target="_blank"
-            rel="noreferrer"
-            className="transition hover:text-ink"
-          >
-            GitHub
           </a>
         </div>
       </div>
