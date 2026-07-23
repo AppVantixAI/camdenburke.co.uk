@@ -1,4 +1,4 @@
-/** Personal brand site for Camden Burke — distinct from AppVantix / FormForge marketing */
+/** Corporate personal site — Industrial Clarity family with AppVantix / FormForge */
 
 export const site = {
   name: "Camden Burke",
@@ -10,120 +10,134 @@ export const site = {
   formforgeUrl: "https://appvantix.com/formforge",
   demoUrl: "https://appvantix.com/demo",
   email: "hello@appvantix.com",
-  emailHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
+  emailHref: "mailto:hello@appvantix.com",
   linkedin: "https://www.linkedin.com/in/camdenburkedev",
   github: "https://github.com/cburke12",
-  location: "Knoxville, Tennessee · working remotely worldwide",
-  metaTitle: "Camden Burke",
+  location: "Knoxville Metropolitan Area · Remote sessions worldwide",
+  metaTitle: "Camden Burke — CEO & Founder, AppVantix",
   description:
-    "Camden Burke is a technical founder — CEO of AppVantix — with dual degrees in Computer Science and Graphic Information Technology, CompTIA Security+, and a bias toward shipping real software.",
-  eyebrow: "Technical founder",
-  headline: "I lead with craft, not costume.",
+    "Camden Burke is CEO and Founder of AppVantix — a technical leader with dual ASU degrees in Computer Science and Graphic Information Technology, CompTIA Security+, and FormForge, configure-to-order software for manufacturers.",
+  eyebrow: "CEO & Founder · AppVantix",
+  headline: "Building software businesses operators can trust.",
   subhead:
-    "Dual degrees from Arizona State University. Security+ certified. I design, build, and run software businesses — starting with AppVantix.",
-  primaryCta: "Write to me",
-  primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
-  secondaryCta: "LinkedIn",
-  secondaryCtaHref: "https://www.linkedin.com/in/camdenburkedev",
+    "I lead AppVantix with computer science rigor, full-stack product craft, and Security+ depth — shipping FormForge for custom manufacturers who need configure-to-order without email chaos.",
+  primaryCta: "Visit AppVantix",
+  primaryCtaHref: "https://appvantix.com",
+  secondaryCta: "See FormForge demo",
+  secondaryCtaHref: "https://appvantix.com/demo",
+  chips: [
+    "B.S. Computer Science · ASU",
+    "B.S. Graphic IT · Full Stack",
+    "CompTIA Security+",
+    "Knoxville, TN",
+  ],
 } as const;
 
 export const nav = [
-  { href: "#thesis", label: "Thesis" },
-  { href: "#provenance", label: "Provenance" },
-  { href: "#ventures", label: "Ventures" },
+  { href: "#about", label: "About" },
+  { href: "#credentials", label: "Credentials" },
+  { href: "#portfolio", label: "Portfolio" },
   { href: "#contact", label: "Contact" },
 ] as const;
 
-export const thesis = {
-  eyebrow: "Thesis",
-  title: "Founders should be able to open the hood.",
-  body: "I do not separate “vision” from the work. Computer science gave me systems rigor. Graphic Information Technology gave me product craft. Security+ keeps trust non-negotiable. That combination is how I run AppVantix — and why I refuse vaporware.",
-  beliefs: [
+export const about = {
+  eyebrow: "About",
+  title: "A technical CEO who still opens the product.",
+  body: "I founded AppVantix to build and operate SaaS — not to sell slide decks. Dual degrees from Arizona State University (Computer Science and Graphic Information Technology / full stack) plus CompTIA Security+ shape how I lead: systems rigor, buyer-facing craft, and security as a product requirement.",
+  points: [
     {
-      num: "01",
-      title: "Ship over theater",
-      body: "If you cannot click it, it is not ready. Decks are optional. Working software is not.",
+      title: "Leadership",
+      body: "CEO accountability for AppVantix — strategy, product direction, and the integrity of what we ship.",
     },
     {
-      num: "02",
-      title: "Design is a leadership skill",
-      body: "Interfaces are decisions. Full-stack and UX training means I do not outsource judgment about how people use what we build.",
+      title: "Engineering judgment",
+      body: "Computer science training means architecture and tradeoffs stay founder-owned, not outsourced by default.",
     },
     {
-      num: "03",
-      title: "Security is product quality",
-      body: "Identity, access, and data handling are part of the craft — not a footnote after launch.",
+      title: "Product craft",
+      body: "Full-stack and UX background shows up in FormForge: branded configure experiences manufacturers can actually use.",
     },
   ],
 } as const;
 
-export const provenance = {
-  eyebrow: "Provenance",
-  title: "Where the judgment comes from.",
-  body: "Credentials are not decoration. They are the operating system behind the founder title.",
+export const credentials = {
+  eyebrow: "Credentials",
+  title: "Education and certification behind the title.",
   education: [
     {
       school: "Arizona State University",
-      credential: "B.S. Computer Science",
-      when: "Expected Dec 2027",
-      note: "Algorithms, systems, and the discipline to reason about software that has to last.",
+      credential: "Bachelor of Science, Computer Science",
+      when: "Expected December 2027",
+      note: "Systems, algorithms, and software that has to hold up in production.",
     },
     {
       school: "Arizona State University",
-      credential: "B.S. Graphic Information Technology",
+      credential: "Bachelor of Science, Graphic Information Technology",
       concentration: "Full Stack Web Development",
       when: "Completed 2024",
-      note: "UX, visual systems, and shipping interfaces people can actually finish a task in.",
+      note: "UX, interface systems, and shipping end-to-end web products.",
     },
   ],
   certification: {
     name: "CompTIA Security+ ce (SY0-701)",
-    when: "Valid through March 2029",
-    note: "Security literacy for anyone building B2B software that touches accounts, access, and customer data.",
+    when: "Valid March 2026 — March 2029",
+    note: "Security literacy for B2B SaaS: identity, access, and trustworthy handling of customer data.",
   },
-  skills: [
-    { label: "Systems & CS", detail: "Architecture, automation, rigorous debugging" },
-    { label: "Product craft", detail: "Full-stack delivery, UX, brand-sensitive UI" },
-    { label: "Security posture", detail: "Identity hygiene, least privilege, operational caution" },
-    { label: "Operator habits", detail: "DNS, vendors, escalation, documentation under pressure" },
-  ],
 } as const;
 
-export const ventures = {
-  eyebrow: "Ventures",
-  title: "Companies I am responsible for.",
-  intro:
-    "These are not my personal brand. They are businesses I founded and lead. This site is about me; those sites are about the work.",
+export const portfolio = {
+  eyebrow: "Portfolio",
+  title: "Companies and products I lead.",
   items: [
     {
       name: "AppVantix",
-      role: "CEO & Founder",
-      blurb:
-        "An agency that builds and operates SaaS businesses. Parent company — not a product rename.",
+      kind: "Agency",
+      description:
+        "Parent company that builds and operates SaaS businesses. FormForge is the spearhead — not a rename of AppVantix.",
       href: "https://appvantix.com",
       cta: "appvantix.com",
+      image: "/hero-formforge.jpg",
+      imageAlt: "FormForge product interface — an AppVantix SaaS product",
+      mark: true,
     },
     {
       name: "FormForge",
-      role: "Flagship product",
-      blurb:
-        "Configure-to-order software for custom manufacturers. Built under AppVantix; lives on its own brand.",
+      kind: "Flagship SaaS",
+      description:
+        "Configure-to-order for custom manufacturers: rule-bound families, branded share links, STEP when valid, structured quote intake.",
       href: "https://appvantix.com/formforge",
-      cta: "See FormForge",
+      cta: "Explore FormForge",
+      image: "/product-rules.jpg",
+      imageAlt: "FormForge rules and family configuration",
+      mark: false,
     },
   ],
+  gallery: {
+    title: "Product in the wild",
+    caption: "Live FormForge UI — sample family, not a mockup reel.",
+    images: [
+      {
+        src: "/product-rules.jpg",
+        alt: "FormForge rules and configuration",
+      },
+      {
+        src: "/product-inbox.jpg",
+        alt: "FormForge quote submissions inbox",
+      },
+    ],
+  },
 } as const;
 
 export const contact = {
   eyebrow: "Contact",
-  title: "If you want the person, start here.",
-  body: "Press, partners, operators, and curious humans — write me. Product demos and pilots belong on AppVantix; introductions and conversations belong with me.",
-  primaryCta: "Write to me",
-  primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
-  secondaryCta: "LinkedIn",
-  secondaryCtaHref: "https://www.linkedin.com/in/camdenburkedev",
-  tertiaryCta: "AppVantix",
-  tertiaryCtaHref: "https://appvantix.com",
+  title: "Let’s talk about the work.",
+  body: "Business and product inquiries through AppVantix. For FormForge, start with the live demo. For introductions, email or LinkedIn.",
+  primaryCta: "See FormForge demo",
+  primaryCtaHref: "https://appvantix.com/demo",
+  secondaryCta: "hello@appvantix.com",
+  secondaryCtaHref: "mailto:hello@appvantix.com",
+  tertiaryCta: "LinkedIn",
+  tertiaryCtaHref: "https://www.linkedin.com/in/camdenburkedev",
 } as const;
 
 export const personSchema = {
@@ -141,12 +155,7 @@ export const personSchema = {
     addressCountry: "US",
   },
   sameAs: [site.linkedin, site.github, site.companyUrl],
-  alumniOf: [
-    {
-      "@type": "CollegeOrUniversity",
-      name: "Arizona State University",
-    },
-  ],
+  alumniOf: [{ "@type": "CollegeOrUniversity", name: "Arizona State University" }],
   hasCredential: [
     {
       "@type": "EducationalOccupationalCredential",
@@ -160,12 +169,12 @@ export const personSchema = {
     url: site.companyUrl,
   },
   knowsAbout: [
+    "AppVantix",
+    "FormForge",
     "Technical founding",
     "Computer Science",
     "Full stack web development",
-    "UX and product design",
     "CompTIA Security+",
-    "SaaS leadership",
-    "AppVantix",
+    "Configure-to-order",
   ],
 } as const;

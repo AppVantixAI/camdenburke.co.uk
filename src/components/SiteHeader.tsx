@@ -1,17 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { nav, site } from "@/lib/content";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const panelId = useId();
-  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -35,21 +35,31 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled || open
-          ? "border-b border-line bg-white/95 backdrop-blur-sm"
+          ? "border-b border-line/70 bg-snow/90 backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5 md:px-8">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 md:px-8 md:py-5">
         <Link
           href="/"
-          className="font-display text-xl font-medium tracking-tight text-ink md:text-2xl"
+          className="flex items-center gap-2.5 text-ink"
           aria-label={`${site.name} home`}
           onClick={() => setOpen(false)}
         >
-          {site.name}
+          <Image
+            src="/appvantix-mark.svg"
+            alt=""
+            width={28}
+            height={28}
+            className="h-7 w-7"
+            priority
+          />
+          <span className="font-display text-lg font-semibold tracking-tight md:text-xl">
+            {site.name}
+          </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
           {nav.map((item) => (
             <a
               key={item.href}
@@ -61,16 +71,20 @@ export function SiteHeader() {
           ))}
           <a
             href={site.primaryCtaHref}
-            className="text-sm font-semibold text-cobalt transition hover:text-cobalt-deep"
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-1.5 rounded-full bg-signal px-4 py-2 text-sm font-semibold text-snow transition hover:bg-signal-deep"
           >
-            Write to me
+            AppVantix
+            <span className="arrow-nudge" aria-hidden>
+              →
+            </span>
           </a>
         </nav>
 
         <button
-          ref={menuButtonRef}
           type="button"
-          className="inline-flex min-h-[44px] items-center border border-ink/20 bg-white px-4 text-sm font-semibold text-ink md:hidden"
+          className="inline-flex min-h-[44px] items-center rounded-full border border-ink/15 bg-snow/80 px-4 text-sm font-semibold text-ink md:hidden"
           aria-expanded={open}
           aria-controls={panelId}
           onClick={() => setOpen((v) => !v)}
@@ -82,14 +96,14 @@ export function SiteHeader() {
       {open && (
         <div
           id={panelId}
-          className="border-t border-line bg-white px-5 py-4 md:hidden"
+          className="border-t border-line bg-snow px-5 py-4 md:hidden"
         >
-          <nav className="flex flex-col" aria-label="Mobile">
+          <nav className="flex flex-col gap-1" aria-label="Mobile">
             {nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="border-b border-line py-3 text-base font-medium text-ink"
+                className="rounded-lg px-3 py-3 text-base font-medium text-ink"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
@@ -97,10 +111,12 @@ export function SiteHeader() {
             ))}
             <a
               href={site.primaryCtaHref}
-              className="mt-4 py-3 text-base font-semibold text-cobalt"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-signal px-4 py-3 text-base font-semibold text-snow"
               onClick={() => setOpen(false)}
             >
-              Write to me →
+              Visit AppVantix →
             </a>
           </nav>
         </div>

@@ -1,47 +1,43 @@
 import type { Metadata } from "next";
-import { Fraunces, Sora, Space_Mono } from "next/font/google";
+import { Syne, Figtree, IBM_Plex_Mono } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SkipLink } from "@/components/SkipLink";
 import { personSchema, site } from "@/lib/content";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const syne = Syne({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-syne",
   display: "swap",
 });
 
-const sora = Sora({
+const figtree = Figtree({
   subsets: ["latin"],
-  variable: "--font-sora",
+  variable: "--font-figtree",
   display: "swap",
 });
 
-const spaceMono = Space_Mono({
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
+  weight: ["400", "500"],
+  variable: "--font-ibm-plex-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: {
-    default: site.metaTitle,
-    template: `%s · ${site.name}`,
-  },
+  title: { default: site.metaTitle, template: `%s · ${site.name}` },
   description: site.description,
   applicationName: site.name,
   keywords: [
     "Camden Burke",
-    "technical founder",
-    "CEO",
     "AppVantix",
+    "FormForge",
+    "CEO",
+    "Founder",
     "Computer Science",
-    "Graphic Information Technology",
     "CompTIA Security+",
-    "Knoxville",
   ],
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
@@ -53,12 +49,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "profile",
     images: [
-      {
-        url: "/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: site.name,
-      },
+      { url: "/og-image.svg", width: 1200, height: 630, alt: site.metaTitle },
     ],
   },
   twitter: {
@@ -67,10 +58,7 @@ export const metadata: Metadata = {
     description: site.description,
     images: ["/og-image.svg"],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "32x32" }],
     shortcut: ["/favicon.ico"],
@@ -79,15 +67,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${sora.variable} ${spaceMono.variable}`}
+      className={`${syne.variable} ${figtree.variable} ${ibmPlexMono.variable}`}
     >
-      <body className="min-h-dvh bg-paper font-sans text-ink antialiased">
+      <body className="min-h-dvh bg-mist font-sans text-ink antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

@@ -1,16 +1,16 @@
+import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
+import { Credentials } from "@/components/Credentials";
 import { Hero } from "@/components/Hero";
-import { Provenance } from "@/components/Provenance";
-import { Thesis } from "@/components/Thesis";
-import { Ventures } from "@/components/Ventures";
+import { Portfolio } from "@/components/Portfolio";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Thesis />
-      <Provenance />
-      <Ventures />
+      <About />
+      <Credentials />
+      <Portfolio />
       <Contact />
     </>
   );
