@@ -26,9 +26,9 @@ function LetterLine({
   const opacity = useTransform(
     scrollYProgress,
     [0, 1],
-    reduce ? [1, 1] : [0.18, 1],
+    reduce ? [1, 1] : [0.55, 1],
   );
-  const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [28, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [16, 0]);
 
   return (
     <motion.p
