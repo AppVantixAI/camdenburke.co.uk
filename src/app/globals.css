@@ -103,4 +103,9 @@ body {
   html {
     scroll-behavior: auto;
   }
+
+  .video-veil {
+    background:
+      linear-gradient(180deg, rgba(7, 8, 12, 0.55) 0%, rgba(7, 8, 12, 0.88) 100%);
+  }
 }
