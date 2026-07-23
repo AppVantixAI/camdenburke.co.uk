@@ -17,8 +17,8 @@ export const site = {
   metaTitle: "Camden Burke — CEO & Founder · AppVantix",
   description:
     "Camden Burke. CEO & Founder of AppVantix. I build software companies with AI and security in the foundation. Say hello.",
-  /** Founder portrait in /public */
-  portraitSrc: "/portrait.jpg",
+  /** Optional founder portrait — leave empty to hide Presence. */
+  portraitSrc: "",
   initials: "CB",
   eyebrow: "CEO & Founder · AppVantix",
   headline: "I don't reinvent the wheel. I build the car.",
@@ -34,7 +34,6 @@ export const site = {
 } as const;
 
 export const nav = [
-  { href: "#presence", label: "Presence" },
   { href: "#creed", label: "Principles" },
   { href: "#constellation", label: "Companies" },
   { href: "#offer", label: "Contact" },
