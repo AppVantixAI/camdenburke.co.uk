@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { site } from "@/lib/content";
 
 export function Footer() {
@@ -29,9 +28,6 @@ export function Footer() {
           >
             GitHub
           </a>
-          <Link href="/notes" className="transition hover:text-ink">
-            Notes
-          </Link>
         </div>
       </div>
     </footer>

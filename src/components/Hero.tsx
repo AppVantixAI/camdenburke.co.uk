@@ -30,7 +30,7 @@ export function Hero() {
   const videoScale = useTransform(smooth, [0, 1], [1.08, 1.28]);
   const contentY = useTransform(smooth, [0, 1], ["0%", "22%"]);
   const opacity = useTransform(smooth, [0, 0.55, 0.9], [1, 0.35, 0]);
-  const titleTrack = useTransform(smooth, [0, 0.7], [0, 6]);
+  const titleTrack = useTransform(smooth, [0, 0.7], [0, 8]);
   const titleTracking = useTransform(titleTrack, (v) => `${v / 100}em`);
 
   useEffect(() => {
@@ -89,27 +89,19 @@ export function Hero() {
       >
         <div className="max-w-4xl">
           <motion.p
-            className="font-display text-lg font-semibold uppercase tracking-[0.14em] text-ink sm:text-xl md:text-2xl"
+            className="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/80"
             initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            {site.name}
-          </motion.p>
-          <motion.p
-            className="mt-3 font-mono text-[11px] uppercase tracking-[0.28em] text-amber"
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.eyebrow}
           </motion.p>
           <motion.h1
-            className="mt-6 max-w-3xl font-display text-3xl font-semibold uppercase leading-[1.05] tracking-tight text-ink sm:text-4xl md:text-6xl lg:text-7xl"
+            className="mt-5 font-display text-4xl font-semibold uppercase leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-7xl lg:text-8xl"
             style={reduce ? undefined : { letterSpacing: titleTracking }}
             initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.headline}
           </motion.h1>
@@ -150,10 +142,7 @@ export function Hero() {
         transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
       >
         <span>Scroll</span>
-        <span
-          className="h-8 w-px bg-gradient-to-b from-ink/50 to-transparent"
-          aria-hidden
-        />
+        <span className="h-8 w-px bg-gradient-to-b from-ink/50 to-transparent" aria-hidden />
       </motion.a>
     </section>
   );

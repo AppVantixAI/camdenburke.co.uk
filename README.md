@@ -13,16 +13,13 @@ Personal brand site for Camden Burke.
 
 ## Voice
 
-**Harvey Specter × Alex Hormozi**
+**Harvey Specter cadence** — composed, college-educated, decisive.
 
-- Specter: composed, decisive, edge without noise. Full sentences. Never needy.
-- Hormozi: outcome-first, no fluff, clear offers, scoreboard language.
+This is a **trust site**, not a product funnel. Visitors should leave knowing who Camden is, what he stands for, and why that warrants confidence.
 
-This is a **trust site**, not a product funnel. Less text. More confidence.
+Primary path: story → principles → background → companies → hello.
 
-Primary path: principles → companies → hello.
-
-Hero: name + role; H1 is the line. Creed stays sharp. Notes live at `/notes`.
+Hero: creed-led character line. Name lives in the nav. Creed stays in Principles with its edge.
 
 ## Develop
 
