@@ -1,41 +1,31 @@
-# Camden Burke — Security Resume
+# Camden Burke — CEO & Founder, AppVantix
 
-Interactive resume site built with Next.js, Three.js, and Tailwind CSS.
+Personal brand site for Camden Burke.
 
-**Live site:** [https://camdenburke.co.uk](https://camdenburke.co.uk)
+**Live:** [https://camdenburke.co.uk](https://camdenburke.co.uk)  
+**Company:** [https://appvantix.com](https://appvantix.com)
 
-## Local development
+## Positioning
+
+- **Camden Burke** — personal / founder brand (owns the first viewport)
+- **AppVantix** — agency that builds and operates SaaS businesses
+- **FormForge** — flagship configure-to-order SaaS product
+
+Primary conversion: FormForge demo. Secondary: `hello@appvantix.com`.
+
+Design: AppVantix **Industrial Clarity** (Syne + Figtree, mist/signal palette).
+
+## Develop
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Edit copy in `src/lib/content.ts`.
 
-## Deploy (Vercel)
+## Deploy
 
-This project is configured for [Vercel](https://vercel.com). Pushes to `main` trigger automatic deployments when the repo is connected.
+Pushes to `master` auto-deploy via Vercel.
 
-### Custom domain: camdenburke.co.uk
-
-Your domain uses **Cloudflare** nameservers. In the Cloudflare dashboard → **DNS** → **Records**, add:
-
-| Type    | Name | Content              | Proxy status |
-| ------- | ---- | -------------------- | ------------ |
-| `A`     | `@`  | `76.76.21.21`        | DNS only (grey cloud) |
-| `CNAME` | `www`| `cname.vercel-dns.com` | DNS only (grey cloud) |
-
-Turn off Cloudflare proxy (grey cloud) for these records so Vercel can verify and issue SSL.
-
-Vercel project: [camdenburke-co-uk](https://vercel.com/app-vantix/camdenburke-co-uk)  
-GitHub repo: [AppVantixAI/camdenburke.co.uk](https://github.com/AppVantixAI/camdenburke.co.uk)
-
-Pushes to `master` auto-deploy via Vercel Git integration.
-
-## Project structure
-
-- `data/resume.js` — resume content (edit here to update copy)
-- `public/resume.pdf` — downloadable PDF
-- `components/` — UI, 3D hero, terminal effects
-- `pages/index.js` — main page
+Repo: [AppVantixAI/camdenburke.co.uk](https://github.com/AppVantixAI/camdenburke.co.uk)

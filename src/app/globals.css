@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+:root {
+  --av-ink: #0c1a22;
+  --av-ink-soft: #3a4d59;
+  --av-mist: #eef3f6;
+  --av-snow: #f8fbfd;
+  --av-line: #c5d2db;
+  --av-signal: #0f766e;
+  --av-signal-deep: #0a5c56;
+  --av-glow: #5eb8c9;
+  --av-ember: #d4a017;
+  --av-focus: #1b6ca8;
+  --background: var(--av-mist);
+  --foreground: var(--av-ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--av-ink);
+  --color-ink-soft: var(--av-ink-soft);
+  --color-mist: var(--av-mist);
+  --color-snow: var(--av-snow);
+  --color-line: var(--av-line);
+  --color-signal: var(--av-signal);
+  --color-signal-deep: var(--av-signal-deep);
+  --color-glow: var(--av-glow);
+  --color-ember: var(--av-ember);
+  --color-focus: var(--av-focus);
+  --font-display: var(--font-syne);
+  --font-sans: var(--font-figtree);
+  --font-mono: var(--font-ibm-plex-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-figtree), ui-sans-serif, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--av-signal) 28%, white);
+  color: var(--av-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--av-focus);
+  outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  z-index: 100;
+  transform: translateY(-120%);
+  border-radius: 9999px;
+  background: var(--av-ink);
+  color: var(--av-snow);
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0.75rem);
+  outline: 2px solid var(--av-focus);
+  outline-offset: 3px;
+}
+
+.font-display {
+  font-family: var(--font-syne), ui-sans-serif, sans-serif;
+}
+
+.mist-layer {
+  background:
+    radial-gradient(
+      120% 80% at 12% 18%,
+      color-mix(in oklab, var(--av-glow) 35%, transparent),
+      transparent 55%
+    ),
+    radial-gradient(
+      90% 70% at 88% 12%,
+      color-mix(in oklab, var(--av-signal) 22%, transparent),
+      transparent 50%
+    ),
+    linear-gradient(165deg, #dfe9ef 0%, var(--av-mist) 42%, #e7eef3 100%);
+}
+
+.mist-drift {
+  animation: mist-drift 32s ease-in-out infinite alternate;
+}
+
+@keyframes mist-drift {
+  from {
+    transform: translate3d(-1.5%, -1%, 0) scale(1.04);
+  }
+  to {
+    transform: translate3d(1.5%, 1.2%, 0) scale(1.08);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-rise-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.animate-rise-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.animate-rise-delay-3 {
+  animation-delay: 0.36s;
+}
+
+@keyframes arrow-nudge {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(4px);
+  }
+}
+
+.group:hover .arrow-nudge,
+.group:focus-visible .arrow-nudge {
+  animation: arrow-nudge 0.35s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .mist-drift,
+  .animate-rise,
+  .animate-rise-delay-1,
+  .animate-rise-delay-2,
+  .animate-rise-delay-3,
+  .group:hover .arrow-nudge,
+  .group:focus-visible .arrow-nudge,
+  .skip-link {
+    animation: none !important;
+    transition: none !important;
+  }
+}
