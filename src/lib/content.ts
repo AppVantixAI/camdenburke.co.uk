@@ -1,4 +1,4 @@
-/** Founder site — Harvey Specter cadence. Trust → email. Audit-led structure. */
+/** Personal founder site — values, confidence, competence. Trust first. */
 
 export const site = {
   name: "Camden Burke",
@@ -16,49 +16,52 @@ export const site = {
   location: "Knoxville · Remote worldwide",
   metaTitle: "Camden Burke — CEO & Founder · AppVantix",
   description:
-    "Camden Burke is CEO & Founder of AppVantix and FormForge. Artificial intelligence and cybersecurity in how we ship. Partners and operators — write the founder.",
+    "Camden Burke is CEO & Founder of AppVantix. Coding since twelve. Focused on artificial intelligence and cybersecurity. Get to know the founder.",
   eyebrow: "CEO & Founder · AppVantix",
-  headline: "I build software companies. You deal with the founder.",
+  headline: "I don't reinvent the wheel. I build the car.",
   subhead:
-    "AppVantix builds and operates software businesses. FormForge helps manufacturers configure and quote to order — without the agency fog. AI and security are how we ship, not a slide in the deck.",
-  primaryCta: "Email me",
-  primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
-  secondaryCta: "See the companies",
-  secondaryCtaHref: "#constellation",
+    "I've been writing software since I was twelve. Today I lead AppVantix — with artificial intelligence and security built into how we work. This is who I am.",
+  primaryCta: "Read my story",
+  primaryCtaHref: "#letter",
+  secondaryCta: "Say hello",
+  secondaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
   videoSrc: "/hero-reel.mp4",
   videoPoster: "/hero-poster.jpg",
 } as const;
 
 export const nav = [
-  { href: "#constellation", label: "Companies" },
-  { href: "#creed", label: "Principles" },
   { href: "#letter", label: "Story" },
+  { href: "#creed", label: "Principles" },
+  { href: "#credentials", label: "Background" },
+  { href: "#constellation", label: "Companies" },
   { href: "#offer", label: "Contact" },
 ] as const;
 
 export const proof = {
   items: [
-    { value: "12", label: "Coding since" },
-    { value: "Sec+", label: "CompTIA · through 2029" },
-    { value: "ASU", label: "B.S. Full Stack · 2024" },
-    { value: "CEO", label: "AppVantix — still running it" },
+    { value: "12", label: "When I started coding" },
+    { value: "Sec+", label: "CompTIA certified" },
+    { value: "ASU", label: "B.S., completed 2024" },
+    { value: "CEO", label: "AppVantix founder" },
   ],
 } as const;
 
 export const letter = {
-  eyebrow: "Story",
-  title: "I started early. I stayed in the work.",
+  eyebrow: "My story",
+  title: "I fell in love with code young — and I never left the work.",
   paragraphs: [
-    "I've been writing software since I was twelve. Swift first. Then whatever needed building — bots, sites, applications across every platform I could reach. See a need, fill a need. That still governs how I move.",
-    "When artificial intelligence became useful, I went in — models, automation, then MCPs: plain language in, real work out. Today I run AppVantix and lead FormForge. I hire the people who build. I own the outcomes — especially on AI and security.",
-    "I don't make excuses when the other side plays the game. If you have something worth discussing, write me.",
+    "I've been coding since I was twelve. Swift was my first language. Winning an award at a CodeDay at Lipscomb made it real — this wasn't a hobby anymore. It was the path.",
+    "I built what needed building. Python bots. Sites on the side. Apps on every platform I could reach. See a need, fill a need. That still governs how I move.",
+    "When artificial intelligence became useful — not theoretical — I went in. How the models work. Automation. Then MCPs arrived, and the game changed: models with hands. Plain language in. Real work out.",
+    "Today I'm CEO and Founder of AppVantix. I lead the companies, including FormForge. I hire the people who build. I stay accountable for where we're going — especially on AI and security.",
+    "I don't make excuses when the other side plays the game. If you want to know who you're dealing with, you're in the right place.",
   ],
   signoff: "— Camden",
 } as const;
 
 export const creed = {
   eyebrow: "Principles",
-  title: "A few lines I live by.",
+  title: "What I stand on.",
   lines: [
     "Don't reinvent the wheel. Just build the damn car.",
     "See a need, fill a need.",
@@ -66,46 +69,45 @@ export const creed = {
   ],
 } as const;
 
-/** Kept for schema / future use; homepage folds this into proof + story. */
 export const credentials = {
-  eyebrow: "Credentials",
-  title: "What's on paper.",
+  eyebrow: "Background",
+  title: "Competence, on the record.",
   items: [
     {
       label: "Role",
       title: "CEO & Founder",
       meta: "AppVantix LLC",
-      body: "Direction, product bets, and accountability. Your email reaches me.",
+      body: "I set direction, make the product bets, and answer for how we show up. Leadership isn't a title I borrowed — it's the job I do.",
     },
     {
       label: "Focus",
       title: "Artificial Intelligence & Cybersecurity",
-      meta: "Operating priority",
-      body: "Models, automation, MCPs. Security by default — not bolted on.",
+      meta: "Where I put my attention",
+      body: "From models and automation to MCPs with real leverage. Security isn't an afterthought — it's how responsible software gets built.",
     },
     {
       label: "Education",
       title: "B.S. Graphic Information Technology",
       meta: "Full Stack Web Development · Arizona State University · 2024",
-      body: "Full-stack foundation so I lead technical work without guessing.",
+      body: "I wanted the full-stack foundation so I could lead technical work with judgment — not guesswork.",
     },
     {
       label: "Certification",
       title: "CompTIA Security+ ce",
       meta: "SY0-701 · Valid through March 2029",
-      body: "Identity, access, and customer data — non-negotiable in B2B.",
+      body: "Identity, access, and customer data aren't optional in B2B. I treat them accordingly.",
     },
   ],
 } as const;
 
 export const constellation = {
   eyebrow: "Companies",
-  title: "What I lead.",
+  title: "Where that shows up.",
   items: [
     {
       name: "AppVantix",
       role: "CEO & Founder",
-      body: "We build and operate software businesses. Artificial intelligence and security sit in the operating system — not the pitch.",
+      body: "The company I founded and still run. We build and operate software businesses — with AI and security baked into how we work.",
       href: "https://appvantix.com",
       cta: "Visit AppVantix",
       image: "/hero-formforge.jpg",
@@ -113,7 +115,7 @@ export const constellation = {
     {
       name: "FormForge",
       role: "Flagship",
-      body: "Configure-to-order for manufacturers: turn complex product rules into clean quotes and configs. The team builds. I own the mission.",
+      body: "Our product for manufacturers. I lead the company. The team builds. The standard is the same: ship with integrity.",
       href: "https://appvantix.com/formforge",
       cta: "Visit FormForge",
       image: "/product-rules.jpg",
@@ -129,14 +131,14 @@ export const reel = {
 
 export const offer = {
   eyebrow: "Contact",
-  title: "If it's worth discussing — write me.",
-  body: "No long form. No runaround. Email me and I'll reply with a clear next step — or an honest no if I'm not the right person.",
+  title: "If you'd like to talk — say hello.",
+  body: "No long form. No runaround. Email me when you're ready. I'll reply with a clear next step — or an honest no if I'm not the right person.",
   forWhom: {
     label: "Happy to hear from",
     items: [
-      "Partners evaluating AppVantix or FormForge",
-      "Operators who prefer to speak with the founder",
-      "People building with AI who take security seriously",
+      "Partners looking at AppVantix or FormForge",
+      "Operators who want to know the founder",
+      "People building with AI who care about security",
       "Press, talent, and thoughtful introductions",
     ],
   },
@@ -144,26 +146,26 @@ export const offer = {
     label: "What you can expect",
     items: [
       "A real reply from me",
-      "A straight answer on next steps",
-      "Someone accountable for the companies he leads",
-      "A demo path when the product is the point",
+      "A straight answer",
+      "Someone who owns the companies he leads",
+      "The same standard you just read about",
     ],
   },
   youDont: {
     label: "What I don't do",
     items: [
-      "Meetings that go nowhere",
-      "Agency fog between you and the decision",
+      "Perform competence I haven't earned",
+      "Sit through meetings that go nowhere",
       "Waste anyone's time — including yours",
     ],
   },
   nextStep: "Subject line can simply be \"Hello.\" That will do.",
-  primaryCta: "Email me",
+  primaryCta: "Say hello",
   primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
   secondaryCta: "LinkedIn",
   secondaryCtaHref: "https://www.linkedin.com/in/camdenburkedev",
-  tertiaryCta: "Book a product demo",
-  tertiaryCtaHref: "https://appvantix.com/demo",
+  tertiaryCta: "AppVantix",
+  tertiaryCtaHref: "https://appvantix.com",
 } as const;
 
 export const personSchema = {

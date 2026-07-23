@@ -7,19 +7,19 @@ Personal brand site for Camden Burke.
 
 ## Positioning
 
-- **Camden Burke** — personal / founder brand (owns the first viewport)
-- **AppVantix** — builds and operates software businesses
-- **FormForge** — flagship configure-to-order product
+- **Camden Burke** — personal founder brand: values, confidence, competence
+- **AppVantix** — the company he leads (proof of the person)
+- **FormForge** — flagship product under that leadership
 
 ## Voice
 
-**Harvey Specter cadence** — composed, college-educated, decisive. Full sentences. Proof over volume.
+**Harvey Specter cadence** — composed, college-educated, decisive.
 
-Conversion: **founder trust → confidence → email**. Demo is tertiary.
+This is a **trust site**, not a product funnel. Visitors should leave knowing who Camden is, what he stands for, and why that warrants confidence.
 
-Page order: Hero → Proof → Companies → Principles → Story → Contact.
+Primary path: story → principles → background → companies → hello.
 
-Hero answers who / what / for whom. Creed lives in Principles. Name stays in the nav.
+Hero: creed-led character line. Name lives in the nav. Creed stays in Principles with its edge.
 
 ## Develop
 
