@@ -1,21 +1,17 @@
-import { Credentials } from "@/components/Credentials";
-import { FinalCta } from "@/components/FinalCta";
+import { Contact } from "@/components/Contact";
 import { Hero } from "@/components/Hero";
-import { Method } from "@/components/Method";
-import { OfferPath } from "@/components/OfferPath";
-import { Positioning } from "@/components/Positioning";
-import { Work } from "@/components/Work";
+import { Provenance } from "@/components/Provenance";
+import { Thesis } from "@/components/Thesis";
+import { Ventures } from "@/components/Ventures";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Positioning />
-      <Credentials />
-      <Work />
-      <Method />
-      <OfferPath />
-      <FinalCta />
+      <Thesis />
+      <Provenance />
+      <Ventures />
+      <Contact />
     </>
   );
 }

@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
-import { Syne, Figtree, IBM_Plex_Mono } from "next/font/google";
+import { Fraunces, Sora, Space_Mono } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SkipLink } from "@/components/SkipLink";
 import { personSchema, site } from "@/lib/content";
 import "./globals.css";
 
-const syne = Syne({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-fraunces",
   display: "swap",
 });
 
-const figtree = Figtree({
+const sora = Sora({
   subsets: ["latin"],
-  variable: "--font-figtree",
+  variable: "--font-sora",
   display: "swap",
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
+const spaceMono = Space_Mono({
   subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-ibm-plex-mono",
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
   display: "swap",
 });
 
@@ -35,30 +35,29 @@ export const metadata: Metadata = {
   applicationName: site.name,
   keywords: [
     "Camden Burke",
-    "AppVantix",
-    "FormForge",
+    "technical founder",
     "CEO",
-    "Founder",
-    "configure-to-order",
-    "SaaS",
-    "custom manufacturers",
+    "AppVantix",
+    "Computer Science",
+    "Graphic Information Technology",
+    "CompTIA Security+",
+    "Knoxville",
   ],
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
-  publisher: site.legal,
   openGraph: {
     title: site.metaTitle,
     description: site.description,
     url: "/",
     siteName: site.name,
     locale: "en_US",
-    type: "website",
+    type: "profile",
     images: [
       {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: site.metaTitle,
+        alt: site.name,
       },
     ],
   },
@@ -71,13 +70,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
   },
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "32x32" }],
@@ -93,9 +85,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${figtree.variable} ${ibmPlexMono.variable}`}
+      className={`${fraunces.variable} ${sora.variable} ${spaceMono.variable}`}
     >
-      <body className="min-h-dvh bg-mist font-sans text-ink antialiased">
+      <body className="min-h-dvh bg-paper font-sans text-ink antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

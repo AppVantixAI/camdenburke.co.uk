@@ -1,4 +1,4 @@
-/** Camden Burke founder site — SoT for all marketing copy */
+/** Personal brand site for Camden Burke — distinct from AppVantix / FormForge marketing */
 
 export const site = {
   name: "Camden Burke",
@@ -10,182 +10,120 @@ export const site = {
   formforgeUrl: "https://appvantix.com/formforge",
   demoUrl: "https://appvantix.com/demo",
   email: "hello@appvantix.com",
-  emailHref: "mailto:hello@appvantix.com",
+  emailHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
   linkedin: "https://www.linkedin.com/in/camdenburkedev",
   github: "https://github.com/cburke12",
-  location: "Knoxville Metropolitan Area · Remote sessions worldwide",
-  metaTitle: "Camden Burke — CEO & Founder, AppVantix",
+  location: "Knoxville, Tennessee · working remotely worldwide",
+  metaTitle: "Camden Burke",
   description:
-    "Camden Burke is CEO and Founder of AppVantix — a technical founder with dual degrees in Computer Science and Graphic Information Technology, CompTIA Security+ certification, and FormForge, configure-to-order SaaS for custom manufacturers.",
-  eyebrow: "CEO & Founder · AppVantix",
-  headline: "A technical founder who designs, secures, and ships.",
+    "Camden Burke is a technical founder — CEO of AppVantix — with dual degrees in Computer Science and Graphic Information Technology, CompTIA Security+, and a bias toward shipping real software.",
+  eyebrow: "Technical founder",
+  headline: "I lead with craft, not costume.",
   subhead:
-    "I lead AppVantix with dual Arizona State University degrees in Computer Science and Graphic Information Technology, CompTIA Security+ depth, and a product you can click — FormForge — not a deck about AI ambition.",
-  primaryCta: "See the FormForge demo",
-  primaryCtaHref: "https://appvantix.com/demo",
-  secondaryCta: "Email AppVantix",
-  secondaryCtaHref: "mailto:hello@appvantix.com",
-  credibility:
-    "ASU · B.S. Computer Science · B.S. Graphic IT (Full Stack) · CompTIA Security+",
+    "Dual degrees from Arizona State University. Security+ certified. I design, build, and run software businesses — starting with AppVantix.",
+  primaryCta: "Write to me",
+  primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
+  secondaryCta: "LinkedIn",
+  secondaryCtaHref: "https://www.linkedin.com/in/camdenburkedev",
 } as const;
 
 export const nav = [
-  { href: "#positioning", label: "Value" },
-  { href: "#credentials", label: "Credentials" },
-  { href: "#work", label: "Work" },
-  { href: "#method", label: "Method" },
-  { href: "#offer", label: "Offer" },
+  { href: "#thesis", label: "Thesis" },
+  { href: "#provenance", label: "Provenance" },
+  { href: "#ventures", label: "Ventures" },
   { href: "#contact", label: "Contact" },
 ] as const;
 
-export const positioning = {
-  eyebrow: "Value",
-  title: "High-trust SaaS for shops that cannot afford vaporware.",
-  body: "Manufacturers evaluating configure-to-order software are buying judgment as much as features. I founded AppVantix as a technical CEO — computer science, full-stack product craft, and security literacy — so FormForge is built, demoed, and piloted by someone who can own the stack end to end.",
-  points: [
+export const thesis = {
+  eyebrow: "Thesis",
+  title: "Founders should be able to open the hood.",
+  body: "I do not separate “vision” from the work. Computer science gave me systems rigor. Graphic Information Technology gave me product craft. Security+ keeps trust non-negotiable. That combination is how I run AppVantix — and why I refuse vaporware.",
+  beliefs: [
     {
-      title: "Who I help",
-      body: "Owners, sales leads, and engineering leads at custom / configure-to-order manufacturers who need valid quotes without email chaos.",
+      num: "01",
+      title: "Ship over theater",
+      body: "If you cannot click it, it is not ready. Decks are optional. Working software is not.",
     },
     {
-      title: "Why I am credible",
-      body: "Dual ASU degrees (CS + Graphic IT / full stack), CompTIA Security+, and live product you can exercise with demo data before you buy.",
+      num: "02",
+      title: "Design is a leadership skill",
+      body: "Interfaces are decisions. Full-stack and UX training means I do not outsource judgment about how people use what we build.",
     },
     {
-      title: "What you get",
-      body: "An agency that ships SaaS (AppVantix) and a flagship product (FormForge) with a firm Pilot path — not an open-ended consultancy retainer.",
+      num: "03",
+      title: "Security is product quality",
+      body: "Identity, access, and data handling are part of the craft — not a footnote after launch.",
     },
   ],
 } as const;
 
-export const credentials = {
-  eyebrow: "Credentials",
-  title: "The foundation behind the founder title.",
-  body: "CEO is not a costume. Buyers get a founder who can speak engineering, design the buyer experience, and treat security as a product requirement — then prove it in a live demo.",
+export const provenance = {
+  eyebrow: "Provenance",
+  title: "Where the judgment comes from.",
+  body: "Credentials are not decoration. They are the operating system behind the founder title.",
   education: [
     {
       school: "Arizona State University",
-      credential: "Bachelor of Science, Computer Science",
-      detail: "Expected December 2027",
-      framing:
-        "Systems, algorithms, and software rigor — the engineering backbone behind FormForge and AppVantix products.",
+      credential: "B.S. Computer Science",
+      when: "Expected Dec 2027",
+      note: "Algorithms, systems, and the discipline to reason about software that has to last.",
     },
     {
       school: "Arizona State University",
-      credential:
-        "Bachelor of Science, Graphic Information Technology · Full Stack Web Development",
-      detail: "Completed 2024",
-      framing:
-        "UX, interface craft, and full-stack delivery — so product families feel branded, usable, and shippable.",
+      credential: "B.S. Graphic Information Technology",
+      concentration: "Full Stack Web Development",
+      when: "Completed 2024",
+      note: "UX, visual systems, and shipping interfaces people can actually finish a task in.",
     },
   ],
-  certifications: [
-    {
-      name: "CompTIA Security+ ce (SY0-701)",
-      detail: "Certified · Valid through March 2029",
-      framing:
-        "Security literacy for B2B SaaS: least privilege, identity hygiene, and trustworthy handling of customer configuration data.",
-    },
-  ],
-  capabilities: [
-    {
-      title: "Product & full stack",
-      body: "From parametric rules and 3D preview to quote intake — I build and operate the surfaces manufacturers actually use.",
-    },
-    {
-      title: "Design systems & UX",
-      body: "Graphic IT training shows up as clear configure experiences, not generic SaaS chrome bolted onto CAD chaos.",
-    },
-    {
-      title: "Security-minded operations",
-      body: "Security+ plus hands-on identity and Windows environments — useful when manufacturing buyers ask how access and data are handled.",
-    },
-    {
-      title: "Operator judgment",
-      body: "Prior ownership and platform work taught DNS, vendor risk, escalation, and documentation — how real businesses stay online.",
-    },
+  certification: {
+    name: "CompTIA Security+ ce (SY0-701)",
+    when: "Valid through March 2029",
+    note: "Security literacy for anyone building B2B software that touches accounts, access, and customer data.",
+  },
+  skills: [
+    { label: "Systems & CS", detail: "Architecture, automation, rigorous debugging" },
+    { label: "Product craft", detail: "Full-stack delivery, UX, brand-sensitive UI" },
+    { label: "Security posture", detail: "Identity hygiene, least privilege, operational caution" },
+    { label: "Operator habits", detail: "DNS, vendors, escalation, documentation under pressure" },
   ],
 } as const;
 
-export const work = {
-  eyebrow: "Work",
-  title: "Where those credentials turn into product.",
+export const ventures = {
+  eyebrow: "Ventures",
+  title: "Companies I am responsible for.",
+  intro:
+    "These are not my personal brand. They are businesses I founded and lead. This site is about me; those sites are about the work.",
   items: [
     {
-      kind: "Agency",
       name: "AppVantix",
-      description:
-        "I founded and lead AppVantix to build and operate SaaS businesses. Technical founder ownership — architecture, product, and go-to-market — not a figurehead title.",
+      role: "CEO & Founder",
+      blurb:
+        "An agency that builds and operates SaaS businesses. Parent company — not a product rename.",
       href: "https://appvantix.com",
-      cta: "Visit AppVantix",
-      mark: true,
+      cta: "appvantix.com",
     },
     {
-      kind: "Flagship SaaS",
       name: "FormForge",
-      description:
-        "Configure-to-order workflow software for custom manufacturers. Rule-bound families, branded share links, STEP when valid, quote inbox — engineered and designed under my direction.",
+      role: "Flagship product",
+      blurb:
+        "Configure-to-order software for custom manufacturers. Built under AppVantix; lives on its own brand.",
       href: "https://appvantix.com/formforge",
-      cta: "Explore FormForge",
-      mark: false,
+      cta: "See FormForge",
     },
   ],
 } as const;
 
-export const method = {
-  eyebrow: "Method",
-  title: "How a technical CEO runs the company",
-  items: [
-    {
-      title: "Ship what you can demo",
-      body: "Prospects click FormForge with demo data. Dual CS + full-stack background means the demo is the product, not a slide about the product.",
-    },
-    {
-      title: "Separate agency from product",
-      body: "AppVantix is the parent. FormForge is what manufacturers buy. That clarity protects both brand and deal quality.",
-    },
-    {
-      title: "Price like an operator",
-      body: "Public firm Pilot at $3,500. Hosted catalog scoped after Pilot — Security+-minded honesty about scope, risk, and what is not included.",
-    },
-  ],
-} as const;
-
-export const offer = {
-  eyebrow: "Offer",
-  title: "A path you can act on this week.",
-  steps: [
-    {
-      title: "Demo",
-      body: "Click through FormForge with demo data — the real product, not a pitch deck.",
-    },
-    {
-      title: "Scope",
-      body: "Pick one family; confirm rules and inputs so the Pilot is concrete.",
-    },
-    {
-      title: "Pilot",
-      body: "$3,500 firm · ~7–10 business days. One family published with share link, STEP when valid, quote inbox, ~30 days hosting.",
-    },
-    {
-      title: "Catalog",
-      body: "Expand families and keep it hosted when the Pilot proves fit. Pricing scoped after Pilot.",
-    },
-  ],
-  primaryCta: "See the FormForge demo",
-  primaryCtaHref: "https://appvantix.com/demo",
-  secondaryCta: "Talk about a Pilot",
-  secondaryCtaHref: "mailto:hello@appvantix.com?subject=FormForge%20Pilot",
-} as const;
-
-export const finalCta = {
+export const contact = {
   eyebrow: "Contact",
-  title: "Work with a founder who can own the stack.",
-  body: "See FormForge with demo data, or email AppVantix. You get CEO-level accountability backed by CS, full-stack product craft, and Security+ depth.",
-  primaryCta: "See the FormForge demo",
-  primaryCtaHref: "https://appvantix.com/demo",
-  secondaryCta: "hello@appvantix.com",
-  secondaryCtaHref: "mailto:hello@appvantix.com",
+  title: "If you want the person, start here.",
+  body: "Press, partners, operators, and curious humans — write me. Product demos and pilots belong on AppVantix; introductions and conversations belong with me.",
+  primaryCta: "Write to me",
+  primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
+  secondaryCta: "LinkedIn",
+  secondaryCtaHref: "https://www.linkedin.com/in/camdenburkedev",
+  tertiaryCta: "AppVantix",
+  tertiaryCtaHref: "https://appvantix.com",
 } as const;
 
 export const personSchema = {
@@ -222,15 +160,12 @@ export const personSchema = {
     url: site.companyUrl,
   },
   knowsAbout: [
-    "SaaS",
-    "AppVantix",
-    "FormForge",
-    "Configure-to-order",
+    "Technical founding",
     "Computer Science",
     "Full stack web development",
     "UX and product design",
     "CompTIA Security+",
-    "Product leadership",
-    "Custom manufacturers",
+    "SaaS leadership",
+    "AppVantix",
   ],
 } as const;

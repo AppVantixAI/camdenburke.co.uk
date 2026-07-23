@@ -9,10 +9,9 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const panelId = useId();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -20,47 +19,15 @@ export function SiteHeader() {
 
   useEffect(() => {
     if (!open) return;
-
-    const panel = panelRef.current;
-    const menuButton = menuButtonRef.current;
-    const panelFocusables = panel
-      ? Array.from(
-          panel.querySelectorAll<HTMLElement>("a[href], button:not([disabled])"),
-        )
-      : [];
-    const focusables = menuButton
-      ? [menuButton, ...panelFocusables]
-      : panelFocusables;
-
-    (focusables[1] ?? focusables[0])?.focus();
-
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setOpen(false);
-        return;
-      }
-      if (e.key !== "Tab" || focusables.length === 0) return;
-
-      const firstEl = focusables[0];
-      const lastEl = focusables[focusables.length - 1];
-      const active = document.activeElement as HTMLElement | null;
-
-      if (e.shiftKey && active === firstEl) {
-        e.preventDefault();
-        lastEl.focus();
-      } else if (!e.shiftKey && active === lastEl) {
-        e.preventDefault();
-        firstEl.focus();
-      }
+      if (e.key === "Escape") setOpen(false);
     };
-
     document.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prev;
-      menuButton?.focus();
     };
   }, [open]);
 
@@ -68,21 +35,21 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled || open
-          ? "border-b border-line/70 bg-snow/90 backdrop-blur-md"
+          ? "border-b border-line bg-white/95 backdrop-blur-sm"
           : "bg-transparent"
       }`}
     >
-      <div className="relative z-50 mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 md:px-8 md:py-5">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5 md:px-8">
         <Link
           href="/"
-          className="font-display text-lg font-semibold tracking-tight text-ink md:text-xl"
+          className="font-display text-xl font-medium tracking-tight text-ink md:text-2xl"
           aria-label={`${site.name} home`}
           onClick={() => setOpen(false)}
         >
           {site.name}
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
           {nav.map((item) => (
             <a
               key={item.href}
@@ -94,21 +61,16 @@ export function SiteHeader() {
           ))}
           <a
             href={site.primaryCtaHref}
-            target="_blank"
-            rel="noreferrer"
-            className="group inline-flex items-center gap-1.5 rounded-full bg-signal px-4 py-2 text-sm font-semibold text-snow transition hover:bg-signal-deep"
+            className="text-sm font-semibold text-cobalt transition hover:text-cobalt-deep"
           >
-            Demo
-            <span className="arrow-nudge" aria-hidden>
-              →
-            </span>
+            Write to me
           </a>
         </nav>
 
         <button
           ref={menuButtonRef}
           type="button"
-          className="inline-flex min-h-[44px] items-center rounded-full border border-ink/15 bg-snow/80 px-4 text-sm font-semibold text-ink md:hidden"
+          className="inline-flex min-h-[44px] items-center border border-ink/20 bg-white px-4 text-sm font-semibold text-ink md:hidden"
           aria-expanded={open}
           aria-controls={panelId}
           onClick={() => setOpen((v) => !v)}
@@ -120,17 +82,14 @@ export function SiteHeader() {
       {open && (
         <div
           id={panelId}
-          ref={panelRef}
-          className="border-t border-line bg-snow px-5 py-4 md:hidden"
-          role="dialog"
-          aria-label="Mobile navigation"
+          className="border-t border-line bg-white px-5 py-4 md:hidden"
         >
-          <nav className="flex flex-col gap-1" aria-label="Mobile">
+          <nav className="flex flex-col" aria-label="Mobile">
             {nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="rounded-lg px-3 py-3 text-base font-medium text-ink"
+                className="border-b border-line py-3 text-base font-medium text-ink"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
@@ -138,12 +97,10 @@ export function SiteHeader() {
             ))}
             <a
               href={site.primaryCtaHref}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-signal px-4 py-3 text-base font-semibold text-snow"
+              className="mt-4 py-3 text-base font-semibold text-cobalt"
               onClick={() => setOpen(false)}
             >
-              See the FormForge demo →
+              Write to me →
             </a>
           </nav>
         </div>
