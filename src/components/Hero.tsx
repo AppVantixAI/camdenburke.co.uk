@@ -113,6 +113,14 @@ export function Hero() {
           >
             {site.subhead}
           </motion.p>
+          <motion.p
+            className="mt-5 font-mono text-[11px] uppercase tracking-[0.2em] text-amber"
+            initial={reduce ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.45 }}
+          >
+            {site.forLine}
+          </motion.p>
           <motion.div
             className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
             initial={reduce ? false : { opacity: 0, y: 28 }}
@@ -121,13 +129,13 @@ export function Hero() {
           >
             <a
               href={site.primaryCtaHref}
-              className="inline-flex items-center justify-center bg-amber px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-void transition hover:bg-amber-deep"
+              className="inline-flex items-center justify-center bg-amber px-10 py-5 text-sm font-bold uppercase tracking-[0.14em] text-void transition hover:bg-amber-deep md:text-base"
             >
               {site.primaryCta}
             </a>
             <a
               href={site.secondaryCtaHref}
-              className="inline-flex items-center justify-center border border-ink/45 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-ink transition hover:border-ink"
+              className="inline-flex items-center justify-center border border-ink/45 px-8 py-5 text-sm font-semibold uppercase tracking-[0.14em] text-ink transition hover:border-ink"
             >
               {site.secondaryCta}
             </a>
