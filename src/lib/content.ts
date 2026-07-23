@@ -1,4 +1,4 @@
-/** Personal CEO site — Hormozi offer/proof patterns + SpaceX motion. No name-drops. */
+/** Personal CEO site — human voice, Camden's phrases, SpaceX motion. */
 
 export const site = {
   name: "Camden Burke",
@@ -16,99 +16,110 @@ export const site = {
   location: "Knoxville · Remote worldwide",
   metaTitle: "Camden Burke — CEO & Founder · AI & Security",
   description:
-    "Camden Burke is CEO & Founder of AppVantix — coding since 12, AI-native operator, cybersecurity focused. CompTIA Security+. Talk to the founder.",
+    "Camden Burke is CEO & Founder of AppVantix. Coding since twelve. Focused on AI and cybersecurity. Say hello.",
   eyebrow: "CEO & Founder · AI & Security",
-  headline: "I own the outcome.",
+  headline: "Don't reinvent the wheel.",
   subhead:
-    "Coding since I was 12. Early on AI — prompt engineering to agents with real hands. Now I run product companies with a security backbone. Not a CAD modeler. Not a slide founder.",
-  forLine: "For partners · operators · buyers · press · talent",
-  primaryCta: "I'm ready",
-  primaryCtaHref: "mailto:hello@appvantix.com?subject=I'm%20ready",
-  secondaryCta: "See the proof",
-  secondaryCtaHref: "#proof",
+    "Just build the damn car. I've been coding since I was twelve — and I still believe the simplest way to win is to see a need and fill it.",
+  forLine: "Partners, operators, buyers, press, talent — if you're serious, write me.",
+  primaryCta: "Say hello",
+  primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
+  secondaryCta: "Read my story",
+  secondaryCtaHref: "#letter",
   videoSrc: "/hero-reel.mp4",
   videoPoster: "/hero-poster.jpg",
 } as const;
 
 export const nav = [
-  { href: "#offer", label: "Offer" },
-  { href: "#proof", label: "Proof" },
-  { href: "#letter", label: "Letter" },
+  { href: "#letter", label: "Story" },
+  { href: "#creed", label: "Creed" },
   { href: "#constellation", label: "Companies" },
-  { href: "#credentials", label: "Credentials" },
+  { href: "#credentials", label: "Background" },
+  { href: "#offer", label: "Contact" },
 ] as const;
 
 export const proof = {
   items: [
-    { value: "12", label: "Started coding" },
-    { value: "AI", label: "Early — still compounding" },
-    { value: "Sec+", label: "Certified security" },
-    { value: "CEO", label: "Founder who ships" },
+    { value: "12", label: "When I started coding" },
+    { value: "AI", label: "Where I put my time" },
+    { value: "Sec+", label: "CompTIA certified" },
+    { value: "CEO", label: "AppVantix founder" },
   ],
 } as const;
 
 export const letter = {
-  eyebrow: "The truth",
-  title: "Most founders sell vibes. I sell owned outcomes.",
+  eyebrow: "A little of my story",
+  title: "I fell in love with code young — and never really left.",
   paragraphs: [
-    "I've been coding since I was 12. First language: Swift 2. I fell in love with it after winning an award at a CodeDay event at Lipscomb University — that win locked the obsession in.",
-    "From there I built everything I could get my hands on: Python \"AI\" bots, pool-cleaner websites as a side hustle, apps across platforms. Always shipping. Always looking for the edge.",
-    "When real AI landed, I jumped. Prompt engineering. Models under the hood. Then APIs wired into automation — n8n, Zapier, Make.com. MCPs changed the game: plain language with actual hands — agents that finish work, not just chat about it. Higher quality output, consistently, by wiring systems differently.",
-    "That edge is why I run AppVantix as CEO & Founder. Strategy, product direction, capital allocation, security posture. FormForge is a product company I lead — not a drafting table I sit at. I hire builders. I own the result.",
-    "If you want theater, hire a pitch coach. If you want a founder who's been in the stack since childhood and treats AI + security as operating constraints — keep scrolling.",
+    "I've been coding since I was twelve. My first language was Swift 2. I got hooked after winning an award at a CodeDay event at Lipscomb University. That day made it feel real — like this wasn't just a hobby anymore.",
+    "After that I built whatever I could. Python bots. Pool-cleaner websites on the side. Apps on every platform I could reach. If someone needed something, I tried to make it. See a need, fill a need — that's still how I move.",
+    "When true AI showed up, I didn't wait around. I got into prompt engineering, then how the models actually work under the hood. I started wiring AI into APIs and automation tools like n8n, Zapier, and Make.com. Then MCPs came along — and that changed everything for me. Suddenly AI had real hands. You could talk in plain language and get real work done, not just another chat reply.",
+    "I'm always looking for a better way to wire things together so the output stays high quality, day after day. Don't reinvent the wheel — just build the damn car.",
+    "Today I'm CEO and Founder of AppVantix. I lead the companies, including FormForge. I'm not a CAD modeler sitting at a drafting table. I hire the people who build, and I stay accountable for where we're going — especially on AI and security.",
+    "Winners don't make excuses when the other side plays the game. If you want to talk, I'm easy to reach.",
   ],
-  signoff: "— Camden Burke, CEO & Founder",
+  signoff: "— Camden",
+} as const;
+
+export const creed = {
+  eyebrow: "How I think",
+  title: "A few lines I actually live by.",
+  lines: [
+    "Don't reinvent the wheel. Just build the damn car.",
+    "See a need, fill a need.",
+    "Winners don't make excuses when the other side plays the game.",
+  ],
 } as const;
 
 export const credentials = {
-  eyebrow: "Receipts",
-  title: "Proof under the title.",
+  eyebrow: "Background",
+  title: "What's on paper.",
   items: [
     {
       label: "Role",
       title: "CEO & Founder",
       meta: "AppVantix LLC",
-      body: "One throat to choke. Strategy, portfolio, and how the companies operate.",
+      body: "I run the company — direction, product bets, and how we show up for customers.",
     },
     {
       label: "Focus",
       title: "AI & Cybersecurity",
-      meta: "Operating lens · since day one of real AI",
-      body: "Prompt engineering to models under the hood. APIs into n8n, Zapier, Make. MCPs that give agents real hands. Security-first — always.",
+      meta: "Where I spend my attention",
+      body: "From prompts and models to automation and MCPs. Security isn't an afterthought — it's part of how we build.",
     },
     {
       label: "Education",
       title: "B.S. Graphic Information Technology",
       meta: "Full Stack Web Development · Arizona State University · Completed 2024",
-      body: "Full-stack craft so I can lead technical companies without guessing.",
+      body: "I wanted the full-stack foundation so I could lead technical work without guessing.",
     },
     {
       label: "Certification",
       title: "CompTIA Security+ ce",
       meta: "SY0-701 · Valid through March 2029",
-      body: "Identity, access, and trustworthy handling of customer data — non-negotiable.",
+      body: "I take identity, access, and customer data seriously. That shouldn't be optional in B2B software.",
     },
   ],
 } as const;
 
 export const constellation = {
-  eyebrow: "Portfolio",
-  title: "What I lead. What ships.",
+  eyebrow: "Companies",
+  title: "What I lead.",
   items: [
     {
       name: "AppVantix",
       role: "CEO & Founder",
-      body: "The holding company I run. We invent and operate SaaS businesses — AI and security in the operating model, not bolted on later.",
+      body: "The company I started and still run. We build and operate software businesses, with AI and security baked into how we work.",
       href: "https://appvantix.com",
-      cta: "Visit AppVantix →",
+      cta: "Visit AppVantix",
       image: "/hero-formforge.jpg",
     },
     {
       name: "FormForge",
-      role: "Flagship product company",
-      body: "Configure-to-order software for manufacturers. I lead the company. The team ships the product. You get a founder-owned roadmap.",
+      role: "Flagship product",
+      body: "Software for manufacturers. I lead the company — the team builds the product. If you want a demo, we can set that up.",
       href: "https://appvantix.com/formforge",
-      cta: "Visit FormForge →",
+      cta: "Visit FormForge",
       image: "/product-rules.jpg",
     },
   ],
@@ -116,43 +127,43 @@ export const constellation = {
 
 export const reel = {
   eyebrow: "In motion",
-  title: "Receipts > résumé.",
-  body: "Industries we serve. Products we operate. Founder leadership — not a modeling reel.",
+  title: "A look at the work.",
+  body: "A short reel of the industries and products around the companies I lead.",
 } as const;
 
 export const offer = {
-  eyebrow: "The offer",
-  title: "Talk to the founder. Get a straight answer.",
-  body: "No gatekeepers. No 12-slide intro. You write. I reply with a clear next step — or I tell you I'm the wrong person.",
+  eyebrow: "Contact",
+  title: "If you want to talk, just say hello.",
+  body: "No long form. No runaround. Email me and I'll get back to you with a clear next step — or an honest no if I'm not the right person.",
   forWhom: {
-    label: "This is for",
+    label: "Happy to hear from",
     items: [
-      "Partners evaluating AppVantix or FormForge",
-      "Operators who need the decision-maker, not a BD proxy",
-      "Buyers who want a security-minded, AI-native product company",
-      "Press, talent, and capital conversations that respect your time",
+      "Partners looking at AppVantix or FormForge",
+      "Operators who want to talk to the founder directly",
+      "People building with AI and care about security",
+      "Press, talent, and thoughtful introductions",
     ],
   },
   youGet: {
-    label: "You get",
+    label: "What you can expect",
     items: [
-      "Direct access to the CEO — one email, one owner",
-      "A clear yes / no / next step in the first reply",
-      "A product demo path if you want software, not politics",
-      "A founder who's been shipping since 12 — AI systems, automation, agents with hands",
+      "A real reply from me",
+      "A straight answer on next steps",
+      "A demo path if you're here for the product",
+      "Someone who's been shipping software since childhood",
     ],
   },
   youDont: {
-    label: "You don't get",
+    label: "What I skip",
     items: [
-      "CAD freelancer pitches",
-      "Slide-deck theater",
-      "Vague 'synergy' calls with no agenda",
+      "Pretending I'm a CAD freelancer",
+      "Death-by-deck meetings",
+      "Calls with no point",
     ],
   },
-  nextStep: "Ready? Hit the button. Subject line can just be: I'm ready.",
-  primaryCta: "I'm ready — email Camden",
-  primaryCtaHref: "mailto:hello@appvantix.com?subject=I'm%20ready",
+  nextStep: "Subject line can just be \"Hello\" — that's enough.",
+  primaryCta: "Email Camden",
+  primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
   secondaryCta: "LinkedIn",
   secondaryCtaHref: "https://www.linkedin.com/in/camdenburkedev",
   tertiaryCta: "Book a product demo",
