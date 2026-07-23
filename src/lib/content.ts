@@ -26,7 +26,7 @@ export const site = {
   secondaryCta: "Watch the reel",
   secondaryCtaHref: "#reel",
   videoSrc: "/hero-reel.mp4",
-  videoPoster: "/hero-formforge.jpg",
+  videoPoster: "/hero-poster.jpg",
 } as const;
 
 export const nav = [
@@ -108,8 +108,8 @@ export const constellation = {
 
 export const reel = {
   eyebrow: "Product reel",
-  title: "Show the machine.",
-  body: "A loop from live FormForge surfaces. Reality over narrative.",
+  title: "Shop floor to software.",
+  body: "Fabrication, automation, and FormForge product surfaces — one continuous loop.",
 } as const;
 
 export const offer = {
