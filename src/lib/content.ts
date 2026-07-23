@@ -16,11 +16,11 @@ export const site = {
   location: "Knoxville · Remote worldwide",
   metaTitle: "Camden Burke — CEO & Founder · AI & Security",
   description:
-    "Camden Burke is CEO & Founder of AppVantix — AI and cybersecurity focused. ASU B.S. Graphic Information Technology (Full Stack), CompTIA Security+. Talk to the founder.",
+    "Camden Burke is CEO & Founder of AppVantix — coding since 12, AI-native operator, cybersecurity focused. CompTIA Security+. Talk to the founder.",
   eyebrow: "CEO & Founder · AI & Security",
   headline: "I own the outcome.",
   subhead:
-    "I build and run AI-native product companies with a security backbone. Not a CAD modeler. Not a slide founder. If you need the person accountable for the result — that's me.",
+    "Coding since I was 12. Early on AI — prompt engineering to agents with real hands. Now I run product companies with a security backbone. Not a CAD modeler. Not a slide founder.",
   forLine: "For partners · operators · buyers · press · talent",
   primaryCta: "I'm ready",
   primaryCtaHref: "mailto:hello@appvantix.com?subject=I'm%20ready",
@@ -40,10 +40,10 @@ export const nav = [
 
 export const proof = {
   items: [
-    { value: "CEO", label: "Founder who ships" },
-    { value: "AI", label: "Built into the model" },
+    { value: "12", label: "Started coding" },
+    { value: "AI", label: "Early — still compounding" },
     { value: "Sec+", label: "Certified security" },
-    { value: "ASU", label: "Full-stack degree" },
+    { value: "CEO", label: "Founder who ships" },
   ],
 } as const;
 
@@ -51,10 +51,11 @@ export const letter = {
   eyebrow: "The truth",
   title: "Most founders sell vibes. I sell owned outcomes.",
   paragraphs: [
-    "I'm CEO and Founder of AppVantix. My job is simple: make the companies under this umbrella win — strategy, product direction, capital allocation, and the security posture of what we ship.",
-    "I am not a CAD modeler. FormForge is a product company I lead. The team builds. I own the company, the roadmap, and the result.",
-    "AI and cybersecurity aren't décor on a LinkedIn banner. They're how I decide what we build, what we refuse, and how we protect customers.",
-    "If you want theater, hire a pitch coach. If you want a founder who answers the email and owns the next step — keep scrolling.",
+    "I've been coding since I was 12. First language: Swift 2. I fell in love with it after winning an award at a CodeDay event at Lipscomb University — that win locked the obsession in.",
+    "From there I built everything I could get my hands on: Python \"AI\" bots, pool-cleaner websites as a side hustle, apps across platforms. Always shipping. Always looking for the edge.",
+    "When real AI landed, I jumped. Prompt engineering. Models under the hood. Then APIs wired into automation — n8n, Zapier, Make.com. MCPs changed the game: plain language with actual hands — agents that finish work, not just chat about it. Higher quality output, consistently, by wiring systems differently.",
+    "That edge is why I run AppVantix as CEO & Founder. Strategy, product direction, capital allocation, security posture. FormForge is a product company I lead — not a drafting table I sit at. I hire builders. I own the result.",
+    "If you want theater, hire a pitch coach. If you want a founder who's been in the stack since childhood and treats AI + security as operating constraints — keep scrolling.",
   ],
   signoff: "— Camden Burke, CEO & Founder",
 } as const;
@@ -72,8 +73,8 @@ export const credentials = {
     {
       label: "Focus",
       title: "AI & Cybersecurity",
-      meta: "Operating lens",
-      body: "Security-first systems. AI where it creates leverage — not demos for LinkedIn.",
+      meta: "Operating lens · since day one of real AI",
+      body: "Prompt engineering to models under the hood. APIs into n8n, Zapier, Make. MCPs that give agents real hands. Security-first — always.",
     },
     {
       label: "Education",
@@ -138,7 +139,7 @@ export const offer = {
       "Direct access to the CEO — one email, one owner",
       "A clear yes / no / next step in the first reply",
       "A product demo path if you want software, not politics",
-      "A founder who treats AI + security as operating constraints",
+      "A founder who's been shipping since 12 — AI systems, automation, agents with hands",
     ],
   },
   youDont: {
@@ -184,9 +185,13 @@ export const personSchema = {
   knowsAbout: [
     "Cybersecurity",
     "Artificial Intelligence",
+    "Prompt Engineering",
+    "Model Context Protocol",
+    "Workflow Automation",
     "SaaS",
     "Executive Leadership",
     "Full Stack Web Development",
+    "Swift",
   ],
   worksFor: {
     "@type": "Organization",
