@@ -1,31 +1,42 @@
 @import "tailwindcss";
 
 :root {
-  --cb-void: #07080c;
-  --cb-ink: #f3f5f8;
-  --cb-muted: #9aa3b5;
-  --cb-line: #252a36;
-  --cb-panel: #10131a;
-  --cb-amber: #f0a05a;
-  --cb-amber-deep: #d9843a;
-  --cb-focus: #5b9fd4;
-  --background: var(--cb-void);
+  /* Industrial Clarity — mist / signal */
+  --cb-mist: #eef3f6;
+  --cb-mist-deep: #e2eaef;
+  --cb-ink: #0c1419;
+  --cb-muted: #5a6b76;
+  --cb-line: #c5d2db;
+  --cb-panel: #f7fafc;
+  --cb-signal: #0f766e;
+  --cb-signal-bright: #5eb8c9;
+  --cb-signal-deep: #0a5c56;
+  --cb-focus: #0f766e;
+  --cb-void: #0c1419;
+  --cb-on-dark: #f3f7f9;
+  --cb-on-dark-muted: #9aafb8;
+  --background: var(--cb-mist);
   --foreground: var(--cb-ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-void: var(--cb-void);
+  --color-mist: var(--cb-mist);
+  --color-mist-deep: var(--cb-mist-deep);
   --color-ink: var(--cb-ink);
   --color-muted: var(--cb-muted);
   --color-line: var(--cb-line);
   --color-panel: var(--cb-panel);
-  --color-amber: var(--cb-amber);
-  --color-amber-deep: var(--cb-amber-deep);
+  --color-signal: var(--cb-signal);
+  --color-signal-bright: var(--cb-signal-bright);
+  --color-signal-deep: var(--cb-signal-deep);
   --color-focus: var(--cb-focus);
-  --font-display: var(--font-outfit);
-  --font-sans: var(--font-dm-sans);
+  --color-void: var(--cb-void);
+  --color-on-dark: var(--cb-on-dark);
+  --color-on-dark-muted: var(--cb-on-dark-muted);
+  --font-display: var(--font-syne);
+  --font-sans: var(--font-figtree);
   --font-mono: var(--font-jetbrains);
 }
 
@@ -38,15 +49,19 @@ html {
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-dm-sans), ui-sans-serif, sans-serif;
+  font-family: var(--font-figtree), ui-sans-serif, sans-serif;
   text-rendering: optimizeLegibility;
+  background:
+    radial-gradient(1100px 520px at 8% -8%, rgba(94, 184, 201, 0.14), transparent 58%),
+    radial-gradient(900px 480px at 92% 12%, rgba(15, 118, 110, 0.09), transparent 55%),
+    radial-gradient(700px 400px at 50% 100%, rgba(15, 118, 110, 0.05), transparent 50%),
+    var(--cb-mist);
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--cb-amber) 40%, black);
-  color: white;
+  background: color-mix(in oklab, var(--cb-signal) 35%, white);
+  color: var(--cb-ink);
 }
 
 :focus-visible {
@@ -64,8 +79,8 @@ body {
   top: 0;
   z-index: 100;
   transform: translateY(-120%);
-  background: var(--cb-amber);
-  color: #0a0a0a;
+  background: var(--cb-signal);
+  color: white;
   padding: 0.625rem 1rem;
   font-size: 0.875rem;
   font-weight: 700;
@@ -79,24 +94,62 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-outfit), ui-sans-serif, sans-serif;
+  font-family: var(--font-syne), ui-sans-serif, sans-serif;
 }
 
 .video-veil {
   background:
-    linear-gradient(90deg, rgba(7, 8, 12, 0.88) 0%, rgba(7, 8, 12, 0.45) 48%, rgba(7, 8, 12, 0.2) 100%),
-    linear-gradient(0deg, rgba(7, 8, 12, 0.92) 0%, rgba(7, 8, 12, 0.35) 42%, rgba(7, 8, 12, 0.55) 100%);
+    linear-gradient(
+      105deg,
+      rgba(12, 20, 25, 0.88) 0%,
+      rgba(12, 20, 25, 0.55) 42%,
+      rgba(12, 20, 25, 0.22) 72%,
+      rgba(12, 20, 25, 0.35) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(12, 20, 25, 0.92) 0%,
+      rgba(12, 20, 25, 0.28) 48%,
+      rgba(12, 20, 25, 0.5) 100%
+    );
+}
+
+.video-veil::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 28%;
+  background: linear-gradient(
+    0deg,
+    var(--cb-mist) 0%,
+    rgba(238, 243, 246, 0.55) 42%,
+    transparent 100%
+  );
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
   .video-veil {
     background:
-      linear-gradient(180deg, rgba(7, 8, 12, 0.5) 0%, rgba(7, 8, 12, 0.72) 40%, rgba(7, 8, 12, 0.95) 100%);
+      linear-gradient(
+        180deg,
+        rgba(12, 20, 25, 0.45) 0%,
+        rgba(12, 20, 25, 0.62) 38%,
+        rgba(12, 20, 25, 0.88) 100%
+      );
   }
 }
 
 .progress-bar {
   transform-origin: 0% 50%;
+}
+
+.mist-grid {
+  background-image:
+    linear-gradient(rgba(12, 20, 25, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12, 20, 25, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, black 0%, transparent 90%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -105,7 +158,10 @@ body {
   }
 
   .video-veil {
-    background:
-      linear-gradient(180deg, rgba(7, 8, 12, 0.55) 0%, rgba(7, 8, 12, 0.88) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(12, 20, 25, 0.55) 0%,
+      rgba(12, 20, 25, 0.85) 100%
+    );
   }
 }

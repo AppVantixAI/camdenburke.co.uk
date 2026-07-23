@@ -20,7 +20,7 @@ export function ScrollProgress() {
 
   return (
     <motion.div
-      className="progress-bar fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-amber shadow-[0_0_18px_rgba(240,160,90,0.45)]"
+      className="progress-bar fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-signal"
       style={{ scaleX }}
       aria-hidden
     />

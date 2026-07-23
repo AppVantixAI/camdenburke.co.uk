@@ -19,7 +19,7 @@ Personal CEO hub with three clear conversion paths:
 
 Primary CTA: reach out. Paths live on `#paths` early in the page.
 
-Design: AppVantix **Industrial Clarity** (Syne + Figtree, mist/signal palette).
+Design: AppVantix **Industrial Clarity** — Syne + Figtree, mist/signal palette (`#eef3f6` / `#0f766e`), cinematic hero into light editorial body.
 
 ## Develop
 

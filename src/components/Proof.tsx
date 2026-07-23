@@ -9,39 +9,31 @@ export function Proof() {
   return (
     <section
       id="proof"
-      className="border-y border-line bg-panel"
+      className="relative border-y border-line bg-panel/80"
       aria-label="Proof"
     >
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px bg-line md:grid-cols-4">
+      <div className="mist-grid pointer-events-none absolute inset-0 opacity-70" aria-hidden />
+      <div className="relative mx-auto grid max-w-6xl grid-cols-2 md:grid-cols-4">
         {proof.items.map((item, index) => (
           <motion.div
             key={item.label}
-            className="bg-panel"
-            initial={reduce ? false : { opacity: 0, y: 40 }}
+            className={`border-line ${
+              index % 2 === 1 ? "border-l" : ""
+            } ${index > 1 ? "border-t md:border-t-0" : ""} md:border-l md:first:border-l-0`}
+            initial={reduce ? false : { opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true, amount: 0.5 }}
             transition={{
-              duration: 0.8,
-              delay: index * 0.1,
+              duration: 0.7,
+              delay: index * 0.07,
               ease: [0.16, 1, 0.3, 1],
             }}
           >
-            <div className="flex flex-col items-start justify-center px-5 py-10 md:px-8 md:py-14">
-              <motion.p
-                className="font-display text-3xl font-semibold tracking-tight text-ink md:text-5xl"
-                initial={reduce ? false : { scale: 0.85 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  type: "spring",
-                  stiffness: 120,
-                  damping: 16,
-                  delay: 0.12 + index * 0.1,
-                }}
-              >
+            <div className="flex flex-col items-start justify-center px-5 py-9 md:px-8 md:py-12">
+              <p className="font-display text-2xl font-bold tracking-tight text-ink md:text-4xl">
                 {item.value}
-              </motion.p>
-              <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+              </p>
+              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
                 {item.label}
               </p>
             </div>

@@ -1,10 +1,11 @@
+import { Close } from "@/components/Close";
 import { Constellation } from "@/components/Constellation";
 import { Credentials } from "@/components/Credentials";
+import { Creed } from "@/components/Creed";
 import { Hero } from "@/components/Hero";
 import { Letter } from "@/components/Letter";
 import { Offer } from "@/components/Offer";
 import { Proof } from "@/components/Proof";
-import { VideoReel } from "@/components/VideoReel";
 
 export default function HomePage() {
   return (
@@ -13,9 +14,10 @@ export default function HomePage() {
       <Proof />
       <Offer />
       <Letter />
+      <Creed />
       <Constellation />
       <Credentials />
-      <VideoReel />
+      <Close />
     </div>
   );
 }

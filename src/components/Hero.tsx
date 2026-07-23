@@ -26,12 +26,10 @@ export function Hero() {
     restDelta: 0.001,
   });
 
-  const videoY = useTransform(smooth, [0, 1], ["0%", "32%"]);
-  const videoScale = useTransform(smooth, [0, 1], [1.08, 1.28]);
-  const contentY = useTransform(smooth, [0, 1], ["0%", "22%"]);
-  const opacity = useTransform(smooth, [0, 0.55, 0.9], [1, 0.35, 0]);
-  const titleTrack = useTransform(smooth, [0, 0.7], [0, 8]);
-  const titleTracking = useTransform(titleTrack, (v) => `${v / 100}em`);
+  const videoY = useTransform(smooth, [0, 1], ["0%", "28%"]);
+  const videoScale = useTransform(smooth, [0, 1], [1.06, 1.22]);
+  const contentY = useTransform(smooth, [0, 1], ["0%", "18%"]);
+  const opacity = useTransform(smooth, [0, 0.55, 0.9], [1, 0.4, 0]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -50,7 +48,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate min-h-[115svh] overflow-hidden"
+      className="relative isolate min-h-[108svh] overflow-hidden"
     >
       <motion.div
         className="absolute inset-0"
@@ -84,58 +82,57 @@ export function Hero() {
       <div className="video-veil absolute inset-0" aria-hidden />
 
       <motion.div
-        className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-24 pt-32 md:px-8 md:pb-28"
+        className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-28 pt-28 md:px-8 md:pb-32"
         style={reduce ? undefined : { y: contentY, opacity }}
       >
-        <div className="max-w-4xl">
+        <div className="max-w-3xl">
           <motion.p
-            className="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/80"
-            initial={reduce ? false : { opacity: 0, y: 20 }}
+            className="font-mono text-[11px] uppercase tracking-[0.28em] text-on-dark/75"
+            initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.eyebrow}
           </motion.p>
           <motion.h1
-            className="mt-5 font-display text-4xl font-semibold uppercase leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-7xl lg:text-8xl"
-            style={reduce ? undefined : { letterSpacing: titleTracking }}
-            initial={reduce ? false : { opacity: 0, y: 40 }}
+            className="mt-4 font-display text-5xl font-bold leading-[0.95] tracking-tight text-on-dark sm:text-6xl md:text-7xl lg:text-[5.75rem]"
+            initial={reduce ? false : { opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.95, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.name}
           </motion.h1>
           <motion.p
-            className="mt-5 max-w-3xl font-display text-xl font-medium leading-snug tracking-tight text-ink sm:text-2xl md:text-3xl md:leading-snug"
-            initial={reduce ? false : { opacity: 0, y: 28 }}
+            className="mt-6 max-w-2xl font-display text-xl font-semibold leading-snug tracking-tight text-on-dark sm:text-2xl md:text-[1.75rem]"
+            initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.85, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.headline}
           </motion.p>
           <motion.p
-            className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg"
-            initial={reduce ? false : { opacity: 0, y: 28 }}
+            className="mt-5 max-w-lg text-base leading-relaxed text-on-dark-muted md:text-lg"
+            initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.85, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.subhead}
           </motion.p>
           <motion.div
             className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
-            initial={reduce ? false : { opacity: 0, y: 28 }}
+            initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.52, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.85, delay: 0.52, ease: [0.16, 1, 0.3, 1] }}
           >
             <a
               href={site.primaryCtaHref}
-              className="inline-flex items-center justify-center bg-amber px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-void transition hover:bg-amber-deep"
+              className="inline-flex items-center justify-center bg-signal px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-signal-deep"
             >
               {site.primaryCta}
             </a>
             <a
               href={site.secondaryCtaHref}
-              className="inline-flex items-center justify-center border border-ink/45 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-ink transition hover:border-ink"
+              className="inline-flex items-center justify-center border border-on-dark/40 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-on-dark transition hover:border-on-dark hover:bg-on-dark/5"
             >
               {site.secondaryCta}
             </a>
@@ -144,13 +141,16 @@ export function Hero() {
       </motion.div>
 
       <motion.a
-        href="#proof"
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 font-mono text-[10px] uppercase tracking-[0.28em] text-muted transition hover:text-ink"
-        animate={reduce ? undefined : { y: [0, 8, 0] }}
-        transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+        href="#paths"
+        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 font-mono text-[10px] uppercase tracking-[0.28em] text-on-dark-muted transition hover:text-on-dark"
+        animate={reduce ? undefined : { y: [0, 6, 0] }}
+        transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
       >
         <span>Scroll</span>
-        <span className="h-8 w-px bg-gradient-to-b from-ink/50 to-transparent" aria-hidden />
+        <span
+          className="h-8 w-px bg-gradient-to-b from-on-dark/45 to-transparent"
+          aria-hidden
+        />
       </motion.a>
     </section>
   );
