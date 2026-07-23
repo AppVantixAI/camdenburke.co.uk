@@ -13,11 +13,11 @@ Personal brand site for Camden Burke.
 
 ## Voice
 
-**Hormozi-direct × SpaceX-edge.** Short sentences. Proof over adjectives. Mission framing. Declare — don't plead. No memoir fluff.
+**Harvey Specter cadence** — composed, college-educated, decisive. Full sentences. Wit without gym-bro telegraph. Proof over volume. Creed keeps its edge; the rest of the site speaks like someone who already closed.
 
 Conversion: **founder trust → confidence → email**. Demo is tertiary (after trust).
 
-Hero: **Camden Burke** → creed punchline → telemetry subhead → Say hello.
+Hero: **Camden Burke** → polished creed line → one composed subhead → Get in touch.
 
 ## Develop
 

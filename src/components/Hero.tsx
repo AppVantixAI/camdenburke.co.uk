@@ -149,7 +149,7 @@ export function Hero() {
         animate={reduce ? undefined : { y: [0, 8, 0] }}
         transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
       >
-        <span>Enter</span>
+        <span>Scroll</span>
         <span className="h-8 w-px bg-gradient-to-b from-ink/50 to-transparent" aria-hidden />
       </motion.a>
     </section>
