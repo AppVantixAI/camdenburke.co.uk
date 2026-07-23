@@ -42,10 +42,10 @@ export default function NotesIndexPage() {
       </ul>
 
       <Link
-        href="/#notes"
+        href="/"
         className="mt-12 inline-flex font-mono text-[11px] uppercase tracking-[0.2em] text-muted transition hover:text-ink"
       >
-        ← Back to site
+        ← Back
       </Link>
     </div>
   );

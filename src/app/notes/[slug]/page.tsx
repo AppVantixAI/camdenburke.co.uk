@@ -62,14 +62,14 @@ export default async function NotePage({ params }: PageProps) {
           href="/notes"
           className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted transition hover:text-ink"
         >
-          ← All notes
+          ← Notes
         </Link>
-        <Link
-          href="/#offer"
+        <a
+          href={site.emailHref + "?subject=Hello%20Camden"}
           className="font-mono text-[11px] uppercase tracking-[0.2em] text-amber transition hover:text-ink"
         >
           Say hello →
-        </Link>
+        </a>
       </div>
     </article>
   );

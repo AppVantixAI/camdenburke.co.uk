@@ -17,11 +17,11 @@ Personal brand site for Camden Burke.
 
 This is a **trust site**, not a product funnel. Visitors should leave knowing who Camden is, what he stands for, and why that warrants confidence.
 
-Primary path: presence → record → companies → principles → story → notes → hello.
+Primary path: principles → companies → hello.
 
-Hero: name + role identify you; the H1 answers who/what. Creed lives in Principles.
+Hero: name + role; H1 answers who/what. Restraint is the point — less text, more confidence.
 
-Optional founder photo: add `public/portrait.jpg` and set `site.portraitSrc` in `src/lib/content.ts`.
+Notes live at `/notes` (not on the homepage). Optional founder photo: `public/portrait.jpg` + `site.portraitSrc`.
 
 ## Develop
 
