@@ -113,6 +113,14 @@ export function Hero() {
           >
             {site.subhead}
           </motion.p>
+          <motion.p
+            className="mt-5 font-mono text-[11px] uppercase tracking-[0.2em] text-amber"
+            initial={false}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.45 }}
+          >
+            {site.forLine}
+          </motion.p>
           <motion.div
             className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
             initial={false}
@@ -132,6 +140,14 @@ export function Hero() {
               {site.secondaryCta}
             </a>
           </motion.div>
+          <motion.p
+            className="mt-12 font-display text-xl font-medium text-ink md:text-2xl"
+            initial={false}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.7 }}
+          >
+            {site.name}
+          </motion.p>
         </div>
       </motion.div>
 

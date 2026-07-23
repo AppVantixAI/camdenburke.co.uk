@@ -5,6 +5,7 @@ import { Hero } from "@/components/Hero";
 import { Letter } from "@/components/Letter";
 import { Offer } from "@/components/Offer";
 import { Proof } from "@/components/Proof";
+import { VideoReel } from "@/components/VideoReel";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Creed />
       <Credentials />
       <Constellation />
+      <VideoReel />
       <Offer />
     </div>
   );
