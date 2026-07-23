@@ -1,4 +1,4 @@
-/** Personal founder site — values, confidence, competence. Trust first. Less proves more. */
+/** Personal founder site — Specter composure × Hormozi clarity. Less proves more. */
 
 export const site = {
   name: "Camden Burke",
@@ -16,23 +16,25 @@ export const site = {
   location: "Knoxville · Remote worldwide",
   metaTitle: "Camden Burke — CEO & Founder · AppVantix",
   description:
-    "Camden Burke is CEO & Founder of AppVantix. Artificial intelligence and cybersecurity. Say hello.",
-  /** Optional: drop a photo at /public/portrait.jpg and set this path. */
-  portraitSrc: "",
+    "Camden Burke. CEO & Founder of AppVantix. I build software companies with AI and security in the foundation. Say hello.",
+  /** Founder portrait in /public */
+  portraitSrc: "/portrait.jpg",
   initials: "CB",
   eyebrow: "CEO & Founder · AppVantix",
-  headline: "I build software companies with AI and security in the foundation.",
-  subhead: "AppVantix. FormForge. I answer for the work.",
+  headline: "I don't reinvent the wheel. I build the car.",
+  subhead:
+    "Software companies. AI in the engine. Security in the foundation. My name's on the work.",
   creedLine: "I don't reinvent the wheel. I build the car.",
   primaryCta: "Say hello",
   primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
-  secondaryCta: "Companies",
+  secondaryCta: "The companies",
   secondaryCtaHref: "#constellation",
   videoSrc: "/hero-reel.mp4",
   videoPoster: "/hero-poster.jpg",
 } as const;
 
 export const nav = [
+  { href: "#presence", label: "Presence" },
   { href: "#creed", label: "Principles" },
   { href: "#constellation", label: "Companies" },
   { href: "#offer", label: "Contact" },
@@ -40,51 +42,51 @@ export const nav = [
 
 export const proof = {
   items: [
-    { value: "12", label: "Started coding" },
-    { value: "Sec+", label: "CompTIA certified" },
-    { value: "ASU", label: "B.S., 2024" },
-    { value: "CEO", label: "AppVantix" },
+    { value: "12", label: "Started here" },
+    { value: "Sec+", label: "On paper" },
+    { value: "ASU", label: "Degree, 2024" },
+    { value: "CEO", label: "Title I earned" },
   ],
 } as const;
 
 export const creed = {
   eyebrow: "Principles",
-  title: "What I stand on.",
+  title: "How I play.",
   lines: [
-    "Don't reinvent the wheel. Just build the damn car.",
-    "See a need, fill a need.",
-    "Winners don't make excuses when the other side plays the game.",
+    "Don't reinvent the wheel. Build the damn car.",
+    "See a need. Fill it.",
+    "No excuses when the other side plays the game.",
   ],
 } as const;
 
 export const constellation = {
   eyebrow: "Companies",
-  title: "What I lead.",
+  title: "Where I put points on the board.",
   items: [
     {
       name: "AppVantix",
       role: "CEO & Founder",
-      body: "Software businesses with AI and security built in.",
+      body: "I founded it. I run it. We build software businesses — AI and security included, not bolted on.",
       href: "https://appvantix.com",
-      cta: "AppVantix",
+      cta: "See AppVantix",
       image: "/hero-formforge.jpg",
     },
     {
       name: "FormForge",
       role: "Flagship",
-      body: "Rules to STEP and STL for manufacturers.",
+      body: "The offer: rules in, STEP and STL out. Manufacturers stop waiting on one-off CAD.",
       href: "https://appvantix.com/formforge",
-      cta: "FormForge",
+      cta: "See FormForge",
       image: "/product-rules.jpg",
     },
   ],
 } as const;
 
-/** Kept off the homepage — available at /notes for those who want them. */
+/** Off homepage — /notes only. */
 export const notes = {
   eyebrow: "Notes",
   title: "Notes.",
-  body: "A few short pieces.",
+  body: "Short. No fluff. Read what you need.",
   indexHref: "/notes",
   indexCta: "All notes",
   items: [
@@ -92,33 +94,33 @@ export const notes = {
       slug: "build-the-car",
       title: "Don't reinvent the wheel. Build the car.",
       date: "2026-07",
-      excerpt: "Reuse what works. Put your energy into the machine that moves.",
+      excerpt: "Parts aren't the product. The machine that moves is.",
       body: [
-        "Most teams waste years polishing parts that already exist.",
-        "I don't reinvent the wheel. I assemble the car — the product, the company, the system that gets someone from need to outcome.",
-        "Know what to borrow, what to buy, and what only you can build. The car is the point.",
+        "Most people polish parts that already exist and call it progress.",
+        "I borrow what works. I buy what I shouldn't build. I build what only I can. Then I assemble the car.",
+        "The car is the point. Everything else is inventory.",
       ],
     },
     {
       slug: "security-in-the-foundation",
-      title: "Security belongs in the foundation.",
+      title: "Security isn't a feature. It's the foundation.",
       date: "2026-07",
-      excerpt: "In B2B, identity and customer data aren't optional.",
+      excerpt: "Bolt it on later and you don't have a product. You have a liability.",
       body: [
-        "You can bolt security on later. You can also lose the trust that makes B2B possible.",
-        "I treat security as architecture, not a checklist after launch.",
-        "If you're building with AI, the surface area grows. Models with hands need boundaries.",
+        "You can ship fast and fix trust later. Or you can keep the customers who actually pay.",
+        "I treat security as architecture. CompTIA Security+ is on paper because the work demands it — not because a badge looks good in a bio.",
+        "AI without boundaries isn't leverage. It's negligence with a demo.",
       ],
     },
     {
       slug: "models-with-hands",
       title: "Models with hands.",
       date: "2026-07",
-      excerpt: "Plain language in. Real work out.",
+      excerpt: "Writing is cute. Doing is the business.",
       body: [
-        "When AI became useful, the question stopped being “can it write?” and became “can it do?”",
-        "MCPs gave models hands. That is leverage — if you keep judgment and security in the loop.",
-        "I don't chase demos. I chase work that ships and holds up when something breaks.",
+        "When AI got useful, the question stopped being “can it write?” It became “can it do the work?”",
+        "MCPs gave models hands. Tools. Systems. Real output. That's the game.",
+        "I don't collect demos. I ship work that still stands when something breaks.",
       ],
     },
   ],
@@ -126,8 +128,8 @@ export const notes = {
 
 export const offer = {
   eyebrow: "Contact",
-  title: "Say hello.",
-  body: "I'll reply with a clear next step — or an honest no.",
+  title: "You know how to find me.",
+  body: "Email me. I'll give you a yes, a no, or a next step. No theater.",
   primaryCta: "Email me",
   primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
   secondaryCta: "LinkedIn",

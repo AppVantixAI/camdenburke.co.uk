@@ -13,15 +13,16 @@ Personal brand site for Camden Burke.
 
 ## Voice
 
-**Harvey Specter cadence** — composed, college-educated, decisive.
+**Harvey Specter × Alex Hormozi**
 
-This is a **trust site**, not a product funnel. Visitors should leave knowing who Camden is, what he stands for, and why that warrants confidence.
+- Specter: composed, decisive, edge without noise. Full sentences. Never needy.
+- Hormozi: outcome-first, no fluff, clear offers, scoreboard language.
+
+This is a **trust site**, not a product funnel. Less text. More confidence.
 
 Primary path: principles → companies → hello.
 
-Hero: name + role; H1 answers who/what. Restraint is the point — less text, more confidence.
-
-Notes live at `/notes` (not on the homepage). Optional founder photo: `public/portrait.jpg` + `site.portraitSrc`.
+Hero: name + role; H1 is the line. Creed stays sharp. Notes live at `/notes`.
 
 ## Develop
 
@@ -30,7 +31,7 @@ npm install
 npm run dev
 ```
 
-Edit copy in `src/lib/content.ts`. Notes live under `/notes`.
+Edit copy in `src/lib/content.ts`.
 
 ## Deploy
 
