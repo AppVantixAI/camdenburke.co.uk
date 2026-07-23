@@ -14,13 +14,13 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/camdenburkedev",
   github: "https://github.com/cburke12",
   location: "Knoxville · Remote worldwide",
-  metaTitle: "Camden Burke — CEO & Founder",
+  metaTitle: "Camden Burke — CEO & Founder · AI & Security",
   description:
-    "Camden Burke is CEO & Founder of AppVantix — ASU B.S. Graphic Information Technology (Full Stack), CompTIA Security+, cybersecurity and AI-focused technical founder building FormForge.",
-  eyebrow: "CEO & Founder · AppVantix",
-  headline: "Do you want software that ships?",
+    "Camden Burke is CEO & Founder of AppVantix — AI and cybersecurity focused. ASU B.S. Graphic Information Technology (Full Stack), CompTIA Security+. Leads product companies including FormForge.",
+  eyebrow: "CEO & Founder · AI & Security",
+  headline: "I lead companies that ship.",
   subhead:
-    "I build and operate product companies. Full-stack degree. Security+. Cybersecurity and AI as the operating lens. The demo is the argument.",
+    "Not a CAD desk. Not a slide deck. I am the founder accountable for strategy, security, and AI-native product companies — starting with AppVantix.",
   primaryCta: "I'm ready",
   primaryCtaHref: "mailto:hello@appvantix.com?subject=Ready%20to%20talk",
   secondaryCta: "Watch the reel",
@@ -39,23 +39,23 @@ export const nav = [
 
 export const proof = {
   items: [
-    { value: "ASU", label: "Full-stack degree" },
+    { value: "CEO", label: "Founder-led" },
+    { value: "AI", label: "+ Security focus" },
     { value: "Sec+", label: "CompTIA certified" },
-    { value: "Cyber", label: "+ AI focused" },
-    { value: "2", label: "Companies led" },
+    { value: "ASU", label: "Full-stack degree" },
   ],
 } as const;
 
 export const letter = {
   eyebrow: "Day 1",
-  title: "A short letter from the founder.",
+  title: "A short letter from the CEO.",
   paragraphs: [
-    "I started AppVantix to invent and operate software businesses — not to sell decks. If I cannot open the hood, I do not claim the product.",
-    "FormForge is the flagship: configure-to-order software for custom manufacturers. Rules, geometry, structured quotes. It has to work on the shop floor, not only in a pitch room.",
-    "I hold a B.S. in Graphic Information Technology (Full Stack Web Development) from Arizona State University, completed 2024, plus CompTIA Security+. My work is cybersecurity and AI focused — secure systems, trustworthy data, and products that use intelligence without theater.",
-    "Every quarter I treat like Day 1. Customer who has a job to finish. Clear writing. Long-term bets. Proof before posture.",
+    "I am CEO and Founder of AppVantix. My job is leadership — vision, capital allocation, product direction, and the security posture of what we ship. I am not a CAD modeler. I hire and lead the people who build.",
+    "AppVantix invents and operates software businesses. FormForge is a flagship product company under that umbrella — software for manufacturers — led from the executive seat, not from a drafting table.",
+    "I hold a B.S. in Graphic Information Technology (Full Stack) from Arizona State University (2024) and CompTIA Security+. Cybersecurity and AI are how I evaluate risk, architecture, and leverage — not hobbies on a résumé.",
+    "Day 1 every quarter: clear writing, long-term bets, proof before posture. Customers and operators get a founder who owns the outcome.",
   ],
-  signoff: "— Camden Burke",
+  signoff: "— Camden Burke, CEO & Founder",
 } as const;
 
 export const credentials = {
@@ -63,10 +63,22 @@ export const credentials = {
   title: "Proof under the title.",
   items: [
     {
+      label: "Role",
+      title: "CEO & Founder",
+      meta: "AppVantix LLC",
+      body: "Accountable for strategy, product portfolio, and how the companies under AppVantix operate.",
+    },
+    {
+      label: "Focus",
+      title: "AI & Cybersecurity",
+      meta: "Operating lens",
+      body: "Security-first systems and AI applied where it creates real leverage — not theater.",
+    },
+    {
       label: "Education",
       title: "B.S. Graphic Information Technology",
       meta: "Full Stack Web Development · Arizona State University · Completed 2024",
-      body: "UX, visual systems, and shipping interfaces people can finish a job in.",
+      body: "Full-stack product craft as a foundation for leading technical companies.",
     },
     {
       label: "Certification",
@@ -74,53 +86,47 @@ export const credentials = {
       meta: "SY0-701 · Valid through March 2029",
       body: "Identity, access, and trustworthy handling of customer data — non-negotiable for B2B software.",
     },
-    {
-      label: "Focus",
-      title: "Cybersecurity & AI",
-      meta: "How I build and operate",
-      body: "Secure-by-default product work and AI applied where it creates real leverage — not slideware.",
-    },
   ],
 } as const;
 
 export const constellation = {
   eyebrow: "Companies",
-  title: "The constellation.",
+  title: "What I lead.",
   items: [
     {
       name: "AppVantix",
-      role: "Parent company",
-      body: "Build and operate SaaS businesses. One founder accountable for the stack.",
+      role: "CEO & Founder",
+      body: "The company I run. We build and operate SaaS businesses — AI and security in the operating model.",
       href: "https://appvantix.com",
-      cta: "Enter AppVantix",
+      cta: "Visit AppVantix",
       image: "/hero-formforge.jpg",
     },
     {
       name: "FormForge",
-      role: "Flagship product",
-      body: "Configure-to-order for custom manufacturers — rules, geometry, structured quotes.",
+      role: "Flagship product company",
+      body: "A product I lead as CEO — configure-to-order software for manufacturers. The team ships the CAD and rules; I own the company.",
       href: "https://appvantix.com/formforge",
-      cta: "Enter FormForge",
+      cta: "Visit FormForge",
       image: "/product-rules.jpg",
     },
   ],
 } as const;
 
 export const reel = {
-  eyebrow: "Product reel",
-  title: "Shop floor to software.",
-  body: "Fabrication, automation, and FormForge product surfaces — one continuous loop.",
+  eyebrow: "Reel",
+  title: "Companies in motion.",
+  body: "The industries we serve and the products we operate — under founder leadership, not as a modeling portfolio.",
 } as const;
 
 export const offer = {
   eyebrow: "Next step",
-  title: "Ready to talk?",
-  body: "Partners, press, operators — write me. Want the product? Take the demo. Want the founder? Start here.",
+  title: "Talk to the founder.",
+  body: "Partners, press, operators — write me. Want a product demo? Book it. Want the CEO? Start here.",
   primaryCta: "Email Camden",
   primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
   secondaryCta: "LinkedIn",
   secondaryCtaHref: "https://www.linkedin.com/in/camdenburkedev",
-  tertiaryCta: "Book the demo",
+  tertiaryCta: "Product demo",
   tertiaryCtaHref: "https://appvantix.com/demo",
 } as const;
 
@@ -147,7 +153,13 @@ export const personSchema = {
       credentialCategory: "certification",
     },
   ],
-  knowsAbout: ["Cybersecurity", "Artificial Intelligence", "SaaS", "Full Stack Web Development"],
+  knowsAbout: [
+    "Cybersecurity",
+    "Artificial Intelligence",
+    "SaaS",
+    "Executive Leadership",
+    "Full Stack Web Development",
+  ],
   worksFor: {
     "@type": "Organization",
     name: site.legal,
