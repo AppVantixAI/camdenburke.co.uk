@@ -13,9 +13,9 @@ export function Hero() {
     target: sectionRef,
     offset: ["start start", "end start"],
   });
-  const videoY = useTransform(scrollYProgress, [0, 1], ["0%", "24%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0.15]);
+  const videoY = useTransform(scrollYProgress, [0, 1], ["0%", "28%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "14%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -68,12 +68,12 @@ export function Hero() {
       <div className="video-veil absolute inset-0" aria-hidden />
 
       <motion.div
-        className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-20 pt-32 md:justify-center md:px-8 md:pb-28"
+        className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-24 pt-32 md:justify-end md:px-8 md:pb-28"
         style={reduce ? undefined : { y: contentY, opacity }}
       >
-        <div className="max-w-2xl">
+        <div className="max-w-4xl">
           <motion.p
-            className="font-mono text-xs uppercase tracking-[0.22em] text-amber"
+            className="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/80"
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -81,60 +81,49 @@ export function Hero() {
             {site.eyebrow}
           </motion.p>
           <motion.h1
-            className="mt-4 font-display text-5xl font-semibold tracking-tight text-ink sm:text-6xl md:text-7xl"
-            initial={reduce ? false : { opacity: 0, y: 24 }}
+            className="mt-5 font-display text-4xl font-semibold uppercase leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-7xl lg:text-8xl"
+            initial={reduce ? false : { opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.18 }}
-          >
-            {site.name}
-          </motion.h1>
-          <motion.p
-            className="mt-5 max-w-xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl"
-            initial={reduce ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.28 }}
+            transition={{ duration: 0.75, delay: 0.18 }}
           >
             {site.headline}
-          </motion.p>
+          </motion.h1>
           <motion.p
-            className="mt-5 max-w-lg text-base leading-relaxed text-muted md:text-lg"
+            className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg"
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.38 }}
+            transition={{ duration: 0.7, delay: 0.32 }}
           >
             {site.subhead}
           </motion.p>
           <motion.div
-            className="mt-9 flex flex-col gap-3 sm:flex-row"
+            className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.48 }}
+            transition={{ duration: 0.7, delay: 0.42 }}
           >
             <a
               href={site.primaryCtaHref}
-              className="inline-flex items-center justify-center bg-amber px-7 py-3.5 text-base font-bold text-void transition hover:bg-amber-deep"
+              className="inline-flex items-center justify-center bg-amber px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-void transition hover:bg-amber-deep"
             >
               {site.primaryCta}
             </a>
             <a
               href={site.secondaryCtaHref}
-              className="inline-flex items-center justify-center border border-ink/25 bg-void/40 px-7 py-3.5 text-base font-semibold text-ink backdrop-blur-sm transition hover:border-ink/50"
+              className="inline-flex items-center justify-center border border-ink/45 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-ink transition hover:border-ink"
             >
               {site.secondaryCta}
             </a>
           </motion.div>
-          <p className="mt-10 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-            {site.role} · {site.company} · {site.location}
-          </p>
-          <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-amber/80">
-            Studied · Musk · Bezos · Hormozi
+          <p className="mt-12 font-display text-xl font-medium text-ink md:text-2xl">
+            {site.name}
           </p>
         </div>
       </motion.div>
 
       <a
-        href="#story"
-        className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.24em] text-muted transition hover:text-ink"
+        href="#proof"
+        className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.28em] text-muted transition hover:text-ink"
       >
         Scroll
       </a>

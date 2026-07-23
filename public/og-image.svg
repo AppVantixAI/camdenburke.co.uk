@@ -1,9 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
   <rect width="1200" height="630" fill="#07080c"/>
   <rect x="0" y="0" width="1200" height="6" fill="#f0a05a"/>
-  <text x="72" y="220" fill="#f0a05a" font-family="system-ui, sans-serif" font-size="22" letter-spacing="4" font-weight="600">TECHNICAL CEO · FOUNDER</text>
-  <text x="72" y="310" fill="#f3f5f8" font-family="system-ui, sans-serif" font-size="72" font-weight="700">Camden Burke</text>
-  <text x="72" y="380" fill="#9aa3b5" font-family="system-ui, sans-serif" font-size="28">Build. Ship. Compound.</text>
-  <text x="72" y="430" fill="#f0a05a" font-family="ui-monospace, monospace" font-size="16" letter-spacing="3">MUSK · BEZOS · HORMOZI</text>
-  <text x="72" y="540" fill="#9aa3b5" font-family="ui-monospace, monospace" font-size="18">camdenburke.co.uk</text>
+  <text x="72" y="200" fill="#9aa3b5" font-family="ui-monospace, monospace" font-size="18" letter-spacing="6">CEO &amp; FOUNDER · APPVANTIX</text>
+  <text x="72" y="320" fill="#f3f5f8" font-family="system-ui, sans-serif" font-size="64" font-weight="700">DO YOU WANT SOFTWARE</text>
+  <text x="72" y="400" fill="#f3f5f8" font-family="system-ui, sans-serif" font-size="64" font-weight="700">THAT SHIPS?</text>
+  <text x="72" y="540" fill="#f0a05a" font-family="system-ui, sans-serif" font-size="24" font-weight="600">Camden Burke</text>
 </svg>

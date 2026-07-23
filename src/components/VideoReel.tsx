@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { site } from "@/lib/content";
+import { reel, site } from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
 
 export function VideoReel() {
@@ -15,12 +15,7 @@ export function VideoReel() {
   const scale = useTransform(
     scrollYProgress,
     [0, 0.4, 0.6, 1],
-    reduce ? [1, 1, 1, 1] : [0.88, 1, 1, 0.92],
-  );
-  const radius = useTransform(
-    scrollYProgress,
-    [0, 0.4, 0.6, 1],
-    reduce ? [0, 0, 0, 0] : [28, 8, 8, 20],
+    reduce ? [1, 1, 1, 1] : [0.86, 1, 1, 0.92],
   );
 
   return (
@@ -28,20 +23,17 @@ export function VideoReel() {
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-amber">
-            Product reel
+            {reel.eyebrow}
           </p>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-ink md:text-4xl">
-            Demo reality. Not narrative.
+          <h2 className="mt-3 font-display text-3xl font-semibold uppercase tracking-tight text-ink md:text-5xl">
+            {reel.title}
           </h2>
-          <p className="mt-3 max-w-xl text-muted">
-            Musk energy: show the machine. A loop cut from real FormForge
-            surfaces — the argument is the product.
-          </p>
+          <p className="mt-3 max-w-xl text-muted">{reel.body}</p>
         </Reveal>
 
         <motion.div
           className="relative mt-10 aspect-video overflow-hidden border border-line bg-panel"
-          style={{ scale, borderRadius: radius }}
+          style={{ scale }}
         >
           <video
             className="h-full w-full object-cover"

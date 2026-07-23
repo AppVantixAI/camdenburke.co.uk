@@ -1,21 +1,21 @@
-import { Contact } from "@/components/Contact";
+import { Constellation } from "@/components/Constellation";
 import { Credentials } from "@/components/Credentials";
 import { Hero } from "@/components/Hero";
-import { Principles } from "@/components/Principles";
-import { Story } from "@/components/Story";
+import { Letter } from "@/components/Letter";
+import { Offer } from "@/components/Offer";
+import { Proof } from "@/components/Proof";
 import { VideoReel } from "@/components/VideoReel";
-import { Work } from "@/components/Work";
 
 export default function HomePage() {
   return (
     <div id="top">
       <Hero />
-      <Story />
-      <Principles />
+      <Proof />
+      <Letter />
       <Credentials />
-      <Work />
+      <Constellation />
       <VideoReel />
-      <Contact />
+      <Offer />
     </div>
   );
 }

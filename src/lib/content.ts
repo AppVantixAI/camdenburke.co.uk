@@ -1,4 +1,4 @@
-/** Personal CEO site — cinematic motion brand (distinct from AppVantix marketing) */
+/** Personal CEO site — SpaceX video + Hormozi proof/offer + Day-1 letter structure */
 
 export const site = {
   name: "Camden Burke",
@@ -16,78 +16,46 @@ export const site = {
   location: "Knoxville · Remote worldwide",
   metaTitle: "Camden Burke — CEO & Founder",
   description:
-    "Camden Burke is a technical CEO and founder — dual ASU degrees in Computer Science and Graphic Information Technology, CompTIA Security+, leading AppVantix and FormForge. Operates by principles studied from Elon Musk, Jeff Bezos, and Alex Hormozi.",
-  eyebrow: "Technical CEO · Founder",
-  headline: "Build. Ship. Compound.",
+    "Camden Burke is CEO & Founder of AppVantix — dual ASU degrees in Computer Science and Graphic Information Technology, CompTIA Security+, building FormForge for configure-to-order manufacturers.",
+  eyebrow: "CEO & Founder · AppVantix",
+  headline: "Do you want software that ships?",
   subhead:
-    "I lead like an engineer and sell like an operator. First principles. Day 1. Offers so clear people say yes. The product is the proof.",
-  primaryCta: "Talk to me",
-  primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
-  secondaryCta: "See the product",
+    "I build and operate product companies. Dual ASU degrees. Security+. The demo is the argument.",
+  primaryCta: "I'm ready",
+  primaryCtaHref: "mailto:hello@appvantix.com?subject=Ready%20to%20talk",
+  secondaryCta: "Watch the reel",
   secondaryCtaHref: "#reel",
   videoSrc: "/hero-reel.mp4",
   videoPoster: "/hero-formforge.jpg",
 } as const;
 
 export const nav = [
-  { href: "#story", label: "Story" },
-  { href: "#principles", label: "Principles" },
+  { href: "#letter", label: "Letter" },
   { href: "#credentials", label: "Credentials" },
-  { href: "#work", label: "Work" },
+  { href: "#constellation", label: "Companies" },
   { href: "#reel", label: "Reel" },
-  { href: "#contact", label: "Contact" },
+  { href: "#offer", label: "Contact" },
 ] as const;
 
-export const story = {
-  eyebrow: "Story",
-  title: "Founder first. Operator always.",
-  beats: [
-    {
-      title: "First principles over theater",
-      body: "Titles are cheap. If I cannot open the hood, I do not claim the product. Engineering truth beats slide decks.",
-    },
-    {
-      title: "Day 1 is a discipline",
-      body: "Customer obsession. Long-term bets. Clear writing. I treat every quarter like the company is still being invented.",
-    },
-    {
-      title: "Value before vanity",
-      body: "Make the offer undeniable. Stack proof. Reduce friction. Results over reputation — then reputation follows.",
-    },
+export const proof = {
+  items: [
+    { value: "2", label: "ASU degrees" },
+    { value: "Sec+", label: "CompTIA certified" },
+    { value: "2", label: "Companies led" },
+    { value: "Remote", label: "Worldwide" },
   ],
 } as const;
 
-/** Explicit references to operators Camden studies — not peer claims */
-export const principles = {
-  eyebrow: "Principles",
-  title: "I study the greats. Then I execute.",
-  lead: "Not fan fiction. Operating systems. Three builders I return to when the work gets hard.",
-  items: [
-    {
-      name: "Elon Musk",
-      lens: "First principles · Ship the machine",
-      quote:
-        "Question every requirement. Build the product. Demo reality, not narrative.",
-      apply:
-        "I stay technical as CEO. FormForge has to work in a shop — not just in a pitch. If it is not shippable, it is not strategy.",
-    },
-    {
-      name: "Jeff Bezos",
-      lens: "Day 1 · Customer obsession",
-      quote:
-        "Protect the long-term. Write clearly. Stay a Day 1 company even as you scale.",
-      apply:
-        "AppVantix exists to invent and operate software businesses. I optimize for the customer who has to finish a job — not for looking busy.",
-    },
-    {
-      name: "Alex Hormozi",
-      lens: "Value equation · Offer clarity",
-      quote:
-        "Increase dream outcome and perceived likelihood. Decrease time delay and effort. Make yes the easy answer.",
-      apply:
-        "I sell outcomes, not vibes. Clear offer. Hard proof. Fast path to a demo. No theater that does not convert.",
-    },
+export const letter = {
+  eyebrow: "Day 1",
+  title: "A short letter from the founder.",
+  paragraphs: [
+    "I started AppVantix to invent and operate software businesses — not to sell decks. If I cannot open the hood, I do not claim the product.",
+    "FormForge is the flagship: configure-to-order software for custom manufacturers. Rules, geometry, structured quotes. It has to work on the shop floor, not only in a pitch room.",
+    "I hold dual degrees from Arizona State — Computer Science (expected Dec 2027) and Graphic Information Technology, Full Stack (completed 2024) — plus CompTIA Security+. Systems rigor, interface craft, and security as quality.",
+    "Every quarter I treat like Day 1. Customer who has a job to finish. Clear writing. Long-term bets. Proof before posture.",
   ],
+  signoff: "— Camden Burke",
 } as const;
 
 export const credentials = {
@@ -98,49 +66,55 @@ export const credentials = {
       label: "Education",
       title: "B.S. Computer Science",
       meta: "Arizona State University · Expected Dec 2027",
-      body: "Algorithms, systems, and software that has to survive contact with reality.",
+      body: "Algorithms, systems, and software that survives contact with reality.",
     },
     {
       label: "Education",
       title: "B.S. Graphic Information Technology",
       meta: "Full Stack Web Development · Completed 2024",
-      body: "UX, visual systems, and shipping interfaces people can finish a job in.",
+      body: "UX, visual systems, and interfaces people can finish a job in.",
     },
     {
       label: "Certification",
       title: "CompTIA Security+ ce",
       meta: "SY0-701 · Valid through March 2029",
-      body: "Identity, access, and trustworthy handling of customer data — non-negotiable for B2B software.",
+      body: "Identity, access, and trustworthy handling of customer data.",
     },
   ],
 } as const;
 
-export const work = {
-  eyebrow: "Work",
-  title: "Companies. Not content.",
+export const constellation = {
+  eyebrow: "Companies",
+  title: "The constellation.",
   items: [
     {
       name: "AppVantix",
-      role: "CEO & Founder",
-      body: "I build and operate SaaS businesses. Parent company. One founder accountable for the stack.",
+      role: "Parent company",
+      body: "Build and operate SaaS businesses. One founder accountable for the stack.",
       href: "https://appvantix.com",
-      cta: "Visit AppVantix",
+      cta: "Enter AppVantix",
       image: "/hero-formforge.jpg",
     },
     {
       name: "FormForge",
       role: "Flagship product",
-      body: "Configure-to-order software for custom manufacturers — rules, geometry, structured quotes. The demo is the argument.",
+      body: "Configure-to-order for custom manufacturers — rules, geometry, structured quotes.",
       href: "https://appvantix.com/formforge",
-      cta: "Explore FormForge",
+      cta: "Enter FormForge",
       image: "/product-rules.jpg",
     },
   ],
 } as const;
 
-export const contact = {
-  eyebrow: "Contact",
-  title: "If the offer is clear, say yes.",
+export const reel = {
+  eyebrow: "Product reel",
+  title: "Show the machine.",
+  body: "A loop from live FormForge surfaces. Reality over narrative.",
+} as const;
+
+export const offer = {
+  eyebrow: "Next step",
+  title: "Ready to talk?",
   body: "Partners, press, operators — write me. Want the product? Take the demo. Want the founder? Start here.",
   primaryCta: "Email Camden",
   primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
