@@ -16,8 +16,11 @@ export const site = {
   location: "Knoxville · Remote worldwide",
   metaTitle: "Camden Burke — CEO & Founder, AppVantix",
   description:
-    "Camden Burke is CEO & Founder of AppVantix. Coding since twelve. Reach out for work, explore AppVantix, or see FormForge — configure-to-order for manufacturers.",
+    "Camden Burke is CEO & Founder of AppVantix — AI and cybersecurity SaaS. Reach out for work, explore AppVantix, or see FormForge configure-to-order for manufacturers.",
+  ogImage: "/og-image.png",
+  ogImageAlt: "Camden Burke — CEO & Founder of AppVantix",
   eyebrow: "CEO & Founder · AppVantix",
+  /** Brand name is the hero signal; catchphrase supports underneath */
   headline: "I don't reinvent the wheel. I build the car.",
   subhead:
     "I've been coding since I was twelve. Today I lead AppVantix — AI and security in how we operate. If you want to work with me, write. Or go straight to the company and the products.",
@@ -30,8 +33,7 @@ export const site = {
 } as const;
 
 /**
- * Selected media for each surface.
- * Reserve assets stay available for UX/branding expansions.
+ * Locked media board — every public still has a job.
  */
 export const assets = {
   hero: {
@@ -43,28 +45,24 @@ export const assets = {
     appvantix: {
       src: "/hero-poster.jpg",
       alt: "Metal fabrication floor — the industries AppVantix builds software for",
-      note: "Company atmosphere: manufacturing world we serve, not a product UI.",
     },
     formforge: {
       src: "/hero-formforge.jpg",
       alt: "FormForge configure-to-order UI with live 3D pipe spool preview",
-      note: "Flagship product shot — 3D configurator is the clearest FormForge proof.",
     },
   },
-  reserve: {
-    productRules: {
+  productDepth: {
+    rules: {
       src: "/product-rules.jpg",
       alt: "FormForge rules builder with manufacturing constraint expressions",
-      note: "Engineering depth — use for secondary FormForge proof or case detail.",
     },
-    productInbox: {
+    inbox: {
       src: "/product-inbox.jpg",
       alt: "FormForge submissions inbox with quote and configuration requests",
-      note: "Ops / revenue workflow — use when showing how leads move after configure.",
     },
-    mark: { src: "/appvantix-mark.svg", note: "Wordmark / lockup for nav or footer if needed." },
-    og: { src: "/og-image.svg", note: "Open Graph share card." },
   },
+  mark: "/appvantix-mark.svg",
+  og: "/og-image.png",
 } as const;
 
 export const nav = [
@@ -212,6 +210,31 @@ export const constellation = {
   ],
 } as const;
 
+/** Secondary FormForge proof — rules engine + submissions inbox */
+export const productDepth = {
+  eyebrow: "Inside FormForge",
+  title: "Rules that protect the floor. Inbox that closes the loop.",
+  body: "Beyond the 3D preview: manufacturing constraints that block bad exports, and a submissions line that turns configs into quotes.",
+  cta: "Visit FormForge",
+  href: "https://appvantix.com/formforge",
+  items: [
+    {
+      label: "01",
+      title: "Rules builder",
+      detail: "Wall thickness, bolt clearance, export gates — expressed as constraints the shop can trust.",
+      image: assets.productDepth.rules.src,
+      imageAlt: assets.productDepth.rules.alt,
+    },
+    {
+      label: "02",
+      title: "Submissions inbox",
+      detail: "Quote and configure requests land ready for review — not lost in email threads.",
+      image: assets.productDepth.inbox.src,
+      imageAlt: assets.productDepth.inbox.alt,
+    },
+  ],
+} as const;
+
 /** Final conversion band — repeats the three doors without burying the ask */
 export const close = {
   eyebrow: "Next step",
@@ -222,40 +245,74 @@ export const close = {
   tertiaryCta: "See FormForge",
 } as const;
 
-export const personSchema = {
+/** JSON-LD graph: WebSite + Person for richer SERP / Knowledge Panel signals */
+export const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: site.name,
-  jobTitle: `${site.role}, ${site.company}`,
-  description: site.description,
-  url: site.url,
-  email: site.email,
-  sameAs: [site.linkedin, site.github, site.companyUrl],
-  alumniOf: [{ "@type": "CollegeOrUniversity", name: "Arizona State University" }],
-  hasCredential: [
+  "@graph": [
     {
-      "@type": "EducationalOccupationalCredential",
-      name: "B.S. Graphic Information Technology — Full Stack Web Development",
-      credentialCategory: "degree",
-      recognizedBy: { "@type": "CollegeOrUniversity", name: "Arizona State University" },
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      url: site.url,
+      name: site.name,
+      description: site.description,
+      inLanguage: "en-US",
+      publisher: { "@id": `${site.url}/#person` },
     },
     {
-      "@type": "EducationalOccupationalCredential",
-      name: "CompTIA Security+ ce (SY0-701)",
-      credentialCategory: "certification",
+      "@type": "Person",
+      "@id": `${site.url}/#person`,
+      name: site.name,
+      givenName: "Camden",
+      familyName: "Burke",
+      jobTitle: `${site.role}, ${site.company}`,
+      description: site.description,
+      url: site.url,
+      email: site.email,
+      image: `${site.url}${site.ogImage}`,
+      sameAs: [site.linkedin, site.github, site.companyUrl],
+      homeLocation: {
+        "@type": "Place",
+        name: "Knoxville, Tennessee",
+      },
+      alumniOf: [
+        { "@type": "CollegeOrUniversity", name: "Arizona State University" },
+      ],
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "B.S. Graphic Information Technology — Full Stack Web Development",
+          credentialCategory: "degree",
+          recognizedBy: {
+            "@type": "CollegeOrUniversity",
+            name: "Arizona State University",
+          },
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "CompTIA Security+ ce (SY0-701)",
+          credentialCategory: "certification",
+        },
+      ],
+      knowsAbout: [
+        "Cybersecurity",
+        "Artificial Intelligence",
+        "SaaS",
+        "Configure-to-order",
+        "Manufacturing software",
+        "Executive Leadership",
+        "Full Stack Web Development",
+      ],
+      worksFor: {
+        "@type": "Organization",
+        "@id": `${site.companyUrl}/#organization`,
+        name: site.legal,
+        url: site.companyUrl,
+        founder: { "@id": `${site.url}/#person` },
+      },
+      mainEntityOfPage: { "@id": `${site.url}/#website` },
     },
   ],
-  knowsAbout: [
-    "Cybersecurity",
-    "Artificial Intelligence",
-    "SaaS",
-    "Configure-to-order",
-    "Executive Leadership",
-    "Full Stack Web Development",
-  ],
-  worksFor: {
-    "@type": "Organization",
-    name: site.legal,
-    url: site.companyUrl,
-  },
 } as const;
+
+/** Alias for older imports */
+export const personSchema = jsonLd;

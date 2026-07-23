@@ -13,11 +13,13 @@ Personal CEO hub with three clear conversion paths:
 2. **AppVantix** — the company  
 3. **FormForge** — flagship product (page + demo)
 
-- **Camden Burke** — founder brand (hero-level name)
+- **Camden Burke** — founder brand (hero name + catchphrase)
 - **AppVantix** — company that builds and operates SaaS
 - **FormForge** — configure-to-order product for manufacturers
 
 Primary CTA: reach out. Paths live on `#paths` early in the page.
+
+Copy & assets: edit `src/lib/content.ts` (includes the locked media board).
 
 Design: AppVantix **Industrial Clarity** — Syne + Figtree, mist/signal palette (`#eef3f6` / `#0f766e`), cinematic hero into light editorial body.
 

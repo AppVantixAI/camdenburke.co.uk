@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SkipLink } from "@/components/SkipLink";
-import { personSchema, site } from "@/lib/content";
+import { jsonLd, site } from "@/lib/content";
 import "./globals.css";
 
 const syne = Syne({
@@ -39,10 +39,17 @@ export const metadata: Metadata = {
     "Cybersecurity",
     "CompTIA Security+",
     "FormForge",
+    "configure-to-order",
+    "manufacturing software",
     "Graphic Information Technology",
   ],
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
+  publisher: site.legal,
+  category: "technology",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: site.metaTitle,
     description: site.description,
@@ -50,17 +57,41 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: "en_US",
     type: "profile",
+    firstName: "Camden",
+    lastName: "Burke",
+    username: "camdenburke",
     images: [
-      { url: "/og-image.png", width: 1200, height: 630, alt: site.metaTitle },
+      {
+        url: site.ogImage,
+        width: 1200,
+        height: 630,
+        alt: site.ogImageAlt,
+        type: "image/png",
+      },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: site.metaTitle,
     description: site.description,
-    images: ["/og-image.png"],
+    images: [
+      {
+        url: site.ogImage,
+        alt: site.ogImageAlt,
+      },
+    ],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "32x32" }],
     shortcut: ["/favicon.ico"],
@@ -79,7 +110,7 @@ export default function RootLayout({
       <body className="min-h-dvh bg-mist font-sans text-ink antialiased">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <SkipLink />
         <ScrollProgress />
