@@ -51,19 +51,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "profile",
     images: [
-      { url: "/og-image.svg", width: 1200, height: 630, alt: site.metaTitle },
+      { url: "/og-image.png", width: 1200, height: 630, alt: site.metaTitle },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: site.metaTitle,
     description: site.description,
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   robots: { index: true, follow: true },
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "32x32" }],
     shortcut: ["/favicon.ico"],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
 };
 
