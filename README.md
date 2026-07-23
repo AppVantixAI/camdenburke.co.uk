@@ -19,7 +19,7 @@ This is a **trust site**, not a product funnel. Visitors should leave knowing wh
 
 Primary path: presence → record → companies → principles → story → notes → hello.
 
-Hero: **brand-first** — name is the H1. Supporting line carries who/what. Creed lives in Principles.
+Hero: name + role identify you; the H1 answers who/what. Creed lives in Principles.
 
 Optional founder photo: add `public/portrait.jpg` and set `site.portraitSrc` in `src/lib/content.ts`.
 

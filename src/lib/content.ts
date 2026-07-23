@@ -21,7 +21,7 @@ export const site = {
   portraitSrc: "",
   initials: "CB",
   eyebrow: "CEO & Founder · AppVantix",
-  /** Brand-first H1 is the name; this is the supporting line. */
+  /** H1 answers who/what — name sits above as identity, not the headline. */
   headline: "I build software companies with AI and security in the foundation.",
   subhead:
     "Coding since twelve. Today I lead AppVantix and FormForge — and I answer for the work.",
