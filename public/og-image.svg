@@ -1,14 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#dfe9ef"/>
-      <stop offset="50%" stop-color="#eef3f6"/>
-      <stop offset="100%" stop-color="#e7eef3"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <text x="72" y="210" fill="#0f766e" font-family="IBM Plex Mono, monospace" font-size="22" letter-spacing="3">CEO &amp; FOUNDER · APPVANTIX</text>
-  <text x="72" y="300" fill="#0c1a22" font-family="Syne, sans-serif" font-size="72" font-weight="700">Camden Burke</text>
-  <text x="72" y="370" fill="#0c1a22" font-family="Syne, sans-serif" font-size="32" font-weight="600">Building software businesses operators can trust.</text>
-  <text x="72" y="440" fill="#3a4d59" font-family="Figtree, sans-serif" font-size="22">ASU · Computer Science · Graphic IT · Security+</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#07080c"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#f0a05a"/>
+  <text x="72" y="220" fill="#f0a05a" font-family="system-ui, sans-serif" font-size="22" letter-spacing="4" font-weight="600">TECHNICAL CEO · FOUNDER</text>
+  <text x="72" y="310" fill="#f3f5f8" font-family="system-ui, sans-serif" font-size="72" font-weight="700">Camden Burke</text>
+  <text x="72" y="380" fill="#9aa3b5" font-family="system-ui, sans-serif" font-size="28">I build companies that ship real software.</text>
+  <text x="72" y="540" fill="#9aa3b5" font-family="ui-monospace, monospace" font-size="18">camdenburke.co.uk</text>
 </svg>

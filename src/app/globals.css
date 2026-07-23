@@ -1,36 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --av-ink: #0c1a22;
-  --av-ink-soft: #3a4d59;
-  --av-mist: #eef3f6;
-  --av-snow: #f8fbfd;
-  --av-line: #c5d2db;
-  --av-signal: #0f766e;
-  --av-signal-deep: #0a5c56;
-  --av-glow: #5eb8c9;
-  --av-ember: #d4a017;
-  --av-focus: #1b6ca8;
-  --background: var(--av-mist);
-  --foreground: var(--av-ink);
+  --cb-void: #07080c;
+  --cb-ink: #f3f5f8;
+  --cb-muted: #9aa3b5;
+  --cb-line: #252a36;
+  --cb-panel: #10131a;
+  --cb-amber: #f0a05a;
+  --cb-amber-deep: #d9843a;
+  --cb-focus: #5b9fd4;
+  --background: var(--cb-void);
+  --foreground: var(--cb-ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-ink: var(--av-ink);
-  --color-ink-soft: var(--av-ink-soft);
-  --color-mist: var(--av-mist);
-  --color-snow: var(--av-snow);
-  --color-line: var(--av-line);
-  --color-signal: var(--av-signal);
-  --color-signal-deep: var(--av-signal-deep);
-  --color-glow: var(--av-glow);
-  --color-ember: var(--av-ember);
-  --color-focus: var(--av-focus);
-  --font-display: var(--font-syne);
-  --font-sans: var(--font-figtree);
-  --font-mono: var(--font-ibm-plex-mono);
+  --color-void: var(--cb-void);
+  --color-ink: var(--cb-ink);
+  --color-muted: var(--cb-muted);
+  --color-line: var(--cb-line);
+  --color-panel: var(--cb-panel);
+  --color-amber: var(--cb-amber);
+  --color-amber-deep: var(--cb-amber-deep);
+  --color-focus: var(--cb-focus);
+  --font-display: var(--font-outfit);
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-jetbrains);
 }
 
 * {
@@ -44,17 +40,17 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-figtree), ui-sans-serif, sans-serif;
+  font-family: var(--font-dm-sans), ui-sans-serif, sans-serif;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--av-signal) 28%, white);
-  color: var(--av-ink);
+  background: color-mix(in oklab, var(--cb-amber) 40%, black);
+  color: white;
 }
 
 :focus-visible {
-  outline: 2px solid var(--av-focus);
+  outline: 2px solid var(--cb-focus);
   outline-offset: 3px;
 }
 
@@ -68,12 +64,11 @@ body {
   top: 0;
   z-index: 100;
   transform: translateY(-120%);
-  border-radius: 9999px;
-  background: var(--av-ink);
-  color: var(--av-snow);
+  background: var(--cb-amber);
+  color: #0a0a0a;
   padding: 0.625rem 1rem;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   transition: transform 0.15s ease;
 }
@@ -84,87 +79,28 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-syne), ui-sans-serif, sans-serif;
+  font-family: var(--font-outfit), ui-sans-serif, sans-serif;
 }
 
-.mist-layer {
+.video-veil {
   background:
-    radial-gradient(
-      120% 80% at 12% 18%,
-      color-mix(in oklab, var(--av-glow) 35%, transparent),
-      transparent 55%
-    ),
-    radial-gradient(
-      90% 70% at 88% 12%,
-      color-mix(in oklab, var(--av-signal) 22%, transparent),
-      transparent 50%
-    ),
-    linear-gradient(165deg, #dfe9ef 0%, var(--av-mist) 42%, #e7eef3 100%);
+    linear-gradient(90deg, rgba(7, 8, 12, 0.92) 0%, rgba(7, 8, 12, 0.55) 42%, rgba(7, 8, 12, 0.25) 100%),
+    linear-gradient(0deg, rgba(7, 8, 12, 0.85) 0%, transparent 45%);
 }
 
-.mist-drift {
-  animation: mist-drift 32s ease-in-out infinite alternate;
-}
-
-@keyframes mist-drift {
-  from {
-    transform: translate3d(-1.5%, -1%, 0) scale(1.04);
-  }
-  to {
-    transform: translate3d(1.5%, 1.2%, 0) scale(1.08);
+@media (max-width: 768px) {
+  .video-veil {
+    background:
+      linear-gradient(180deg, rgba(7, 8, 12, 0.55) 0%, rgba(7, 8, 12, 0.88) 55%, rgba(7, 8, 12, 0.96) 100%);
   }
 }
 
-@keyframes rise-in {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-rise {
-  animation: rise-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.animate-rise-delay-1 {
-  animation-delay: 0.1s;
-}
-
-.animate-rise-delay-2 {
-  animation-delay: 0.2s;
-}
-
-.animate-rise-delay-3 {
-  animation-delay: 0.32s;
-}
-
-.group:hover .arrow-nudge,
-.group:focus-visible .arrow-nudge {
-  transform: translateX(4px);
-}
-
-.arrow-nudge {
-  display: inline-block;
-  transition: transform 0.18s ease;
+.progress-bar {
+  transform-origin: 0% 50%;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .mist-drift,
-  .animate-rise,
-  .animate-rise-delay-1,
-  .animate-rise-delay-2,
-  .animate-rise-delay-3,
-  .skip-link,
-  .arrow-nudge {
-    animation: none !important;
-    transition: none !important;
   }
 }

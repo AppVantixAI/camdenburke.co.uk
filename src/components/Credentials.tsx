@@ -1,51 +1,36 @@
+"use client";
+
 import { credentials } from "@/lib/content";
+import { Reveal } from "@/components/Reveal";
 
 export function Credentials() {
   return (
-    <section id="credentials" className="scroll-mt-24 bg-mist">
-      <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
-        <div className="max-w-2xl">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-signal">
+    <section id="credentials" className="scroll-mt-24 bg-void">
+      <div className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
+        <Reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-amber">
             {credentials.eyebrow}
           </p>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+          <h2 className="mt-4 max-w-2xl font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
             {credentials.title}
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {credentials.education.map((item) => (
-            <article
-              key={item.credential}
-              className="border border-line bg-snow p-6 md:p-7"
-            >
-              <p className="font-mono text-xs text-signal">{item.when}</p>
-              <h3 className="mt-3 font-display text-xl font-semibold tracking-tight text-ink">
-                {item.credential}
-              </h3>
-              {"concentration" in item && item.concentration && (
-                <p className="mt-2 text-sm font-medium text-signal">
-                  {item.concentration}
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
+          {credentials.items.map((item, index) => (
+            <Reveal key={item.title} delay={index * 0.1}>
+              <article className="h-full border border-line bg-panel p-6 transition duration-500 hover:-translate-y-1 hover:border-amber/40 md:p-7">
+                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-amber">
+                  {item.label}
                 </p>
-              )}
-              <p className="mt-1 text-sm text-ink-soft">{item.school}</p>
-              <p className="mt-4 text-sm leading-relaxed text-ink-soft">
-                {item.note}
-              </p>
-            </article>
+                <h3 className="mt-4 font-display text-xl font-semibold text-ink md:text-2xl">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm text-muted">{item.meta}</p>
+                <p className="mt-4 text-sm leading-relaxed text-muted">{item.body}</p>
+              </article>
+            </Reveal>
           ))}
-
-          <article className="border border-signal/30 bg-signal/5 p-6 md:p-7">
-            <p className="font-mono text-xs text-signal">
-              {credentials.certification.when}
-            </p>
-            <h3 className="mt-3 font-display text-xl font-semibold tracking-tight text-ink">
-              {credentials.certification.name}
-            </h3>
-            <p className="mt-4 text-sm leading-relaxed text-ink-soft">
-              {credentials.certification.note}
-            </p>
-          </article>
         </div>
       </div>
     </section>

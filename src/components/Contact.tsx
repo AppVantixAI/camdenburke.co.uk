@@ -1,36 +1,36 @@
+"use client";
+
 import { contact, site } from "@/lib/content";
+import { Reveal } from "@/components/Reveal";
 
 export function Contact() {
   return (
-    <section id="contact" className="scroll-mt-24 bg-mist">
-      <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
-        <div className="max-w-2xl">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-signal">
+    <section id="contact" className="scroll-mt-24 border-t border-line bg-void">
+      <div className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
+        <Reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-amber">
             {contact.eyebrow}
           </p>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+          <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl">
             {contact.title}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-ink-soft md:text-lg">
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg">
             {contact.body}
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <Reveal delay={0.12} className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a
             href={contact.primaryCtaHref}
-            target="_blank"
-            rel="noreferrer"
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-signal px-6 py-3.5 text-base font-semibold text-snow shadow-[0_18px_40px_-18px_rgba(15,118,110,0.85)] transition hover:bg-signal-deep"
+            className="inline-flex items-center justify-center bg-amber px-7 py-3.5 text-base font-bold text-void transition hover:bg-amber-deep"
           >
             {contact.primaryCta}
-            <span className="arrow-nudge" aria-hidden>
-              →
-            </span>
           </a>
           <a
             href={contact.secondaryCtaHref}
-            className="inline-flex items-center justify-center rounded-full border border-ink/15 bg-snow px-6 py-3.5 text-base font-semibold text-ink transition hover:border-ink/30"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center border border-ink/20 px-7 py-3.5 text-base font-semibold text-ink transition hover:border-ink/45"
           >
             {contact.secondaryCta}
           </a>
@@ -38,13 +38,15 @@ export function Contact() {
             href={contact.tertiaryCtaHref}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-ink/15 bg-snow px-6 py-3.5 text-base font-semibold text-ink transition hover:border-ink/30"
+            className="inline-flex items-center justify-center border border-ink/20 px-7 py-3.5 text-base font-semibold text-ink transition hover:border-ink/45"
           >
             {contact.tertiaryCta}
           </a>
-        </div>
+        </Reveal>
 
-        <p className="mt-8 font-mono text-xs text-ink-soft">{site.location}</p>
+        <p className="mt-12 font-mono text-xs uppercase tracking-[0.16em] text-muted">
+          {site.location}
+        </p>
       </div>
     </section>
   );

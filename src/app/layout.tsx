@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
-import { Syne, Figtree, IBM_Plex_Mono } from "next/font/google";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
+import { Outfit, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { SkipLink } from "@/components/SkipLink";
 import { personSchema, site } from "@/lib/content";
 import "./globals.css";
 
-const syne = Syne({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-outfit",
   display: "swap",
 });
 
-const figtree = Figtree({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-figtree",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
+const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-ibm-plex-mono",
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -71,17 +71,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${figtree.variable} ${ibmPlexMono.variable}`}
+      className={`${outfit.variable} ${dmSans.variable} ${jetbrains.variable}`}
     >
-      <body className="min-h-dvh bg-mist font-sans text-ink antialiased">
+      <body className="min-h-dvh bg-void font-sans text-ink antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
         <SkipLink />
-        <SiteHeader />
+        <ScrollProgress />
+        <Header />
         <main id="main-content">{children}</main>
-        <SiteFooter />
+        <Footer />
       </body>
     </html>
   );
