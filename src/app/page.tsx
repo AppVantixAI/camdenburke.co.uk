@@ -1,6 +1,5 @@
 import { Constellation } from "@/components/Constellation";
 import { Credentials } from "@/components/Credentials";
-import { Creed } from "@/components/Creed";
 import { Hero } from "@/components/Hero";
 import { Letter } from "@/components/Letter";
 import { Offer } from "@/components/Offer";
@@ -13,7 +12,6 @@ export default function HomePage() {
       <Hero />
       <Proof />
       <Letter />
-      <Creed />
       <Credentials />
       <Constellation />
       <VideoReel />

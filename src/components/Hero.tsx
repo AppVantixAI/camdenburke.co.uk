@@ -90,7 +90,7 @@ export function Hero() {
         <div className="max-w-4xl">
           <motion.p
             className="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/80"
-            initial={false}
+            initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
@@ -99,7 +99,7 @@ export function Hero() {
           <motion.h1
             className="mt-5 font-display text-4xl font-semibold uppercase leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-7xl lg:text-8xl"
             style={reduce ? undefined : { letterSpacing: titleTracking }}
-            initial={false}
+            initial={reduce ? false : { opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
           >
@@ -107,42 +107,34 @@ export function Hero() {
           </motion.h1>
           <motion.p
             className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg"
-            initial={false}
+            initial={reduce ? false : { opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.subhead}
           </motion.p>
-          <motion.p
-            className="mt-5 font-mono text-[11px] uppercase tracking-[0.2em] text-amber"
-            initial={false}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.45 }}
-          >
-            {site.forLine}
-          </motion.p>
           <motion.div
             className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
-            initial={false}
+            initial={reduce ? false : { opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
             <a
               href={site.primaryCtaHref}
-              className="inline-flex items-center justify-center bg-amber px-10 py-5 text-sm font-bold uppercase tracking-[0.14em] text-void transition hover:bg-amber-deep md:text-base"
+              className="inline-flex items-center justify-center bg-amber px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-void transition hover:bg-amber-deep"
             >
               {site.primaryCta}
             </a>
             <a
               href={site.secondaryCtaHref}
-              className="inline-flex items-center justify-center border border-ink/45 px-8 py-5 text-sm font-semibold uppercase tracking-[0.14em] text-ink transition hover:border-ink"
+              className="inline-flex items-center justify-center border border-ink/45 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-ink transition hover:border-ink"
             >
               {site.secondaryCta}
             </a>
           </motion.div>
           <motion.p
             className="mt-12 font-display text-xl font-medium text-ink md:text-2xl"
-            initial={false}
+            initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.7 }}
           >
