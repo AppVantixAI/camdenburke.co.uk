@@ -3,6 +3,7 @@
   <rect x="0" y="0" width="1200" height="6" fill="#f0a05a"/>
   <text x="72" y="220" fill="#f0a05a" font-family="system-ui, sans-serif" font-size="22" letter-spacing="4" font-weight="600">TECHNICAL CEO · FOUNDER</text>
   <text x="72" y="310" fill="#f3f5f8" font-family="system-ui, sans-serif" font-size="72" font-weight="700">Camden Burke</text>
-  <text x="72" y="380" fill="#9aa3b5" font-family="system-ui, sans-serif" font-size="28">I build companies that ship real software.</text>
+  <text x="72" y="380" fill="#9aa3b5" font-family="system-ui, sans-serif" font-size="28">Build. Ship. Compound.</text>
+  <text x="72" y="430" fill="#f0a05a" font-family="ui-monospace, monospace" font-size="16" letter-spacing="3">MUSK · BEZOS · HORMOZI</text>
   <text x="72" y="540" fill="#9aa3b5" font-family="ui-monospace, monospace" font-size="18">camdenburke.co.uk</text>
 </svg>

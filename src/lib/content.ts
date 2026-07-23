@@ -16,14 +16,14 @@ export const site = {
   location: "Knoxville · Remote worldwide",
   metaTitle: "Camden Burke — CEO & Founder",
   description:
-    "Camden Burke is a technical CEO and founder — dual ASU degrees in Computer Science and Graphic Information Technology, CompTIA Security+, leading AppVantix and FormForge.",
+    "Camden Burke is a technical CEO and founder — dual ASU degrees in Computer Science and Graphic Information Technology, CompTIA Security+, leading AppVantix and FormForge. Operates by principles studied from Elon Musk, Jeff Bezos, and Alex Hormozi.",
   eyebrow: "Technical CEO · Founder",
-  headline: "I build companies that ship real software.",
+  headline: "Build. Ship. Compound.",
   subhead:
-    "Computer science. Full-stack product craft. Security+. I lead AppVantix — and I still care how the product feels in someone's hands.",
-  primaryCta: "Get in touch",
+    "I lead like an engineer and sell like an operator. First principles. Day 1. Offers so clear people say yes. The product is the proof.",
+  primaryCta: "Talk to me",
   primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
-  secondaryCta: "Watch the product",
+  secondaryCta: "See the product",
   secondaryCtaHref: "#reel",
   videoSrc: "/hero-reel.mp4",
   videoPoster: "/hero-formforge.jpg",
@@ -31,6 +31,7 @@ export const site = {
 
 export const nav = [
   { href: "#story", label: "Story" },
+  { href: "#principles", label: "Principles" },
   { href: "#credentials", label: "Credentials" },
   { href: "#work", label: "Work" },
   { href: "#reel", label: "Reel" },
@@ -42,23 +43,56 @@ export const story = {
   title: "Founder first. Operator always.",
   beats: [
     {
-      title: "Why I lead this way",
-      body: "I do not separate vision from execution. If I cannot open the hood, I do not claim the product.",
+      title: "First principles over theater",
+      body: "Titles are cheap. If I cannot open the hood, I do not claim the product. Engineering truth beats slide decks.",
     },
     {
-      title: "What I bring",
-      body: "Dual ASU degrees — Computer Science and Graphic Information Technology (full stack) — plus CompTIA Security+. Systems rigor, interface craft, and security as quality.",
+      title: "Day 1 is a discipline",
+      body: "Customer obsession. Long-term bets. Clear writing. I treat every quarter like the company is still being invented.",
     },
     {
-      title: "What I am building",
-      body: "AppVantix builds and operates SaaS. FormForge is the flagship for configure-to-order manufacturers. Different brands. One founder accountable for both.",
+      title: "Value before vanity",
+      body: "Make the offer undeniable. Stack proof. Reduce friction. Results over reputation — then reputation follows.",
+    },
+  ],
+} as const;
+
+/** Explicit references to operators Camden studies — not peer claims */
+export const principles = {
+  eyebrow: "Principles",
+  title: "I study the greats. Then I execute.",
+  lead: "Not fan fiction. Operating systems. Three builders I return to when the work gets hard.",
+  items: [
+    {
+      name: "Elon Musk",
+      lens: "First principles · Ship the machine",
+      quote:
+        "Question every requirement. Build the product. Demo reality, not narrative.",
+      apply:
+        "I stay technical as CEO. FormForge has to work in a shop — not just in a pitch. If it is not shippable, it is not strategy.",
+    },
+    {
+      name: "Jeff Bezos",
+      lens: "Day 1 · Customer obsession",
+      quote:
+        "Protect the long-term. Write clearly. Stay a Day 1 company even as you scale.",
+      apply:
+        "AppVantix exists to invent and operate software businesses. I optimize for the customer who has to finish a job — not for looking busy.",
+    },
+    {
+      name: "Alex Hormozi",
+      lens: "Value equation · Offer clarity",
+      quote:
+        "Increase dream outcome and perceived likelihood. Decrease time delay and effort. Make yes the easy answer.",
+      apply:
+        "I sell outcomes, not vibes. Clear offer. Hard proof. Fast path to a demo. No theater that does not convert.",
     },
   ],
 } as const;
 
 export const credentials = {
   eyebrow: "Credentials",
-  title: "The operating system behind the title.",
+  title: "Proof under the title.",
   items: [
     {
       label: "Education",
@@ -83,12 +117,12 @@ export const credentials = {
 
 export const work = {
   eyebrow: "Work",
-  title: "Ventures under my leadership.",
+  title: "Companies. Not content.",
   items: [
     {
       name: "AppVantix",
       role: "CEO & Founder",
-      body: "Agency that builds and operates SaaS businesses. Parent company — not a product rename.",
+      body: "I build and operate SaaS businesses. Parent company. One founder accountable for the stack.",
       href: "https://appvantix.com",
       cta: "Visit AppVantix",
       image: "/hero-formforge.jpg",
@@ -96,7 +130,7 @@ export const work = {
     {
       name: "FormForge",
       role: "Flagship product",
-      body: "Configure-to-order software for custom manufacturers — rules, geometry, structured quotes.",
+      body: "Configure-to-order software for custom manufacturers — rules, geometry, structured quotes. The demo is the argument.",
       href: "https://appvantix.com/formforge",
       cta: "Explore FormForge",
       image: "/product-rules.jpg",
@@ -106,13 +140,13 @@ export const work = {
 
 export const contact = {
   eyebrow: "Contact",
-  title: "Start a conversation.",
-  body: "Press, partners, and operators — write me. Product demos live on AppVantix; introductions start here.",
+  title: "If the offer is clear, say yes.",
+  body: "Partners, press, operators — write me. Want the product? Take the demo. Want the founder? Start here.",
   primaryCta: "Email Camden",
   primaryCtaHref: "mailto:hello@appvantix.com?subject=Hello%20Camden",
   secondaryCta: "LinkedIn",
   secondaryCtaHref: "https://www.linkedin.com/in/camdenburkedev",
-  tertiaryCta: "FormForge demo",
+  tertiaryCta: "Book the demo",
   tertiaryCtaHref: "https://appvantix.com/demo",
 } as const;
 

@@ -31,11 +31,11 @@ export function VideoReel() {
             Product reel
           </p>
           <h2 className="mt-3 font-display text-3xl font-semibold text-ink md:text-4xl">
-            Motion over mockups.
+            Demo reality. Not narrative.
           </h2>
           <p className="mt-3 max-w-xl text-muted">
-            A loop cut from real FormForge surfaces — the work behind the
-            companies I lead.
+            Musk energy: show the machine. A loop cut from real FormForge
+            surfaces — the argument is the product.
           </p>
         </Reveal>
 

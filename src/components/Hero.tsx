@@ -126,6 +126,9 @@ export function Hero() {
           <p className="mt-10 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
             {site.role} · {site.company} · {site.location}
           </p>
+          <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-amber/80">
+            Studied · Musk · Bezos · Hormozi
+          </p>
         </div>
       </motion.div>
 
