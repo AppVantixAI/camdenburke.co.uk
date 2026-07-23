@@ -16,11 +16,11 @@ export const site = {
   location: "Knoxville · Remote worldwide",
   metaTitle: "Camden Burke — CEO & Founder",
   description:
-    "Camden Burke is CEO & Founder of AppVantix — dual ASU degrees in Computer Science and Graphic Information Technology, CompTIA Security+, building FormForge for configure-to-order manufacturers.",
+    "Camden Burke is CEO & Founder of AppVantix — ASU B.S. Graphic Information Technology (Full Stack), CompTIA Security+, cybersecurity and AI-focused technical founder building FormForge.",
   eyebrow: "CEO & Founder · AppVantix",
   headline: "Do you want software that ships?",
   subhead:
-    "I build and operate product companies. Dual ASU degrees. Security+. The demo is the argument.",
+    "I build and operate product companies. Full-stack degree. Security+. Cybersecurity and AI as the operating lens. The demo is the argument.",
   primaryCta: "I'm ready",
   primaryCtaHref: "mailto:hello@appvantix.com?subject=Ready%20to%20talk",
   secondaryCta: "Watch the reel",
@@ -39,10 +39,10 @@ export const nav = [
 
 export const proof = {
   items: [
-    { value: "2", label: "ASU degrees" },
+    { value: "ASU", label: "Full-stack degree" },
     { value: "Sec+", label: "CompTIA certified" },
+    { value: "Cyber", label: "+ AI focused" },
     { value: "2", label: "Companies led" },
-    { value: "Remote", label: "Worldwide" },
   ],
 } as const;
 
@@ -52,7 +52,7 @@ export const letter = {
   paragraphs: [
     "I started AppVantix to invent and operate software businesses — not to sell decks. If I cannot open the hood, I do not claim the product.",
     "FormForge is the flagship: configure-to-order software for custom manufacturers. Rules, geometry, structured quotes. It has to work on the shop floor, not only in a pitch room.",
-    "I hold dual degrees from Arizona State — Computer Science (expected Dec 2027) and Graphic Information Technology, Full Stack (completed 2024) — plus CompTIA Security+. Systems rigor, interface craft, and security as quality.",
+    "I hold a B.S. in Graphic Information Technology (Full Stack Web Development) from Arizona State University, completed 2024, plus CompTIA Security+. My work is cybersecurity and AI focused — secure systems, trustworthy data, and products that use intelligence without theater.",
     "Every quarter I treat like Day 1. Customer who has a job to finish. Clear writing. Long-term bets. Proof before posture.",
   ],
   signoff: "— Camden Burke",
@@ -64,21 +64,21 @@ export const credentials = {
   items: [
     {
       label: "Education",
-      title: "B.S. Computer Science",
-      meta: "Arizona State University · Expected Dec 2027",
-      body: "Algorithms, systems, and software that survives contact with reality.",
-    },
-    {
-      label: "Education",
       title: "B.S. Graphic Information Technology",
-      meta: "Full Stack Web Development · Completed 2024",
-      body: "UX, visual systems, and interfaces people can finish a job in.",
+      meta: "Full Stack Web Development · Arizona State University · Completed 2024",
+      body: "UX, visual systems, and shipping interfaces people can finish a job in.",
     },
     {
       label: "Certification",
       title: "CompTIA Security+ ce",
       meta: "SY0-701 · Valid through March 2029",
-      body: "Identity, access, and trustworthy handling of customer data.",
+      body: "Identity, access, and trustworthy handling of customer data — non-negotiable for B2B software.",
+    },
+    {
+      label: "Focus",
+      title: "Cybersecurity & AI",
+      meta: "How I build and operate",
+      body: "Secure-by-default product work and AI applied where it creates real leverage — not slideware.",
     },
   ],
 } as const;
@@ -137,10 +137,17 @@ export const personSchema = {
   hasCredential: [
     {
       "@type": "EducationalOccupationalCredential",
+      name: "B.S. Graphic Information Technology — Full Stack Web Development",
+      credentialCategory: "degree",
+      recognizedBy: { "@type": "CollegeOrUniversity", name: "Arizona State University" },
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
       name: "CompTIA Security+ ce (SY0-701)",
       credentialCategory: "certification",
     },
   ],
+  knowsAbout: ["Cybersecurity", "Artificial Intelligence", "SaaS", "Full Stack Web Development"],
   worksFor: {
     "@type": "Organization",
     name: site.legal,
