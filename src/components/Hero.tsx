@@ -103,21 +103,13 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
           >
-            {site.name}
-          </motion.h1>
-          <motion.p
-            className="mt-5 max-w-2xl font-display text-xl font-medium leading-snug text-ink md:text-3xl"
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
-          >
             {site.headline}
-          </motion.p>
+          </motion.h1>
           <motion.p
             className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg"
             initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.subhead}
           </motion.p>

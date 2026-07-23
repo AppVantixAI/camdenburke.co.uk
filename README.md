@@ -17,7 +17,7 @@ Personal brand site for Camden Burke.
 
 Conversion: **founder trust → confidence → email**. Demo is tertiary (after trust).
 
-Hero: **Camden Burke** → polished creed line → one composed subhead → Get in touch.
+Hero: polished creed line → one composed subhead → Get in touch. Name lives in the nav.
 
 ## Develop
 

@@ -18,7 +18,6 @@ export const site = {
   description:
     "Camden Burke is CEO & Founder of AppVantix. Coding since twelve. Focused on artificial intelligence and cybersecurity. If you have something worth saying — write me.",
   eyebrow: "CEO & Founder · AppVantix",
-  /** Under the brand — never larger than the name. */
   headline: "I don't reinvent the wheel. I build the car.",
   subhead:
     "I've been writing software since I was twelve. Today I lead AppVantix and FormForge — with artificial intelligence and security built into how we work, not stapled on afterward.",
