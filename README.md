@@ -13,11 +13,13 @@ Personal brand site for Camden Burke.
 
 ## Voice
 
-**Harvey Specter cadence** — composed, college-educated, decisive. Full sentences. Wit without gym-bro telegraph. Proof over volume. Creed keeps its edge; the rest of the site speaks like someone who already closed.
+**Harvey Specter cadence** — composed, college-educated, decisive. Full sentences. Proof over volume.
 
-Conversion: **founder trust → confidence → email**. Demo is tertiary (after trust).
+Conversion: **founder trust → confidence → email**. Demo is tertiary.
 
-Hero: polished creed line → one composed subhead → Get in touch. Name lives in the nav.
+Page order: Hero → Proof → Companies → Principles → Story → Contact.
+
+Hero answers who / what / for whom. Creed lives in Principles. Name stays in the nav.
 
 ## Develop
 
