@@ -12,7 +12,10 @@ export function Proof() {
       className="relative border-y border-line bg-panel/80"
       aria-label="Proof"
     >
-      <div className="mist-grid pointer-events-none absolute inset-0 opacity-70" aria-hidden />
+      <div
+        className="mist-grid pointer-events-none absolute inset-0 opacity-50 md:opacity-70"
+        aria-hidden
+      />
       <div className="relative mx-auto grid max-w-6xl grid-cols-2 md:grid-cols-4">
         {proof.items.map((item, index) => (
           <motion.div
@@ -20,20 +23,20 @@ export function Proof() {
             className={`border-line ${
               index % 2 === 1 ? "border-l" : ""
             } ${index > 1 ? "border-t md:border-t-0" : ""} md:border-l md:first:border-l-0`}
-            initial={reduce ? false : { opacity: 0, y: 24 }}
+            initial={reduce ? false : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.35 }}
             transition={{
-              duration: 0.7,
-              delay: index * 0.07,
+              duration: 0.55,
+              delay: index * 0.05,
               ease: [0.16, 1, 0.3, 1],
             }}
           >
-            <div className="flex flex-col items-start justify-center px-5 py-9 md:px-8 md:py-12">
-              <p className="font-display text-2xl font-bold tracking-tight text-ink md:text-4xl">
+            <div className="flex flex-col items-start justify-center px-4 py-6 sm:px-5 sm:py-8 md:px-8 md:py-12">
+              <p className="font-display text-xl font-bold tracking-tight text-ink sm:text-2xl md:text-4xl">
                 {item.value}
               </p>
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+              <p className="mt-1.5 max-w-[11rem] font-mono text-[9px] uppercase leading-snug tracking-[0.16em] text-muted sm:mt-2 sm:max-w-none sm:text-[10px] sm:tracking-[0.22em]">
                 {item.label}
               </p>
             </div>

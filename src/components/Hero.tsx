@@ -8,6 +8,7 @@ import {
   useSpring,
   useTransform,
 } from "motion/react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import { site } from "@/lib/content";
 
 export function Hero() {
@@ -15,6 +16,9 @@ export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const [ready, setReady] = useState(false);
   const reduce = useReducedMotion();
+  const isMobile = useIsMobile();
+  const parallaxOff = Boolean(reduce || isMobile);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -48,22 +52,24 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate min-h-[108svh] overflow-hidden"
+      className="relative isolate min-h-[100svh] overflow-hidden"
     >
       <motion.div
         className="absolute inset-0"
-        style={reduce ? undefined : { y: videoY, scale: videoScale }}
+        style={
+          parallaxOff ? undefined : { y: videoY, scale: videoScale }
+        }
       >
         <video
           ref={videoRef}
-          className={`h-full w-full object-cover transition-opacity duration-1000 ${
+          className={`h-full w-full object-cover object-[center_30%] transition-opacity duration-1000 md:object-center ${
             ready ? "opacity-100" : "opacity-0"
           }`}
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload={isMobile ? "metadata" : "auto"}
           poster={site.videoPoster}
           aria-hidden
         >
@@ -74,7 +80,7 @@ export function Hero() {
           <img
             src={site.videoPoster}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-[center_30%] md:object-center"
           />
         )}
       </motion.div>
@@ -82,57 +88,57 @@ export function Hero() {
       <div className="video-veil absolute inset-0" aria-hidden />
 
       <motion.div
-        className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-28 pt-28 md:px-8 md:pb-32"
-        style={reduce ? undefined : { y: contentY, opacity }}
+        className="page-pad relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end pb-20 pt-[calc(var(--header-h)+1.25rem)] md:pb-28 md:pt-28"
+        style={parallaxOff ? undefined : { y: contentY, opacity }}
       >
         <div className="max-w-3xl">
           <motion.p
-            className="font-mono text-[11px] uppercase tracking-[0.28em] text-on-dark/75"
-            initial={reduce ? false : { opacity: 0, y: 16 }}
+            className="font-mono text-[10px] uppercase tracking-[0.24em] text-on-dark/75 sm:text-[11px] sm:tracking-[0.28em]"
+            initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.eyebrow}
           </motion.p>
           <motion.h1
-            className="mt-4 font-display text-5xl font-bold leading-[0.95] tracking-tight text-on-dark sm:text-6xl md:text-7xl lg:text-[5.75rem]"
-            initial={reduce ? false : { opacity: 0, y: 36 }}
+            className="mt-3 font-display text-[2.65rem] font-bold leading-[0.96] tracking-tight text-on-dark sm:mt-4 sm:text-5xl md:text-7xl lg:text-[5.75rem]"
+            initial={reduce ? false : { opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.95, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.85, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.name}
           </motion.h1>
           <motion.p
-            className="mt-6 max-w-2xl font-display text-xl font-semibold leading-snug tracking-tight text-on-dark sm:text-2xl md:text-[1.75rem]"
-            initial={reduce ? false : { opacity: 0, y: 24 }}
+            className="mt-4 max-w-2xl font-display text-lg font-semibold leading-snug tracking-tight text-on-dark sm:mt-5 sm:text-xl md:text-2xl lg:text-[1.75rem]"
+            initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.75, delay: 0.26, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.headline}
           </motion.p>
           <motion.p
-            className="mt-5 max-w-lg text-base leading-relaxed text-on-dark-muted md:text-lg"
-            initial={reduce ? false : { opacity: 0, y: 24 }}
+            className="mt-4 max-w-lg text-[0.95rem] leading-relaxed text-on-dark-muted sm:mt-5 sm:text-base md:text-lg"
+            initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.75, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
           >
             {site.subhead}
           </motion.p>
           <motion.div
-            className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
-            initial={reduce ? false : { opacity: 0, y: 24 }}
+            className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:max-w-md sm:flex-row sm:items-stretch"
+            initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.52, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.75, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
           >
             <a
               href={site.primaryCtaHref}
-              className="inline-flex items-center justify-center bg-signal px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-signal-deep"
+              className="tap-target inline-flex w-full items-center justify-center bg-signal px-6 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-signal-deep sm:flex-1"
             >
               {site.primaryCta}
             </a>
             <a
               href={site.secondaryCtaHref}
-              className="inline-flex items-center justify-center border border-on-dark/40 px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-on-dark transition hover:border-on-dark hover:bg-on-dark/5"
+              className="tap-target inline-flex w-full items-center justify-center border border-on-dark/40 px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-on-dark transition hover:border-on-dark hover:bg-on-dark/5 sm:flex-1"
             >
               {site.secondaryCta}
             </a>
@@ -142,7 +148,7 @@ export function Hero() {
 
       <motion.a
         href="#paths"
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 font-mono text-[10px] uppercase tracking-[0.28em] text-on-dark-muted transition hover:text-on-dark"
+        className="absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 font-mono text-[10px] uppercase tracking-[0.28em] text-on-dark-muted transition hover:text-on-dark sm:flex"
         animate={reduce ? undefined : { y: [0, 6, 0] }}
         transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
       >

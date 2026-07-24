@@ -75,7 +75,7 @@ export const nav = [
 
 export const proof = {
   items: [
-    { value: "12", label: "Coding since age twelve" },
+    { value: "12", label: "Coding since twelve" },
     { value: "CEO", label: "AppVantix founder" },
     { value: "Sec+", label: "CompTIA certified" },
     { value: "ASU", label: "Full-stack degree" },

@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import { Syne, Figtree, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Syne, Figtree, IBM_Plex_Mono } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { MobileCta } from "@/components/MobileCta";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SkipLink } from "@/components/SkipLink";
 import { jsonLd, site } from "@/lib/content";
@@ -19,11 +20,19 @@ const figtree = Figtree({
   display: "swap",
 });
 
-const jetbrains = JetBrains_Mono({
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  variable: "--font-jetbrains",
+  weight: ["400", "500", "600"],
+  variable: "--font-ibm-plex-mono",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#eef3f6",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -105,7 +114,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${figtree.variable} ${jetbrains.variable}`}
+      className={`${syne.variable} ${figtree.variable} ${ibmPlexMono.variable}`}
     >
       <body className="min-h-dvh bg-mist font-sans text-ink antialiased">
         <script
@@ -117,6 +126,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+        <MobileCta />
       </body>
     </html>
   );

@@ -3,8 +3,8 @@
   <rect x="0" y="0" width="1200" height="6" fill="#0f766e"/>
   <circle cx="1040" cy="-40" r="280" fill="#5eb8c9" fill-opacity="0.16"/>
   <circle cx="160" cy="680" r="220" fill="#0f766e" fill-opacity="0.1"/>
-  <text x="72" y="180" fill="#0f766e" font-family="ui-monospace, monospace" font-size="18" letter-spacing="5">CEO &amp; FOUNDER - APPVANTIX</text>
-  <text x="72" y="300" fill="#0c1419" font-family="system-ui, sans-serif" font-size="72" font-weight="700">Camden Burke</text>
-  <text x="72" y="380" fill="#5a6b76" font-family="system-ui, sans-serif" font-size="28" font-weight="500">I don't reinvent the wheel. I build the car.</text>
+  <text x="72" y="170" fill="#0f766e" font-family="ui-monospace, monospace" font-size="18" letter-spacing="5">CEO &amp; FOUNDER - APPVANTIX</text>
+  <text x="72" y="290" fill="#0c1a22" font-family="system-ui, sans-serif" font-size="78" font-weight="700">Camden Burke</text>
+  <text x="72" y="370" fill="#3a4d59" font-family="system-ui, sans-serif" font-size="28" font-weight="500">I don't reinvent the wheel. I build the car.</text>
   <text x="72" y="540" fill="#0f766e" font-family="system-ui, sans-serif" font-size="22" font-weight="600">camdenburke.co.uk</text>
 </svg>

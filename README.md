@@ -21,7 +21,7 @@ Primary CTA: reach out. Paths live on `#paths` early in the page.
 
 Copy & assets: edit `src/lib/content.ts` (includes the locked media board).
 
-Design: AppVantix **Industrial Clarity** — Syne + Figtree, mist/signal palette (`#eef3f6` / `#0f766e`), cinematic hero into light editorial body.
+Design: AppVantix **Industrial Clarity** — Syne + Figtree + IBM Plex Mono; mist `#eef3f6` / ink `#0c1a22` / signal `#0f766e`. Cinematic hero into light editorial body; company mark shared with appvantix.com.
 
 ## Develop
 
