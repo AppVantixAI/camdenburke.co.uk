@@ -16,14 +16,14 @@ export const site = {
   location: "Knoxville · Remote worldwide",
   metaTitle: "Camden Burke — CEO & Founder, AppVantix",
   description:
-    "Camden Burke is CEO & Founder of AppVantix — AI and cybersecurity SaaS. Reach out for work, explore AppVantix, or see FormForge configure-to-order for manufacturers.",
+    "Camden Burke builds AppVantix: AI and cybersecurity SaaS. Email for work, visit the company, or open FormForge for manufacturers.",
   ogImage: "/og-image.png",
   ogImageAlt: "Camden Burke — CEO & Founder of AppVantix",
   eyebrow: "CEO & Founder · AppVantix",
   /** Brand name is the hero signal; catchphrase supports underneath */
   headline: "I don't reinvent the wheel. I build the car.",
   subhead:
-    "I've been coding since I was twelve. Today I lead AppVantix — AI and security in how we operate. If you want to work with me, write. Or go straight to the company and the products.",
+    "I started writing code at twelve. Now I run AppVantix, shipping AI and security into the products we build. Email me to work together, or go straight to the company and FormForge.",
   primaryCta: "Reach out",
   primaryCtaHref: "mailto:hello@appvantix.com?subject=Work%20with%20Camden",
   secondaryCta: "Three ways in",
@@ -84,15 +84,15 @@ export const proof = {
 
 /** Three conversion paths — equal clarity, reach-out weighted as primary */
 export const paths = {
-  eyebrow: "What do you need?",
+  eyebrow: "Start here",
   title: "Three ways in.",
-  body: "Reach out for work. Visit the company. Or go straight to a product. Pick the door that matches why you're here.",
+  body: "Email me for work. Visit AppVantix for the company. Open FormForge for the product.",
   items: [
     {
       label: "01",
       title: "Reach out for work",
       detail:
-        "Partnerships, builds, press, or a founder conversation. Write me — I read every note.",
+        "Partnerships, builds, press, or a founder chat. I read every note.",
       cta: "Email Camden",
       href: "mailto:hello@appvantix.com?subject=Work%20with%20Camden",
       external: false,
@@ -104,7 +104,7 @@ export const paths = {
       label: "02",
       title: "Explore AppVantix",
       detail:
-        "The company I run. We invent and operate SaaS businesses — AI and security in the operating model.",
+        "The company I run. We invent and operate SaaS products with AI and security built in from day one.",
       cta: "Visit AppVantix",
       href: "https://appvantix.com",
       external: true,
@@ -116,7 +116,7 @@ export const paths = {
       label: "03",
       title: "See FormForge",
       detail:
-        "Flagship product: configure-to-order software for manufacturers. Product page or book a demo.",
+        "Configure-to-order software for manufacturers. Open the product page or book a demo.",
       cta: "Visit FormForge",
       href: "https://appvantix.com/formforge",
       external: true,
@@ -128,14 +128,14 @@ export const paths = {
 } as const;
 
 export const letter = {
-  eyebrow: "A little of my story",
-  title: "I fell in love with code young — and I never left the work.",
+  eyebrow: "My story",
+  title: "Code found me early. I stayed with it.",
   paragraphs: [
-    "I've been coding since I was twelve. Swift was my first language. Winning an award at a CodeDay at Lipscomb made it real — this wasn't a hobby anymore. It was the path.",
-    "I built what needed building. Python bots. Sites on the side. Apps on every platform I could reach. See a need, fill a need. That still governs how I move.",
-    "When artificial intelligence became useful — not theoretical — I went in. How the models work. Automation. Then MCPs arrived, and the game changed: models with hands. Plain language in. Real work out.",
-    "Today I'm CEO and Founder of AppVantix. I hire the people who build. I stay accountable for vision, product direction, and security. FormForge is our flagship: configure-to-order for manufacturers who are done quoting from one-off CAD.",
-    "I don't make excuses when the other side plays the game. If you want to work with me, write. If you want the company or the product, the doors are open above.",
+    "Swift was my first language. A CodeDay award at Lipscomb settled it: this was the work, not a side hobby.",
+    "I built what people needed. Python bots. Sites on the side. Apps on every platform I could reach. See a need, fill a need. That still guides how I move.",
+    "When AI became useful for real work, I went deep on how the models work and where automation pays off. Then MCPs showed up: models that can act. Plain language in. Real work out.",
+    "Today I am CEO and Founder of AppVantix. I hire the people who build. I answer for vision, product direction, and security. FormForge is our lead product: configure-to-order for shops tired of quoting from one-off CAD.",
+    "I don't make excuses when the other side plays the game. To work with me, write. For the company or the product, use the doors above.",
   ],
   signoff: "— Camden Burke, CEO & Founder",
   cta: "Email Camden",
@@ -145,8 +145,8 @@ export const letter = {
 } as const;
 
 export const creed = {
-  eyebrow: "How I think",
-  title: "A few lines I actually live by.",
+  eyebrow: "Principles",
+  title: "Lines I live by.",
   lines: [
     "Don't reinvent the wheel. Just build the damn car.",
     "See a need, fill a need.",
@@ -156,31 +156,31 @@ export const creed = {
 
 export const credentials = {
   eyebrow: "Credentials",
-  title: "Competence, on the record.",
+  title: "On the record.",
   items: [
     {
       label: "Role",
       title: "CEO & Founder",
       meta: "AppVantix LLC",
-      body: "I set direction, make the product bets, and answer for how we show up. Leadership isn't a title I borrowed — it's the job I do.",
+      body: "I set direction, make the product bets, and own how we show up. The CEO seat is the job I do every day.",
     },
     {
       label: "Focus",
       title: "Artificial Intelligence & Cybersecurity",
       meta: "Where I put my attention",
-      body: "From models and automation to MCPs with real leverage. Security isn't an afterthought — it's how responsible software gets built.",
+      body: "Models, automation, and MCPs that put tools in the model's hands. Security is part of how we design software, not a patch at the end.",
     },
     {
       label: "Education",
       title: "B.S. Graphic Information Technology",
       meta: "Full Stack Web Development · Arizona State University · Completed 2024",
-      body: "I wanted the full-stack foundation so I could lead technical work with judgment — not guesswork.",
+      body: "I wanted a full-stack base so I could lead technical work with a clear eye, not guesses.",
     },
     {
       label: "Certification",
       title: "CompTIA Security+ ce",
       meta: "SY0-701 · Valid through March 2029",
-      body: "Identity, access, and customer data aren't optional in B2B. I treat them accordingly.",
+      body: "Identity, access, and customer data matter in B2B. I hold that bar.",
     },
   ],
 } as const;
@@ -192,7 +192,7 @@ export const constellation = {
     {
       name: "AppVantix",
       role: "The company",
-      body: "CEO & Founder seat. We invent and operate SaaS businesses — AI and security baked into how we run.",
+      body: "I founded and run AppVantix. We invent and operate SaaS products with AI and security in the stack.",
       href: "https://appvantix.com",
       cta: "Visit AppVantix",
       image: assets.constellation.appvantix.src,
@@ -201,7 +201,7 @@ export const constellation = {
     {
       name: "FormForge",
       role: "Flagship product",
-      body: "Configure-to-order for manufacturers. Live 3D, rules that protect the shop floor, files ready when the config is right.",
+      body: "Configure-to-order for manufacturers. Live 3D, shop-floor rules, and files ready when the config checks out.",
       href: "https://appvantix.com/formforge",
       cta: "Visit FormForge",
       image: assets.constellation.formforge.src,
@@ -213,22 +213,24 @@ export const constellation = {
 /** Secondary FormForge proof — rules engine + submissions inbox */
 export const productDepth = {
   eyebrow: "Inside FormForge",
-  title: "Rules that protect the floor. Inbox that closes the loop.",
-  body: "Beyond the 3D preview: manufacturing constraints that block bad exports, and a submissions line that turns configs into quotes.",
+  title: "Shop rules. Quote inbox.",
+  body: "Past the 3D preview: constraints that stop bad exports, and a submissions line that turns configs into quotes.",
   cta: "Visit FormForge",
   href: "https://appvantix.com/formforge",
   items: [
     {
       label: "01",
       title: "Rules builder",
-      detail: "Wall thickness, bolt clearance, export gates — expressed as constraints the shop can trust.",
+      detail:
+        "Wall thickness, bolt clearance, export gates as rules the shop can trust.",
       image: assets.productDepth.rules.src,
       imageAlt: assets.productDepth.rules.alt,
     },
     {
       label: "02",
       title: "Submissions inbox",
-      detail: "Quote and configure requests land ready for review — not lost in email threads.",
+      detail:
+        "Quote and configure requests land ready for review, not lost in email.",
       image: assets.productDepth.inbox.src,
       imageAlt: assets.productDepth.inbox.alt,
     },
@@ -238,8 +240,8 @@ export const productDepth = {
 /** Final conversion band — repeats the three doors without burying the ask */
 export const close = {
   eyebrow: "Next step",
-  title: "Ready when you are.",
-  body: "Email me for work. Visit AppVantix for the company. Open FormForge for the product. No maze — just a clear move.",
+  title: "Pick a door.",
+  body: "Email me for work. Visit AppVantix for the company. Open FormForge for the product.",
   primaryCta: "Email Camden",
   secondaryCta: "Visit AppVantix",
   tertiaryCta: "See FormForge",
