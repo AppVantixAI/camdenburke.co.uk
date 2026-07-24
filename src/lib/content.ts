@@ -128,8 +128,8 @@ export const letter = {
   title: "Years of craft. Real passion.",
   /** Famous / film epigraph — verified attribution only */
   epigraph: {
-    text: "The only way to do great work is to love what you do.",
-    attribution: "Steve Jobs, Stanford Commencement (2005)",
+    text: "It ain't about how hard you hit. It's about how hard you can get hit and keep moving forward.",
+    attribution: "Rocky Balboa — Rocky Balboa (2006)",
   },
   paragraphs: [
     "I have been writing code since I was twelve. Not a late pivot — years of craft, and real passion. Swift first. CodeDay at Lipscomb. Built what people needed, then kept going.",
@@ -142,6 +142,7 @@ export const letter = {
 
 /**
  * Famous / film quotes only — verified speakers & sources.
+ * Themes: smarter not harder (leverage) + never quitting (grit).
  * Receipts under each line connect the quote to Camden's work (not attributed as his words).
  */
 export const creed = {
@@ -149,22 +150,36 @@ export const creed = {
   title: "Lines that stick.",
   lines: [
     {
-      line: "Talk is cheap. Show me the code.",
-      attribution: "Linus Torvalds",
+      line: "Give me a place to stand, and I shall move the earth.",
+      attribution:
+        "Archimedes — quoted by Pappus of Alexandria, Synagoge, Book VIII (c. AD 340)",
       receipt:
-        "FormForge is the receipt: configure-to-order with live 3D, shop rules, and a quote inbox.",
+        "Leverage over brute force: FormForge turns shop rules and live 3D into configure-to-order that scales.",
     },
     {
-      line: "Real artists ship.",
-      attribution: "Steve Jobs",
+      line: "The person doing the job knows far more than anyone else as to the best way of doing that job.",
+      attribution: "Allan H. Mogensen — Father of Work Simplification (1930s)",
       receipt:
-        "Ship useful software. Iterate. Make it hard to break — constraint rules and export gates before files leave.",
+        "Build with the people who live the work — manufacturers quoting by hand told us what FormForge had to fix.",
     },
     {
-      line: "See a need, fill a need.",
-      attribution: "Bigweld, Robots (2005)",
+      line: "Never give in, never give in, never, never, never, never—in nothing, great or small, large or petty—never give in except to convictions of honour and good sense.",
+      attribution: "Winston Churchill — Harrow School speech (29 Oct 1941)",
       receipt:
-        "Manufacturers still quoting custom work by hand. That gap is why AppVantix and FormForge exist.",
+        "Coding since twelve. ASU. Security+. AppVantix. Keep shipping when the hard parts show up.",
+    },
+    {
+      line: "It ain't about how hard you hit. It's about how hard you can get hit and keep moving forward.",
+      attribution: "Rocky Balboa — Rocky Balboa (2006)",
+      receipt:
+        "Products break. Markets shift. You take the hit, fix it, and move the next version forward.",
+    },
+    {
+      line: "Results! Why, man, I have gotten a lot of results! I know several thousand things that won't work.",
+      attribution:
+        "Thomas Edison — recounted by Walter S. Mallory in Edison: His Life and Inventions (1910)",
+      receipt:
+        "Persistence with receipts: each failed path narrows the ones that ship.",
     },
   ],
 } as const;
@@ -261,8 +276,8 @@ export const close = {
   eyebrow: "Next",
   title: "Build with me.",
   quote: {
-    text: "Stay hungry. Stay foolish.",
-    attribution: "Whole Earth Catalog · Steve Jobs, Stanford (2005)",
+    text: "Never give in except to convictions of honour and good sense.",
+    attribution: "Winston Churchill — Harrow School (29 Oct 1941)",
   },
   body: "Email for work. Paths above for AppVantix and FormForge.",
   primaryCta: "Email Camden",
