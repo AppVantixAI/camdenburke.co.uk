@@ -23,28 +23,12 @@ export function Close() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <div className="mt-10 flex w-full flex-col gap-3 sm:mt-12 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="mt-10 sm:mt-12">
             <a
               href={site.primaryCtaHref}
               className="btn-solid tap-target inline-flex w-full items-center justify-center px-6 py-3.5 text-sm font-bold uppercase tracking-[0.16em] sm:w-auto sm:px-8 sm:py-4"
             >
               {close.primaryCta}
-            </a>
-            <a
-              href={site.companyUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-ghost tap-target inline-flex w-full items-center justify-center px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] sm:w-auto sm:px-8 sm:py-4"
-            >
-              {close.secondaryCta}
-            </a>
-            <a
-              href={site.formforgeUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="tap-target inline-flex w-full items-center justify-center px-4 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-muted transition hover:text-ink sm:w-auto"
-            >
-              {close.tertiaryCta}
             </a>
           </div>
         </Reveal>

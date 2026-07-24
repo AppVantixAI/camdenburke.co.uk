@@ -11,13 +11,7 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 import { letter } from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
 
-function LetterLine({
-  paragraph,
-  index,
-}: {
-  paragraph: string;
-  index: number;
-}) {
+function LetterLine({ paragraph }: { paragraph: string }) {
   const ref = useRef<HTMLParagraphElement>(null);
   const reduce = useReducedMotion();
   const isMobile = useIsMobile();
@@ -39,7 +33,6 @@ function LetterLine({
       style={{ opacity, y }}
       className="text-base leading-relaxed text-ink/90 sm:text-lg md:text-2xl md:leading-relaxed"
     >
-      <span className="sr-only">{`Paragraph ${index + 1}. `}</span>
       {paragraph}
     </motion.p>
   );
@@ -62,12 +55,8 @@ export function Letter() {
         </Reveal>
 
         <div className="mt-10 space-y-7 sm:mt-14 sm:space-y-9 md:mt-16 md:space-y-10">
-          {letter.paragraphs.map((paragraph, index) => (
-            <LetterLine
-              key={paragraph.slice(0, 28)}
-              paragraph={paragraph}
-              index={index}
-            />
+          {letter.paragraphs.map((paragraph) => (
+            <LetterLine key={paragraph.slice(0, 28)} paragraph={paragraph} />
           ))}
         </div>
 
@@ -75,20 +64,6 @@ export function Letter() {
           <p className="mt-12 font-display text-lg font-semibold text-ink sm:mt-14 sm:text-xl md:mt-16 md:text-2xl">
             {letter.signoff}
           </p>
-          <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:flex-row sm:items-center">
-            <a
-              href={letter.ctaHref}
-              className="btn-solid tap-target inline-flex w-full items-center justify-center px-6 py-3.5 text-sm font-bold uppercase tracking-[0.16em] sm:w-auto sm:px-8 sm:py-4"
-            >
-              {letter.cta}
-            </a>
-            <a
-              href={letter.secondaryCtaHref}
-              className="btn-ghost tap-target inline-flex w-full items-center justify-center px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] sm:w-auto sm:px-8 sm:py-4"
-            >
-              {letter.secondaryCta}
-            </a>
-          </div>
         </Reveal>
       </div>
     </section>

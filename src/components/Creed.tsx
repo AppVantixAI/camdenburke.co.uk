@@ -17,15 +17,20 @@ export function Creed() {
         </Reveal>
 
         <ol className="mt-10 divide-y divide-line border-y border-line sm:mt-12 md:mt-14">
-          {creed.lines.map((line, index) => (
-            <Reveal key={line} delay={index * 0.06}>
+          {creed.lines.map((item, index) => (
+            <Reveal key={item.line} delay={index * 0.06}>
               <li className="grid gap-2 py-6 sm:gap-4 sm:py-8 md:grid-cols-[72px_1fr] md:items-baseline md:gap-10 md:py-10">
                 <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-signal">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <p className="font-display text-lg font-semibold leading-snug text-ink sm:text-xl md:text-3xl md:leading-snug">
-                  {line}
-                </p>
+                <div>
+                  <p className="font-display text-lg font-semibold leading-snug text-ink sm:text-xl md:text-3xl md:leading-snug">
+                    {item.line}
+                  </p>
+                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted sm:mt-3 md:text-base">
+                    {item.receipt}
+                  </p>
+                </div>
               </li>
             </Reveal>
           ))}

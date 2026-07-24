@@ -8,7 +8,7 @@ import {
   useTransform,
 } from "motion/react";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { paths, site } from "@/lib/content";
+import { paths } from "@/lib/content";
 
 export function Offer() {
   const ref = useRef<HTMLElement>(null);
@@ -67,7 +67,7 @@ export function Offer() {
               <p className="mt-3 flex-1 text-sm leading-relaxed text-muted sm:mt-4 md:text-base">
                 {item.detail}
               </p>
-              <div className="mt-6 flex flex-col gap-3 sm:mt-8">
+              <div className="mt-6 sm:mt-8">
                 <a
                   href={item.href}
                   {...(item.external
@@ -81,24 +81,10 @@ export function Offer() {
                 >
                   {item.cta}
                 </a>
-                {item.secondaryCta && item.secondaryHref ? (
-                  <a
-                    href={item.secondaryHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="tap-target inline-flex items-center justify-center px-2 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted transition hover:text-ink"
-                  >
-                    {item.secondaryCta}
-                  </a>
-                ) : null}
               </div>
             </motion.article>
           ))}
         </div>
-
-        <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.16em] text-muted sm:mt-14 sm:text-xs">
-          {site.location}
-        </p>
       </motion.div>
     </section>
   );

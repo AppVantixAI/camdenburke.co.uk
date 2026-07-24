@@ -46,13 +46,28 @@ export function Header() {
       transition={{ duration: 0.45 }}
     >
       <div className="page-pad mx-auto flex h-[var(--header-h)] max-w-6xl items-center justify-between gap-3">
-        <a
-          href="#top"
-          onClick={close}
-          className="min-w-0 truncate font-display text-sm font-bold tracking-tight text-on-dark transition hover:text-signal sm:text-base"
-        >
-          {site.name}
-        </a>
+        <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+          <a
+            href="#top"
+            onClick={close}
+            className="min-w-0 truncate font-display text-sm font-bold tracking-tight text-on-dark transition hover:text-signal sm:text-base"
+          >
+            {site.name}
+          </a>
+          <span
+            className={`hidden h-3.5 w-px shrink-0 lg:block ${
+              scrolled ? "bg-line" : "bg-on-dark/25"
+            }`}
+            aria-hidden
+          />
+          <p
+            className={`hidden font-mono text-[9px] uppercase tracking-[0.16em] lg:block ${
+              scrolled ? "text-muted" : "text-on-dark/55"
+            }`}
+          >
+            {site.location}
+          </p>
+        </div>
 
         <nav
           className="hidden items-center gap-6 xl:flex"
@@ -133,6 +148,9 @@ export function Header() {
                 </a>
               ))}
               <BrandMark withLabel size={22} className="mt-6 py-2 text-ink" />
+              <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
+                {site.location}
+              </p>
               <a
                 href={site.primaryCtaHref}
                 onClick={close}

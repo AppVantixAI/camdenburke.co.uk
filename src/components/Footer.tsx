@@ -13,6 +13,9 @@ export function Footer() {
             <BrandMark withLabel size={20} className="text-ink" />
           </div>
           <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+            {site.location}
+          </p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
             © {year} · {site.legal}
           </p>
         </div>

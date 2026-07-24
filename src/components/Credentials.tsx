@@ -39,6 +39,25 @@ export function Credentials() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.08}>
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 sm:mt-10">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+              Verify
+            </p>
+            {credentials.verify.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className="tap-target font-mono text-[10px] uppercase tracking-[0.18em] text-ink transition hover:text-signal"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );
