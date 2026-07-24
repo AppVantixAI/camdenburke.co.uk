@@ -24,10 +24,15 @@ export function Creed() {
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <div>
-                  <p className="font-display text-lg font-semibold leading-snug text-ink sm:text-xl md:text-3xl md:leading-snug">
-                    {item.line}
-                  </p>
-                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted sm:mt-3 md:text-base">
+                  <blockquote>
+                    <p className="font-display text-lg font-semibold leading-snug text-ink sm:text-xl md:text-3xl md:leading-snug">
+                      &ldquo;{item.line}&rdquo;
+                    </p>
+                    <footer className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-signal sm:mt-3.5 sm:text-[11px] sm:tracking-[0.22em]">
+                      <cite className="not-italic">— {item.attribution}</cite>
+                    </footer>
+                  </blockquote>
+                  <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted sm:mt-4 md:text-base">
                     {item.receipt}
                   </p>
                 </div>

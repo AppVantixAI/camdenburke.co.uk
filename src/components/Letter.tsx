@@ -52,6 +52,14 @@ export function Letter() {
           <h2 className="mt-3 font-display text-[1.75rem] font-bold leading-tight tracking-tight text-ink sm:mt-4 sm:text-3xl md:text-5xl">
             {letter.title}
           </h2>
+          <blockquote className="mt-6 border-l border-signal/50 pl-4 sm:mt-8 sm:pl-5">
+            <p className="font-display text-base font-medium leading-snug text-ink sm:text-lg md:text-xl">
+              &ldquo;{letter.epigraph.text}&rdquo;
+            </p>
+            <footer className="mt-2.5 font-mono text-[10px] uppercase tracking-[0.2em] text-signal sm:text-[11px] sm:tracking-[0.22em]">
+              <cite className="not-italic">— {letter.epigraph.attribution}</cite>
+            </footer>
+          </blockquote>
         </Reveal>
 
         <div className="mt-10 space-y-7 sm:mt-14 sm:space-y-9 md:mt-16 md:space-y-10">
