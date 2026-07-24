@@ -31,13 +31,13 @@ export function Header() {
   }, [open]);
 
   const close = () => setOpen(false);
-  const onMist = scrolled || open;
+  const onChrome = scrolled || open;
 
   return (
     <motion.header
       className={`fixed inset-x-0 top-0 z-50 transition-[background,backdrop-filter,border-color] duration-300 ${
-        onMist
-          ? "border-b border-line/70 bg-mist/95 backdrop-blur-md"
+        onChrome
+          ? "border-b border-line bg-mist/90 backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       }`}
       style={{ paddingTop: "env(safe-area-inset-top)" }}
@@ -49,9 +49,7 @@ export function Header() {
         <a
           href="#top"
           onClick={close}
-          className={`min-w-0 truncate font-display text-sm font-bold tracking-tight transition sm:text-base ${
-            onMist ? "text-ink" : "text-on-dark"
-          }`}
+          className="min-w-0 truncate font-display text-sm font-bold tracking-tight text-on-dark transition hover:text-signal sm:text-base"
         >
           {site.name}
         </a>
@@ -78,21 +76,13 @@ export function Header() {
         <div className="flex shrink-0 items-center gap-2">
           <a
             href={site.primaryCtaHref}
-            className={`tap-target hidden items-center border px-3 py-2 font-mono text-[10px] uppercase tracking-[0.18em] transition sm:inline-flex ${
-              onMist
-                ? "border-ink/25 text-ink hover:border-signal hover:text-signal"
-                : "border-on-dark/45 text-on-dark hover:border-on-dark hover:bg-on-dark/5"
-            }`}
+            className="btn-ghost-on-media tap-target hidden items-center px-3 py-2 font-mono text-[10px] uppercase tracking-[0.18em] sm:inline-flex"
           >
             {site.primaryCta}
           </a>
           <button
             type="button"
-            className={`tap-target inline-flex items-center justify-center border xl:hidden ${
-              onMist
-                ? "border-ink/25 text-ink"
-                : "border-on-dark/40 text-on-dark"
-            }`}
+            className="tap-target inline-flex items-center justify-center border border-on-dark/40 text-on-dark xl:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -146,7 +136,7 @@ export function Header() {
               <a
                 href={site.primaryCtaHref}
                 onClick={close}
-                className="tap-target mt-6 inline-flex w-full items-center justify-center bg-signal px-5 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white"
+                className="btn-solid tap-target mt-6 inline-flex w-full items-center justify-center px-5 py-4 text-sm font-bold uppercase tracking-[0.16em]"
               >
                 {site.primaryCta}
               </a>

@@ -20,13 +20,13 @@ export const site = {
   ogImage: "/og-image.png",
   ogImageAlt: "Camden Burke — CEO & Founder of AppVantix",
   eyebrow: "CEO & Founder · AppVantix",
-  /** Brand name is the hero signal; catchphrase supports underneath */
+  /** Brand name is the hero signal; mission sentence supports underneath */
   headline: "Build useful software. Ship it. Make it hard to break.",
   subhead:
-    "I run AppVantix. AI and security in the products. FormForge for manufacturers who need configure-to-order that works. Email, company, or product below.",
-  primaryCta: "Email",
+    "AppVantix builds AI and security into the stack. FormForge ships configure-to-order for manufacturers who need it to work.",
+  primaryCta: "Email Camden",
   primaryCtaHref: "mailto:hello@appvantix.com?subject=Work%20with%20Camden",
-  secondaryCta: "Options",
+  secondaryCta: "View Paths",
   secondaryCtaHref: "#paths",
   videoSrc: "/hero-reel.mp4",
   videoPoster: "/hero-poster.jpg",
@@ -69,7 +69,7 @@ export const nav = [
   { href: "#paths", label: "Paths" },
   { href: "#letter", label: "Background" },
   { href: "#creed", label: "Principles" },
-  { href: "#constellation", label: "Companies" },
+  { href: "#constellation", label: "Work" },
   { href: "#credentials", label: "Credentials" },
 ] as const;
 
@@ -86,13 +86,13 @@ export const proof = {
 export const paths = {
   eyebrow: "Paths",
   title: "Three ways in.",
-  body: "Work. Company. Product. Pick one.",
+  body: "Work. Company. Product. Choose one.",
   items: [
     {
       label: "01",
       title: "Work with me",
       detail:
-        "Partnerships, builds, press, founder talks. Email me. I read every note.",
+        "Partnerships, builds, press, founder talks. Email me — I read every note.",
       cta: "Email Camden",
       href: "mailto:hello@appvantix.com?subject=Work%20with%20Camden",
       external: false,
@@ -104,8 +104,8 @@ export const paths = {
       label: "02",
       title: "AppVantix",
       detail:
-        "The company. We invent and operate SaaS. AI and security in the stack.",
-      cta: "Visit AppVantix",
+        "The company. Invent and operate SaaS with AI and security in the stack.",
+      cta: "Enter AppVantix",
       href: "https://appvantix.com",
       external: true,
       primary: false,
@@ -116,8 +116,8 @@ export const paths = {
       label: "03",
       title: "FormForge",
       detail:
-        "Configure-to-order for manufacturers. Live 3D, shop rules, export-ready files. Product page or demo.",
-      cta: "Visit FormForge",
+        "Configure-to-order for manufacturers. Live 3D, shop rules, export-ready files.",
+      cta: "Enter FormForge",
       href: "https://appvantix.com/formforge",
       external: true,
       primary: false,
@@ -132,15 +132,15 @@ export const letter = {
   title: "Started young. Stayed on the problem.",
   paragraphs: [
     "Coding since 12. Swift first. CodeDay at Lipscomb made it real.",
-    "Built what people needed. Python bots. Sites. Apps. See a need, fill a need.",
-    "When AI became useful, I went deep. Models. Automation. Then tools that act. Language in. Work out.",
-    "Now: CEO and Founder of AppVantix. Hire builders. Own vision, product, security. FormForge is the lead product: configure-to-order for shops tired of one-off CAD quotes.",
-    "No excuses. Want to work together, email. Want the company or product, use the paths above.",
+    "Built what people needed — bots, sites, apps. See a need, fill a need.",
+    "When AI became useful, I went deep: models, automation, then tools that act. Language in. Work out.",
+    "Now: CEO and Founder of AppVantix. Hire builders. Own vision, product, security. FormForge is the lead product — configure-to-order for shops done with one-off CAD quotes.",
+    "No excuses. Want to work together — email. Want the company or product — use the paths above.",
   ],
   signoff: "— Camden Burke, CEO & Founder",
   cta: "Email Camden",
   ctaHref: "mailto:hello@appvantix.com?subject=Work%20with%20Camden",
-  secondaryCta: "Back to paths",
+  secondaryCta: "View Paths",
   secondaryCtaHref: "#paths",
 } as const;
 
@@ -188,15 +188,15 @@ export const credentials = {
 } as const;
 
 export const constellation = {
-  eyebrow: "Companies",
-  title: "Where to go.",
+  eyebrow: "Work",
+  title: "Where the work lives.",
   items: [
     {
       name: "AppVantix",
       role: "Company",
       body: "Invent and operate SaaS. AI and security in the stack.",
       href: "https://appvantix.com",
-      cta: "Visit AppVantix",
+      cta: "Enter AppVantix",
       image: assets.constellation.appvantix.src,
       imageAlt: assets.constellation.appvantix.alt,
     },
@@ -205,7 +205,7 @@ export const constellation = {
       role: "Product",
       body: "Configure-to-order for manufacturers. Live 3D. Shop rules. Files when the config is right.",
       href: "https://appvantix.com/formforge",
-      cta: "Visit FormForge",
+      cta: "Enter FormForge",
       image: assets.constellation.formforge.src,
       imageAlt: assets.constellation.formforge.alt,
     },
@@ -242,10 +242,10 @@ export const productDepth = {
 /** Final conversion band — repeats the three doors without burying the ask */
 export const close = {
   eyebrow: "Next",
-  title: "Ready when you are.",
+  title: "Build with us.",
   body: "Email for work. AppVantix for the company. FormForge for the product.",
   primaryCta: "Email Camden",
-  secondaryCta: "Visit AppVantix",
+  secondaryCta: "Enter AppVantix",
   tertiaryCta: "See FormForge",
 } as const;
 

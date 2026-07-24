@@ -49,7 +49,7 @@ export function Letter() {
   return (
     <section
       id="letter"
-      className="scroll-mt-20 border-y border-line bg-panel/70 md:scroll-mt-24"
+      className="scroll-mt-20 border-y border-line bg-panel md:scroll-mt-24"
     >
       <div className="page-pad section-pad mx-auto max-w-3xl">
         <Reveal>
@@ -78,13 +78,13 @@ export function Letter() {
           <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:flex-row sm:items-center">
             <a
               href={letter.ctaHref}
-              className="tap-target inline-flex w-full items-center justify-center bg-signal px-6 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-signal-deep sm:w-auto sm:px-8 sm:py-4"
+              className="btn-solid tap-target inline-flex w-full items-center justify-center px-6 py-3.5 text-sm font-bold uppercase tracking-[0.16em] sm:w-auto sm:px-8 sm:py-4"
             >
               {letter.cta}
             </a>
             <a
               href={letter.secondaryCtaHref}
-              className="tap-target inline-flex w-full items-center justify-center border border-ink/20 px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-ink transition hover:border-signal hover:text-signal sm:w-auto sm:px-8 sm:py-4"
+              className="btn-ghost tap-target inline-flex w-full items-center justify-center px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] sm:w-auto sm:px-8 sm:py-4"
             >
               {letter.secondaryCta}
             </a>

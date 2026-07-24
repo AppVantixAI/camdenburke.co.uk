@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Syne, Figtree, IBM_Plex_Mono } from "next/font/google";
+import { Space_Grotesk, Manrope, IBM_Plex_Mono } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileCta } from "@/components/MobileCta";
@@ -8,15 +8,15 @@ import { SkipLink } from "@/components/SkipLink";
 import { jsonLd, site } from "@/lib/content";
 import "./globals.css";
 
-const syne = Syne({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-space-grotesk",
   display: "swap",
 });
 
-const figtree = Figtree({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-figtree",
+  variable: "--font-manrope",
   display: "swap",
 });
 
@@ -31,7 +31,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#eef3f6",
+  themeColor: "#000000",
 };
 
 export const metadata: Metadata = {
@@ -114,7 +114,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${figtree.variable} ${ibmPlexMono.variable}`}
+      className={`${spaceGrotesk.variable} ${manrope.variable} ${ibmPlexMono.variable}`}
     >
       <body className="min-h-dvh bg-mist font-sans text-ink antialiased">
         <script

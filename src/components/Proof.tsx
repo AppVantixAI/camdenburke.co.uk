@@ -9,7 +9,7 @@ export function Proof() {
   return (
     <section
       id="proof"
-      className="relative border-y border-line bg-panel/80"
+      className="relative border-y border-line bg-panel"
       aria-label="Proof"
     >
       <div

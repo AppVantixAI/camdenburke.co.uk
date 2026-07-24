@@ -75,8 +75,8 @@ export function Offer() {
                     : {})}
                   className={
                     item.primary
-                      ? "tap-target inline-flex w-full items-center justify-center bg-signal px-6 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition hover:bg-signal-deep md:w-auto"
-                      : "tap-target inline-flex w-full items-center justify-center border border-ink/20 px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-ink transition hover:border-signal hover:text-signal md:w-auto"
+                      ? "btn-solid tap-target inline-flex w-full items-center justify-center px-6 py-3.5 text-sm font-bold uppercase tracking-[0.14em] md:w-auto"
+                      : "btn-ghost tap-target inline-flex w-full items-center justify-center px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] md:w-auto"
                   }
                 >
                   {item.cta}

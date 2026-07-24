@@ -93,7 +93,7 @@ export function Hero() {
       >
         <div className="max-w-3xl">
           <motion.p
-            className="font-mono text-[10px] uppercase tracking-[0.24em] text-on-dark/75 sm:text-[11px] sm:tracking-[0.28em]"
+            className="font-mono text-[10px] uppercase tracking-[0.28em] text-signal sm:text-[11px] sm:tracking-[0.32em]"
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -101,7 +101,7 @@ export function Hero() {
             {site.eyebrow}
           </motion.p>
           <motion.h1
-            className="mt-3 font-display text-[2.65rem] font-bold leading-[0.96] tracking-tight text-on-dark sm:mt-4 sm:text-5xl md:text-7xl lg:text-[5.75rem]"
+            className="mt-4 font-display text-[2.75rem] font-bold leading-[0.94] tracking-tight text-on-dark sm:mt-5 sm:text-6xl md:text-7xl lg:text-[5.85rem]"
             initial={reduce ? false : { opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
@@ -109,7 +109,7 @@ export function Hero() {
             {site.name}
           </motion.h1>
           <motion.p
-            className="mt-4 max-w-2xl font-display text-lg font-semibold leading-snug tracking-tight text-on-dark sm:mt-5 sm:text-xl md:text-2xl lg:text-[1.75rem]"
+            className="mt-5 max-w-2xl font-display text-lg font-medium leading-snug tracking-tight text-on-dark sm:mt-6 sm:text-xl md:text-2xl lg:text-[1.7rem]"
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.26, ease: [0.16, 1, 0.3, 1] }}
@@ -117,7 +117,7 @@ export function Hero() {
             {site.headline}
           </motion.p>
           <motion.p
-            className="mt-4 max-w-lg text-[0.95rem] leading-relaxed text-on-dark-muted sm:mt-5 sm:text-base md:text-lg"
+            className="mt-4 max-w-md text-[0.95rem] leading-relaxed text-on-dark-muted sm:mt-5 sm:text-base md:text-lg"
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
@@ -132,13 +132,13 @@ export function Hero() {
           >
             <a
               href={site.primaryCtaHref}
-              className="tap-target inline-flex w-full items-center justify-center bg-signal px-6 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-signal-deep sm:flex-1"
+              className="btn-solid tap-target inline-flex w-full items-center justify-center px-6 py-3.5 text-sm font-bold uppercase tracking-[0.16em] sm:flex-1"
             >
               {site.primaryCta}
             </a>
             <a
               href={site.secondaryCtaHref}
-              className="tap-target inline-flex w-full items-center justify-center border border-on-dark/40 px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-on-dark transition hover:border-on-dark hover:bg-on-dark/5 sm:flex-1"
+              className="btn-ghost-on-media tap-target inline-flex w-full items-center justify-center px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] sm:flex-1"
             >
               {site.secondaryCta}
             </a>

@@ -69,7 +69,7 @@ function ConstellationPanel({
 
       <div className="page-pad relative mx-auto flex min-h-[72svh] max-w-6xl flex-col justify-end pb-14 pt-24 md:min-h-[88svh] md:pb-24 md:pt-28">
         <Reveal>
-          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-signal-bright sm:text-xs sm:tracking-[0.28em]">
+          <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-signal sm:text-xs sm:tracking-[0.32em]">
             {String(index + 1).padStart(2, "0")} · {item.role}
           </p>
           <h3 className="mt-3 font-display text-4xl font-bold tracking-tight text-on-dark sm:mt-4 sm:text-5xl md:text-7xl">
@@ -82,7 +82,7 @@ function ConstellationPanel({
             href={item.href}
             target="_blank"
             rel="noreferrer"
-            className="tap-target mt-8 inline-flex w-full items-center justify-center border border-on-dark/45 px-6 py-3.5 font-mono text-xs uppercase tracking-[0.2em] text-on-dark transition hover:border-signal-bright hover:text-signal-bright sm:mt-10 sm:w-fit sm:px-7"
+            className="btn-ghost-on-media tap-target mt-8 inline-flex w-full items-center justify-center px-6 py-3.5 font-mono text-xs uppercase tracking-[0.22em] sm:mt-10 sm:w-fit sm:px-7"
           >
             {item.cta}
           </a>

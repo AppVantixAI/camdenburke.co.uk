@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  /* Industrial Clarity — shared with AppVantix */
-  --cb-mist: #eef3f6;
-  --cb-mist-deep: #e2eaef;
-  --cb-snow: #f8fbfd;
-  --cb-ink: #0c1a22;
-  --cb-muted: #3a4d59;
-  --cb-line: #c5d2db;
-  --cb-panel: #f8fbfd;
-  --cb-signal: #0f766e;
-  --cb-signal-bright: #5eb8c9;
-  --cb-signal-deep: #0a5c56;
-  --cb-focus: #1b6ca8;
-  --cb-void: #0c1a22;
-  --cb-on-dark: #f3f7f9;
-  --cb-on-dark-muted: #9aafb8;
+  /* Cinematic mission — black canvas, off-white type, one metal accent */
+  --cb-mist: #000000;
+  --cb-mist-deep: #070709;
+  --cb-snow: #0c0c0f;
+  --cb-ink: #f0f0fa;
+  --cb-muted: #8a8a9a;
+  --cb-line: #1c1c22;
+  --cb-panel: #0a0a0c;
+  --cb-signal: #c4b896;
+  --cb-signal-bright: #d8ccae;
+  --cb-signal-deep: #a89870;
+  --cb-focus: #c4b896;
+  --cb-void: #000000;
+  --cb-on-dark: #f0f0fa;
+  --cb-on-dark-muted: #9a9aaa;
   --background: var(--cb-mist);
   --foreground: var(--cb-ink);
   --page-x: 1rem;
@@ -40,8 +40,8 @@
   --color-void: var(--cb-void);
   --color-on-dark: var(--cb-on-dark);
   --color-on-dark-muted: var(--cb-on-dark-muted);
-  --font-display: var(--font-syne);
-  --font-sans: var(--font-figtree);
+  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-manrope);
   --font-mono: var(--font-ibm-plex-mono);
 }
 
@@ -64,24 +64,11 @@ html {
 
 body {
   color: var(--foreground);
-  font-family: var(--font-figtree), ui-sans-serif, sans-serif;
+  font-family: var(--font-manrope), ui-sans-serif, sans-serif;
   text-rendering: optimizeLegibility;
   overflow-x: clip;
   padding-bottom: env(safe-area-inset-bottom);
-  background:
-    radial-gradient(700px 360px at 8% -8%, rgba(94, 184, 201, 0.12), transparent 58%),
-    radial-gradient(560px 320px at 92% 12%, rgba(15, 118, 110, 0.08), transparent 55%),
-    var(--cb-mist);
-}
-
-@media (min-width: 768px) {
-  body {
-    background:
-      radial-gradient(1100px 520px at 8% -8%, rgba(94, 184, 201, 0.14), transparent 58%),
-      radial-gradient(900px 480px at 92% 12%, rgba(15, 118, 110, 0.09), transparent 55%),
-      radial-gradient(700px 400px at 50% 100%, rgba(15, 118, 110, 0.05), transparent 50%),
-      var(--cb-mist);
-  }
+  background: var(--cb-mist);
 }
 
 /* Room for sticky mobile CTA */
@@ -92,7 +79,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--cb-signal) 35%, white);
+  background: color-mix(in oklab, var(--cb-signal) 45%, black);
   color: var(--cb-ink);
 }
 
@@ -111,8 +98,8 @@ body {
   top: 0;
   z-index: 100;
   transform: translateY(-120%);
-  background: var(--cb-signal);
-  color: white;
+  background: var(--cb-ink);
+  color: var(--cb-mist);
   padding: 0.625rem 1rem;
   font-size: 0.875rem;
   font-weight: 700;
@@ -126,7 +113,7 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-syne), ui-sans-serif, sans-serif;
+  font-family: var(--font-space-grotesk), ui-sans-serif, sans-serif;
 }
 
 .page-pad {
@@ -143,13 +130,49 @@ body {
   min-width: 2.75rem;
 }
 
-/* Mobile-first veil: bottom-weighted for thumb-zone copy */
+/* Solid white mission CTA — black type on light fill */
+.btn-solid {
+  background: var(--cb-ink);
+  color: var(--cb-mist);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-solid:hover {
+  background: color-mix(in oklab, var(--cb-ink) 88%, var(--cb-signal));
+}
+
+/* Uppercase outline / ghost CTA */
+.btn-ghost {
+  border: 1px solid color-mix(in oklab, var(--cb-ink) 40%, transparent);
+  color: var(--cb-ink);
+  background: transparent;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn-ghost:hover {
+  border-color: var(--cb-ink);
+  background: color-mix(in oklab, var(--cb-ink) 6%, transparent);
+}
+
+.btn-ghost-on-media {
+  border: 1px solid color-mix(in oklab, var(--cb-on-dark) 45%, transparent);
+  color: var(--cb-on-dark);
+  background: transparent;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn-ghost-on-media:hover {
+  border-color: var(--cb-on-dark);
+  background: color-mix(in oklab, var(--cb-on-dark) 6%, transparent);
+}
+
+/* Full-bleed media veil — fades into pure black */
 .video-veil {
   background: linear-gradient(
     180deg,
-    rgba(12, 26, 34, 0.42) 0%,
-    rgba(12, 26, 34, 0.58) 36%,
-    rgba(12, 26, 34, 0.9) 100%
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.55) 40%,
+    rgba(0, 0, 0, 0.92) 100%
   );
 }
 
@@ -161,7 +184,7 @@ body {
   background: linear-gradient(
     0deg,
     var(--cb-mist) 0%,
-    rgba(238, 243, 246, 0.5) 45%,
+    rgba(0, 0, 0, 0.5) 45%,
     transparent 100%
   );
   pointer-events: none;
@@ -172,16 +195,16 @@ body {
     background:
       linear-gradient(
         105deg,
-        rgba(12, 26, 34, 0.88) 0%,
-        rgba(12, 26, 34, 0.55) 42%,
-        rgba(12, 26, 34, 0.22) 72%,
-        rgba(12, 26, 34, 0.35) 100%
+        rgba(0, 0, 0, 0.88) 0%,
+        rgba(0, 0, 0, 0.5) 42%,
+        rgba(0, 0, 0, 0.2) 72%,
+        rgba(0, 0, 0, 0.4) 100%
       ),
       linear-gradient(
         0deg,
-        rgba(12, 26, 34, 0.92) 0%,
-        rgba(12, 26, 34, 0.28) 48%,
-        rgba(12, 26, 34, 0.5) 100%
+        rgba(0, 0, 0, 0.92) 0%,
+        rgba(0, 0, 0, 0.28) 48%,
+        rgba(0, 0, 0, 0.55) 100%
       );
   }
 
@@ -196,8 +219,8 @@ body {
 
 .mist-grid {
   background-image:
-    linear-gradient(rgba(12, 26, 34, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(12, 26, 34, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(240, 240, 250, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240, 240, 250, 0.04) 1px, transparent 1px);
   background-size: 32px 32px;
   mask-image: linear-gradient(180deg, black 0%, transparent 90%);
 }
@@ -225,8 +248,14 @@ body.nav-open .mobile-cta {
   .video-veil {
     background: linear-gradient(
       180deg,
-      rgba(12, 26, 34, 0.55) 0%,
-      rgba(12, 26, 34, 0.85) 100%
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.88) 100%
     );
+  }
+
+  .btn-solid,
+  .btn-ghost,
+  .btn-ghost-on-media {
+    transition: none;
   }
 }

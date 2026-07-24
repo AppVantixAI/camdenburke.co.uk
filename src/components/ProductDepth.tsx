@@ -57,7 +57,7 @@ export function ProductDepth() {
             href={productDepth.href}
             target="_blank"
             rel="noreferrer"
-            className="tap-target mt-10 inline-flex w-full items-center justify-center border border-ink/20 px-6 py-3.5 font-mono text-xs uppercase tracking-[0.2em] text-ink transition hover:border-signal hover:text-signal sm:mt-12 sm:w-auto sm:px-7"
+            className="btn-ghost tap-target mt-10 inline-flex w-full items-center justify-center px-6 py-3.5 font-mono text-xs uppercase tracking-[0.22em] sm:mt-12 sm:w-auto sm:px-7"
           >
             {productDepth.cta}
           </a>
