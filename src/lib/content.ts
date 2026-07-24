@@ -23,7 +23,7 @@ export const site = {
   /** Brand name is the hero signal; mission sentence supports underneath */
   headline: "Build useful software. Ship it. Make it hard to break.",
   subhead:
-    "Founder of AppVantix. Coding since twelve — years of shipping, not a pivot. ASU full-stack, CompTIA Security+. I start companies when the work needs an owner.",
+    "Founder of AppVantix. Coding since twelve — years of craft, and real passion. ASU full-stack. CompTIA Security+. CEO because the work needed an owner.",
   primaryCta: "Email Camden",
   primaryCtaHref: "mailto:hello@appvantix.com?subject=Work%20with%20Camden",
   secondaryCta: "View Paths",
@@ -68,7 +68,7 @@ export const assets = {
 export const nav = [
   { href: "#paths", label: "Paths" },
   { href: "#letter", label: "Background" },
-  { href: "#creed", label: "Principles" },
+  { href: "#creed", label: "Quotes" },
   { href: "#constellation", label: "Work" },
   { href: "#credentials", label: "Credentials" },
 ] as const;
@@ -125,57 +125,46 @@ export const paths = {
 /** Person first: story → qualifications → why CEO & Founder → what he's building */
 export const letter = {
   eyebrow: "Background",
-  title: "Years of craft. Then ownership.",
-  /** Pull quote under the title — always attributed in the UI */
+  title: "Years of craft. Real passion.",
+  /** Famous / film epigraph — verified attribution only */
   epigraph: {
-    text: "I start companies when the work needs an owner.",
-    attribution: "Camden Burke",
+    text: "The only way to do great work is to love what you do.",
+    attribution: "Steve Jobs, Stanford Commencement (2005)",
   },
   paragraphs: [
-    "I have been writing code since I was twelve. Not a late pivot — years of craft. Swift first. CodeDay at Lipscomb. Built what people needed, then kept going.",
-    "That arc never stopped. When AI became useful, I went deep the same way I go deep on anything that matters. ASU full-stack, 2024. CompTIA Security+. I lead product and security from a base I earned — not borrowed.",
-    "Useful software needs an owner who ships, hardens, and stays accountable. I founded AppVantix as CEO so that person is me — the same builder, with a company to match the work.",
-    "AppVantix invents and operates SaaS with AI and security in the stack. FormForge is the lead product: live 3D, shop rules, export-ready files for manufacturers still quoting custom work by hand.",
+    "I have been writing code since I was twelve. Not a late pivot — years of craft, and real passion. Swift first. CodeDay at Lipscomb. Built what people needed, then kept going.",
+    "That arc never stopped. When AI became useful, I went deep the same way I go deep on anything that matters. ASU full-stack, 2024. CompTIA Security+. Qualifications I earned — so technical leadership is grounded, not guessed.",
+    "This site is about me as CEO & Founder: the story, the qualifications, and why the title sticks. Useful software needs an owner who ships, hardens, and stays accountable. I founded AppVantix so that person is me.",
+    "I started AppVantix because manufacturers were still quoting pipe spools by hand — that's insane in 2026. FormForge is the lead product: live 3D, shop rules, export-ready files.",
   ],
   signoff: "— Camden Burke, CEO & Founder",
 } as const;
 
 /**
- * Operating lines — Camden's own voice only.
- * Each line must carry a visible attribution in the UI (no orphan quotes).
+ * Famous / film quotes only — verified speakers & sources.
+ * Receipts under each line connect the quote to Camden's work (not attributed as his words).
  */
 export const creed = {
-  eyebrow: "Principles",
-  title: "How I operate.",
+  eyebrow: "Quotes",
+  title: "Lines that stick.",
   lines: [
     {
-      line: "The goal is useful product, not theater.",
-      attribution: "Camden Burke",
+      line: "Talk is cheap. Show me the code.",
+      attribution: "Linus Torvalds",
       receipt:
-        "I ship FormForge: configure-to-order with live 3D, shop rules, and a quote inbox.",
+        "FormForge is the receipt: configure-to-order with live 3D, shop rules, and a quote inbox.",
     },
     {
-      line: "Don't reinvent the wheel. Build the car.",
-      attribution: "AppVantix operating principle",
+      line: "Real artists ship.",
+      attribution: "Steve Jobs",
       receipt:
-        "AppVantix invents and operates SaaS — AI and security in the stack.",
+        "Ship useful software. Iterate. Make it hard to break — constraint rules and export gates before files leave.",
     },
     {
-      line: "Find the gap. Own the fix.",
-      attribution: "Camden Burke",
+      line: "See a need, fill a need.",
+      attribution: "Bigweld, Robots (2005)",
       receipt:
-        "Shops still quoting custom work by hand and email. That is why I started.",
-    },
-    {
-      line: "Ship. Iterate. Make it hard to break.",
-      attribution: "Camden Burke",
-      receipt:
-        "Constraint rules and export gates before files leave the system.",
-    },
-    {
-      line: "Physics and code don't care about excuses.",
-      attribution: "AppVantix operating principle",
-      receipt: "Valid geometry or it does not ship.",
+        "Manufacturers still quoting custom work by hand. That gap is why AppVantix and FormForge exist.",
     },
   ],
 } as const;
@@ -272,8 +261,8 @@ export const close = {
   eyebrow: "Next",
   title: "Build with me.",
   quote: {
-    text: "Useful product. Hardened systems. An owner who stays.",
-    attribution: "Camden Burke",
+    text: "Stay hungry. Stay foolish.",
+    attribution: "Whole Earth Catalog · Steve Jobs, Stanford (2005)",
   },
   body: "Email for work. Paths above for AppVantix and FormForge.",
   primaryCta: "Email Camden",
