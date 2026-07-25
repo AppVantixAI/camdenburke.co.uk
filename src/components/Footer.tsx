@@ -1,5 +1,5 @@
 import { BrandMark } from "@/components/BrandMark";
-import { site } from "@/lib/content";
+import { footerLinks, site } from "@/lib/content";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -20,36 +20,18 @@ export function Footer() {
           </p>
         </div>
         <div className="grid grid-cols-2 gap-x-6 gap-y-3 font-mono text-[10px] uppercase tracking-[0.16em] text-muted sm:flex sm:flex-wrap sm:gap-5">
-          <a
-            href={site.emailHref}
-            className="tap-target inline-flex items-center transition hover:text-ink"
-          >
-            Email
-          </a>
-          <a
-            href={site.formforgeUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="tap-target inline-flex items-center transition hover:text-ink"
-          >
-            FormForge
-          </a>
-          <a
-            href={site.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="tap-target inline-flex items-center transition hover:text-ink"
-          >
-            LinkedIn
-          </a>
-          <a
-            href={site.github}
-            target="_blank"
-            rel="noreferrer"
-            className="tap-target inline-flex items-center transition hover:text-ink"
-          >
-            GitHub
-          </a>
+          {footerLinks.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              {...(item.external
+                ? { target: "_blank", rel: "noreferrer" }
+                : {})}
+              className="tap-target inline-flex items-center transition hover:text-ink"
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
       </div>
     </footer>

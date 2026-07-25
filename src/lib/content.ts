@@ -34,6 +34,17 @@ export const site = {
   videoPoster: "/hero-poster.jpg",
 } as const;
 
+/** Footer links — keep in sync with live Paths / Work products */
+export const footerLinks = [
+  { label: "Email", href: site.emailHref, external: false },
+  { label: "AppVantix", href: site.companyUrl, external: true },
+  { label: "FormForge", href: site.formforgeUrl, external: true },
+  { label: "LifeVault", href: site.lifevaultUrl, external: true },
+  { label: "Snap2Text", href: site.snap2textUrl, external: true },
+  { label: "LinkedIn", href: site.linkedin, external: true },
+  { label: "GitHub", href: site.github, external: true },
+] as const;
+
 /**
  * Locked media board — every public still has a job.
  */
