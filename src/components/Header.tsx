@@ -54,19 +54,6 @@ export function Header() {
           >
             {site.name}
           </a>
-          <span
-            className={`hidden h-3.5 w-px shrink-0 lg:block ${
-              scrolled ? "bg-line" : "bg-on-dark/25"
-            }`}
-            aria-hidden
-          />
-          <p
-            className={`hidden font-mono text-[9px] uppercase tracking-[0.16em] lg:block ${
-              scrolled ? "text-muted" : "text-on-dark/55"
-            }`}
-          >
-            {site.location}
-          </p>
         </div>
 
         <nav
@@ -148,9 +135,6 @@ export function Header() {
                 </a>
               ))}
               <BrandMark withLabel size={22} className="mt-6 py-2 text-ink" />
-              <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
-                {site.location}
-              </p>
               <a
                 href={site.primaryCtaHref}
                 onClick={close}

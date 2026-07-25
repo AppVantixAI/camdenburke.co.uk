@@ -65,7 +65,7 @@ export const nav = [
   { href: "#letter", label: "Background" },
   { href: "#creed", label: "Quotes" },
   { href: "#constellation", label: "Work" },
-  { href: "#credentials", label: "Credentials" },
+  { href: "#method", label: "How I work" },
 ] as const;
 
 /** Trajectory strip — hard dates/roles only; no invented customer counts */
@@ -139,7 +139,7 @@ export const letter = {
   paragraphs: [
     "I have been writing code since I was twelve. Not a late pivot — years of craft, and real passion. Swift first. CodeDay at Lipscomb. Built what people needed, then kept going.",
     "That arc never stopped. When AI became useful, I went deep the same way I go deep on anything that matters. ASU full-stack, 2024. CompTIA Security+. Qualifications I earned — so technical leadership is grounded, not guessed.",
-    "This site is about me as CEO & Founder: the story, the qualifications, and why the title sticks. Useful software needs an owner who ships, hardens, and stays accountable. I founded AppVantix so that person is me.",
+    "This site is about me as CEO & Founder: the story, the qualifications, and the work. Useful software needs an owner who ships, hardens, and stays accountable. I founded AppVantix so that person is me.",
     "I founded AppVantix to invent and operate useful software — with AI and security in the stack. LifeVault.ai is another product I’m shipping: time capsules parents seal today for a day that matters later.",
   ],
   signoff: "— Camden Burke, CEO & Founder",
@@ -159,25 +159,13 @@ export const creed = {
       attribution:
         "Archimedes — quoted by Pappus of Alexandria, Synagoge, Book VIII (c. AD 340)",
       receipt:
-        "Leverage over brute force: ship systems that multiply what one person can do — products that scale past handwork.",
-    },
-    {
-      line: "The person doing the job knows far more than anyone else as to the best way of doing that job.",
-      attribution: "Allan H. Mogensen — Father of Work Simplification (1930s)",
-      receipt:
-        "Build with the people who live the work — listen first, then encode the real constraints into software.",
+        "Leverage over brute force: ship systems that multiply what one person can do.",
     },
     {
       line: "Never give in, never give in, never, never, never, never—in nothing, great or small, large or petty—never give in except to convictions of honour and good sense.",
       attribution: "Winston Churchill — Harrow School speech (29 Oct 1941)",
       receipt:
-        "Coding since twelve. ASU. Security+. AppVantix. Keep shipping when the hard parts show up.",
-    },
-    {
-      line: "It ain't about how hard you hit. It's about how hard you can get hit and keep moving forward.",
-      attribution: "Rocky Balboa — Rocky Balboa (2006)",
-      receipt:
-        "Products break. Markets shift. You take the hit, fix it, and move the next version forward.",
+        "Coding since twelve. ASU. Security+. Keep shipping when the hard parts show up.",
     },
     {
       line: "Results! Why, man, I have gotten a lot of results! I know several thousand things that won't work.",
@@ -189,36 +177,34 @@ export const creed = {
   ],
 } as const;
 
-export const credentials = {
-  eyebrow: "Credentials",
-  title: "Why the title sticks.",
+/**
+ * After Work — how Camden operates. Verify links are real trust anchors.
+ * Degree / Sec+ already appear in Proof + Background; no vanity “title sticks” pitch.
+ */
+export const method = {
+  eyebrow: "How I work",
+  title: "Ship it. Harden it. Own it.",
+  body: "What you can expect after the sites above — concrete habits, not a resume rewrite.",
   items: [
     {
-      label: "Role",
-      title: "CEO & Founder",
-      meta: "AppVantix LLC",
-      body: "Years of shipping made the call: set direction, make product bets, own outcomes. The title matches the work.",
+      label: "01",
+      title: "Live product over slides",
+      detail:
+        "Click through real apps and waitlists. If it isn’t running somewhere public, I don’t lead with it.",
     },
     {
-      label: "Focus",
-      title: "Artificial Intelligence & Cybersecurity",
-      meta: "Core work",
-      body: "Models, automation, tools that act. Security is part of the design, not a patch.",
+      label: "02",
+      title: "Security in the design",
+      detail:
+        "CompTIA Security+ through March 2029. Identity, access, and customer data are product decisions — not a patch later.",
     },
     {
-      label: "Education",
-      title: "B.S. Graphic Information Technology",
-      meta: "Full Stack Web Development · Arizona State University · Completed 2024",
-      body: "Full-stack base so technical leadership is grounded, not guessed.",
-    },
-    {
-      label: "Certification",
-      title: "CompTIA Security+ ce",
-      meta: "SY0-701 · Valid through March 2029",
-      body: "Identity, access, customer data. Required for serious B2B software.",
+      label: "03",
+      title: "Direct founder contact",
+      detail:
+        "Email reaches me. No gatekeepers, no invented case studies. I own the outcome.",
     },
   ],
-  /** Outward trust anchors — real profiles/sites only, no press invention */
   verify: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/camdenburkedev" },
     { label: "AppVantix", href: "https://appvantix.com" },

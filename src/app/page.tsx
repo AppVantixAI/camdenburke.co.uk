@@ -1,9 +1,9 @@
 import { Close } from "@/components/Close";
 import { Constellation } from "@/components/Constellation";
-import { Credentials } from "@/components/Credentials";
 import { Creed } from "@/components/Creed";
 import { Hero } from "@/components/Hero";
 import { Letter } from "@/components/Letter";
+import { Method } from "@/components/Method";
 import { Offer } from "@/components/Offer";
 import { Proof } from "@/components/Proof";
 
@@ -16,7 +16,7 @@ export default function HomePage() {
       <Letter />
       <Creed />
       <Constellation />
-      <Credentials />
+      <Method />
       <Close />
     </div>
   );
