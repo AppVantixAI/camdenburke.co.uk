@@ -8,6 +8,7 @@ export const site = {
   url: "https://camdenburke.co.uk",
   companyUrl: "https://appvantix.com",
   formforgeUrl: "https://appvantix.com/formforge",
+  lifevaultUrl: "https://lifevault.ai/#how",
   demoUrl: "https://appvantix.com/demo",
   email: "hello@appvantix.com",
   emailHref: "mailto:hello@appvantix.com?subject=Work%20with%20Camden",
@@ -50,6 +51,10 @@ export const assets = {
       src: "/hero-formforge.jpg",
       alt: "FormForge configure-to-order UI with live 3D pipe spool preview",
     },
+    lifevault: {
+      src: "/hero-lifevault.jpg",
+      alt: "LifeVault — digital time capsules for parents, early access waitlist",
+    },
   },
   productDepth: {
     rules: {
@@ -83,10 +88,10 @@ export const proof = {
   ],
 } as const;
 
-/** Three doors into Camden's work — reach-out weighted as primary */
+/** Doors into Camden's work — reach-out weighted as primary */
 export const paths = {
   eyebrow: "Paths",
-  title: "Three ways in.",
+  title: "Four ways in.",
   body: "Work with me. See my company. See what I'm shipping.",
   items: [
     {
@@ -113,9 +118,19 @@ export const paths = {
       label: "03",
       title: "FormForge",
       detail:
-        "My lead product. Configure-to-order for manufacturers — live 3D, shop rules, export-ready files.",
+        "Configure-to-order for manufacturers — live 3D, shop rules, export-ready files.",
       cta: "Enter FormForge",
       href: "https://appvantix.com/formforge",
+      external: true,
+      primary: false,
+    },
+    {
+      label: "04",
+      title: "LifeVault.ai",
+      detail:
+        "Digital time capsules for parents — seal photos, videos, and letters that unlock on a day that matters.",
+      cta: "Enter LifeVault",
+      href: "https://lifevault.ai/#how",
       external: true,
       primary: false,
     },
@@ -217,6 +232,7 @@ export const credentials = {
   verify: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/camdenburkedev" },
     { label: "AppVantix", href: "https://appvantix.com" },
+    { label: "LifeVault", href: "https://lifevault.ai/#how" },
     { label: "GitHub", href: "https://github.com/cburke12" },
   ],
 } as const;
@@ -242,6 +258,15 @@ export const constellation = {
       cta: "Enter FormForge",
       image: assets.constellation.formforge.src,
       imageAlt: assets.constellation.formforge.alt,
+    },
+    {
+      name: "LifeVault.ai",
+      role: "Product I ship",
+      body: "Digital time capsules for parents. Seal photos, videos, and letters now — they unlock on a birthday, graduation, or milestone you choose.",
+      href: "https://lifevault.ai/#how",
+      cta: "Enter LifeVault",
+      image: assets.constellation.lifevault.src,
+      imageAlt: assets.constellation.lifevault.alt,
     },
   ],
 } as const;
@@ -279,7 +304,7 @@ export const close = {
     text: "Never give in except to convictions of honour and good sense.",
     attribution: "Winston Churchill — Harrow School (29 Oct 1941)",
   },
-  body: "Email for work. Paths above for AppVantix and FormForge.",
+  body: "Email for work. Paths above for AppVantix, FormForge, and LifeVault.",
   primaryCta: "Email Camden",
 } as const;
 
@@ -307,7 +332,7 @@ export const jsonLd = {
       url: site.url,
       email: site.email,
       image: `${site.url}${site.ogImage}`,
-      sameAs: [site.linkedin, site.github, site.companyUrl],
+      sameAs: [site.linkedin, site.github, site.companyUrl, site.lifevaultUrl],
       homeLocation: {
         "@type": "Place",
         name: "Knoxville, Tennessee",
