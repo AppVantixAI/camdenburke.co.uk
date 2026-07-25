@@ -9,6 +9,7 @@ export const site = {
   companyUrl: "https://appvantix.com",
   formforgeUrl: "https://appvantix.com/formforge",
   lifevaultUrl: "https://lifevault.ai/#how",
+  snap2textUrl: "https://snap2text.app/",
   demoUrl: "https://appvantix.com/demo",
   email: "hello@appvantix.com",
   emailHref: "mailto:hello@appvantix.com?subject=Work%20with%20Camden",
@@ -17,7 +18,7 @@ export const site = {
   location: "Knoxville · Remote worldwide",
   metaTitle: "Camden Burke — CEO & Founder, AppVantix",
   description:
-    "Camden Burke — CEO & Founder of AppVantix. Coding since twelve: years of craft, AI and security software, products shipping under AppVantix and LifeVault.",
+    "Camden Burke — CEO & Founder of AppVantix. Coding since twelve: years of craft, AI and security software — FormForge, LifeVault, Snap2Text.",
   ogImage: "/og-image.png",
   ogImageAlt: "Camden Burke — CEO & Founder of AppVantix",
   eyebrow: "CEO & Founder · AppVantix",
@@ -55,6 +56,10 @@ export const assets = {
       src: "/hero-lifevault.jpg",
       alt: "LifeVault — digital time capsules for parents, early access waitlist",
     },
+    snap2text: {
+      src: "/hero-snap2text.jpg",
+      alt: "Snap2Text Mac app — on-device OCR capture, cleanup, and private history",
+    },
   },
   mark: "/appvantix-mark.svg",
   og: "/og-image.png",
@@ -81,7 +86,7 @@ export const proof = {
 /** Doors into Camden's work — reach-out weighted as primary */
 export const paths = {
   eyebrow: "Paths",
-  title: "Four ways in.",
+  title: "Ways in.",
   body: "Work with me. See my company. See what I'm shipping.",
   items: [
     {
@@ -121,6 +126,16 @@ export const paths = {
         "Digital time capsules for parents — seal photos, videos, and letters that unlock on a day that matters.",
       cta: "Enter LifeVault",
       href: "https://lifevault.ai/#how",
+      external: true,
+      primary: false,
+    },
+    {
+      label: "05",
+      title: "Snap2Text",
+      detail:
+        "Mac OCR utility — capture text anywhere on screen, clean it up, keep history private on-device. $9.99 once.",
+      cta: "Enter Snap2Text",
+      href: "https://snap2text.app/",
       external: true,
       primary: false,
     },
@@ -209,6 +224,7 @@ export const method = {
     { label: "LinkedIn", href: "https://www.linkedin.com/in/camdenburkedev" },
     { label: "AppVantix", href: "https://appvantix.com" },
     { label: "LifeVault", href: "https://lifevault.ai/#how" },
+    { label: "Snap2Text", href: "https://snap2text.app/" },
     { label: "GitHub", href: "https://github.com/cburke12" },
   ],
 } as const;
@@ -244,6 +260,15 @@ export const constellation = {
       image: assets.constellation.lifevault.src,
       imageAlt: assets.constellation.lifevault.alt,
     },
+    {
+      name: "Snap2Text",
+      role: "Product I ship",
+      body: "Private Mac OCR — capture text anywhere on screen, clean it up, search history on-device. One-time purchase. No cloud OCR.",
+      href: "https://snap2text.app/",
+      cta: "Enter Snap2Text",
+      image: assets.constellation.snap2text.src,
+      imageAlt: assets.constellation.snap2text.alt,
+    },
   ],
 } as const;
 
@@ -255,7 +280,7 @@ export const close = {
     text: "Never give in except to convictions of honour and good sense.",
     attribution: "Winston Churchill — Harrow School (29 Oct 1941)",
   },
-  body: "Email for work. Paths above for AppVantix, FormForge, and LifeVault.",
+  body: "Email for work. Paths above for AppVantix, FormForge, LifeVault, and Snap2Text.",
   primaryCta: "Email Camden",
 } as const;
 
@@ -283,7 +308,13 @@ export const jsonLd = {
       url: site.url,
       email: site.email,
       image: `${site.url}${site.ogImage}`,
-      sameAs: [site.linkedin, site.github, site.companyUrl, site.lifevaultUrl],
+      sameAs: [
+        site.linkedin,
+        site.github,
+        site.companyUrl,
+        site.lifevaultUrl,
+        site.snap2textUrl,
+      ],
       homeLocation: {
         "@type": "Place",
         name: "Knoxville, Tennessee",

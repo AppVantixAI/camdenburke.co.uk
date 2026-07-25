@@ -45,6 +45,7 @@ export const metadata: Metadata = {
     "Founder",
     "AppVantix",
     "LifeVault",
+    "Snap2Text",
     "Artificial Intelligence",
     "Cybersecurity",
     "CompTIA Security+",
