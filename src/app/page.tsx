@@ -5,7 +5,6 @@ import { Creed } from "@/components/Creed";
 import { Hero } from "@/components/Hero";
 import { Letter } from "@/components/Letter";
 import { Offer } from "@/components/Offer";
-import { ProductDepth } from "@/components/ProductDepth";
 import { Proof } from "@/components/Proof";
 
 export default function HomePage() {
@@ -17,7 +16,6 @@ export default function HomePage() {
       <Letter />
       <Creed />
       <Constellation />
-      <ProductDepth />
       <Credentials />
       <Close />
     </div>

@@ -17,7 +17,7 @@ export const site = {
   location: "Knoxville · Remote worldwide",
   metaTitle: "Camden Burke — CEO & Founder, AppVantix",
   description:
-    "Camden Burke — CEO & Founder of AppVantix. Coding since twelve: years of craft, AI and security software, FormForge for manufacturers.",
+    "Camden Burke — CEO & Founder of AppVantix. Coding since twelve: years of craft, AI and security software, products shipping under AppVantix and LifeVault.",
   ogImage: "/og-image.png",
   ogImageAlt: "Camden Burke — CEO & Founder of AppVantix",
   eyebrow: "CEO & Founder · AppVantix",
@@ -54,16 +54,6 @@ export const assets = {
     lifevault: {
       src: "/hero-lifevault.jpg",
       alt: "LifeVault — digital time capsules for parents, early access waitlist",
-    },
-  },
-  productDepth: {
-    rules: {
-      src: "/product-rules.jpg",
-      alt: "FormForge rules builder with manufacturing constraint expressions",
-    },
-    inbox: {
-      src: "/product-inbox.jpg",
-      alt: "FormForge submissions inbox with quote and configuration requests",
     },
   },
   mark: "/appvantix-mark.svg",
@@ -150,7 +140,7 @@ export const letter = {
     "I have been writing code since I was twelve. Not a late pivot — years of craft, and real passion. Swift first. CodeDay at Lipscomb. Built what people needed, then kept going.",
     "That arc never stopped. When AI became useful, I went deep the same way I go deep on anything that matters. ASU full-stack, 2024. CompTIA Security+. Qualifications I earned — so technical leadership is grounded, not guessed.",
     "This site is about me as CEO & Founder: the story, the qualifications, and why the title sticks. Useful software needs an owner who ships, hardens, and stays accountable. I founded AppVantix so that person is me.",
-    "I started AppVantix because manufacturers were still quoting pipe spools by hand — that's insane in 2026. FormForge is the lead product: live 3D, shop rules, export-ready files.",
+    "I founded AppVantix to invent and operate useful software — with AI and security in the stack. LifeVault.ai is another product I’m shipping: time capsules parents seal today for a day that matters later.",
   ],
   signoff: "— Camden Burke, CEO & Founder",
 } as const;
@@ -169,13 +159,13 @@ export const creed = {
       attribution:
         "Archimedes — quoted by Pappus of Alexandria, Synagoge, Book VIII (c. AD 340)",
       receipt:
-        "Leverage over brute force: FormForge turns shop rules and live 3D into configure-to-order that scales.",
+        "Leverage over brute force: ship systems that multiply what one person can do — products that scale past handwork.",
     },
     {
       line: "The person doing the job knows far more than anyone else as to the best way of doing that job.",
       attribution: "Allan H. Mogensen — Father of Work Simplification (1930s)",
       receipt:
-        "Build with the people who live the work — manufacturers quoting by hand told us what FormForge had to fix.",
+        "Build with the people who live the work — listen first, then encode the real constraints into software.",
     },
     {
       line: "Never give in, never give in, never, never, never, never—in nothing, great or small, large or petty—never give in except to convictions of honour and good sense.",
@@ -271,31 +261,6 @@ export const constellation = {
   ],
 } as const;
 
-/** Secondary FormForge depth — product evidence of how Camden builds */
-export const productDepth = {
-  eyebrow: "FormForge",
-  title: "Rules. Inbox. Loop closed.",
-  body: "Proof of how I build: constraints that block bad exports, and an inbox that turns configs into quotes.",
-  items: [
-    {
-      label: "01",
-      title: "Rules builder",
-      detail:
-        "Wall thickness, bolt clearance, export gates. Constraints the shop can trust.",
-      image: assets.productDepth.rules.src,
-      imageAlt: assets.productDepth.rules.alt,
-    },
-    {
-      label: "02",
-      title: "Submissions inbox",
-      detail:
-        "Quote and configure requests ready for review. Not lost in email.",
-      image: assets.productDepth.inbox.src,
-      imageAlt: assets.productDepth.inbox.alt,
-    },
-  ],
-} as const;
-
 /** Final band — one clear ask; other doors live in Paths */
 export const close = {
   eyebrow: "Next",
@@ -360,8 +325,7 @@ export const jsonLd = {
         "Cybersecurity",
         "Artificial Intelligence",
         "SaaS",
-        "Configure-to-order",
-        "Manufacturing software",
+        "Digital time capsules",
         "Executive Leadership",
         "Full Stack Web Development",
       ],
