@@ -16,7 +16,7 @@ export function MobileCta() {
 
   return (
     <div
-      className={`mobile-cta fixed inset-x-0 bottom-0 z-40 border-t border-line bg-mist/95 px-4 pt-3 backdrop-blur-md transition-transform duration-300 md:hidden ${
+      className={`mobile-cta fixed inset-x-0 bottom-0 z-40 border-t border-line bg-mist/95 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] pt-3 backdrop-blur-md transition-transform duration-300 md:hidden ${
         visible ? "translate-y-0" : "translate-y-full"
       }`}
       style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
@@ -24,7 +24,7 @@ export function MobileCta() {
     >
       <a
         href={site.primaryCtaHref}
-        className="btn-solid tap-target flex w-full items-center justify-center px-5 py-3.5 text-sm font-bold uppercase tracking-[0.16em]"
+        className="btn-solid tap-target flex min-h-12 w-full items-center justify-center px-5 py-3.5 text-sm font-bold uppercase tracking-[0.16em]"
         tabIndex={visible ? 0 : -1}
       >
         {site.primaryCta}

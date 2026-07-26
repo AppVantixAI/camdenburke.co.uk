@@ -32,11 +32,11 @@ export function Proof() {
               ease: [0.16, 1, 0.3, 1],
             }}
           >
-            <div className="flex flex-col items-start justify-center px-4 py-6 sm:px-5 sm:py-8 md:px-8 md:py-12">
-              <p className="font-display text-xl font-bold tracking-tight text-ink sm:text-2xl md:text-4xl">
+            <div className="flex flex-col items-start justify-center px-3.5 py-5 sm:px-5 sm:py-8 md:px-8 md:py-12">
+              <p className="font-display text-lg font-bold tracking-tight text-ink sm:text-2xl md:text-4xl">
                 {item.value}
               </p>
-              <p className="mt-1.5 max-w-[11rem] font-mono text-[9px] uppercase leading-snug tracking-[0.16em] text-muted sm:mt-2 sm:max-w-none sm:text-[10px] sm:tracking-[0.22em]">
+              <p className="mt-1.5 max-w-[10.5rem] font-mono text-[9px] uppercase leading-snug tracking-[0.14em] text-muted sm:mt-2 sm:max-w-none sm:text-[10px] sm:tracking-[0.22em]">
                 {item.label}
               </p>
             </div>

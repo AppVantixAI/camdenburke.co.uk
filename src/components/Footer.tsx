@@ -13,13 +13,10 @@ export function Footer() {
             <BrandMark withLabel size={20} className="text-ink" />
           </div>
           <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
-            {site.location}
-          </p>
-          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
             © {year} · {site.legal}
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-x-6 gap-y-3 font-mono text-[10px] uppercase tracking-[0.16em] text-muted sm:flex sm:flex-wrap sm:gap-5">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-1 font-mono text-[10px] uppercase tracking-[0.16em] text-muted sm:flex sm:flex-wrap sm:gap-5">
           {footerLinks.map((item) => (
             <a
               key={item.label}
@@ -27,7 +24,7 @@ export function Footer() {
               {...(item.external
                 ? { target: "_blank", rel: "noreferrer" }
                 : {})}
-              className="tap-target inline-flex items-center transition hover:text-ink"
+              className="tap-target-inline transition hover:text-ink"
             >
               {item.label}
             </a>

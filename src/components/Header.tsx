@@ -84,7 +84,11 @@ export function Header() {
           </a>
           <button
             type="button"
-            className="tap-target inline-flex items-center justify-center border border-on-dark/40 text-on-dark xl:hidden"
+            className={`tap-target inline-flex h-11 w-11 items-center justify-center border xl:hidden ${
+              onChrome
+                ? "border-ink/40 text-ink"
+                : "border-on-dark/40 text-on-dark"
+            }`}
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -123,13 +127,13 @@ export function Header() {
             exit={reduce ? undefined : { opacity: 0, y: -8 }}
             transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="page-pad mx-auto flex max-w-6xl flex-col pb-10 pt-2">
+            <div className="page-pad mx-auto flex max-w-6xl flex-col pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-2">
               {nav.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={close}
-                  className="tap-target flex items-center border-b border-line py-4 font-mono text-xs uppercase tracking-[0.18em] text-ink"
+                  className="tap-target flex min-h-12 items-center border-b border-line py-4 font-mono text-xs uppercase tracking-[0.18em] text-ink"
                 >
                   {item.label}
                 </a>

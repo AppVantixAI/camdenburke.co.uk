@@ -88,12 +88,12 @@ export function Hero() {
       <div className="video-veil absolute inset-0" aria-hidden />
 
       <motion.div
-        className="page-pad relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end pb-20 pt-[calc(var(--header-h)+1.25rem)] md:pb-28 md:pt-28"
+        className="page-pad relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end pb-[calc(5.5rem+env(safe-area-inset-bottom))] pt-[calc(var(--header-h)+1.25rem)] md:pb-28 md:pt-28"
         style={parallaxOff ? undefined : { y: contentY, opacity }}
       >
         <div className="max-w-3xl">
           <motion.p
-            className="font-mono text-[10px] uppercase tracking-[0.28em] text-signal sm:text-[11px] sm:tracking-[0.32em]"
+            className="font-mono text-[10px] uppercase tracking-[0.22em] text-signal sm:text-[11px] sm:tracking-[0.32em]"
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -101,7 +101,7 @@ export function Hero() {
             {site.eyebrow}
           </motion.p>
           <motion.h1
-            className="mt-4 font-display text-[2.75rem] font-bold leading-[0.94] tracking-tight text-on-dark sm:mt-5 sm:text-6xl md:text-7xl lg:text-[5.85rem]"
+            className="mt-4 font-display text-[2.4rem] font-bold leading-[0.94] tracking-tight text-on-dark sm:mt-5 sm:text-6xl md:text-7xl lg:text-[5.85rem]"
             initial={reduce ? false : { opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
@@ -109,7 +109,7 @@ export function Hero() {
             {site.name}
           </motion.h1>
           <motion.p
-            className="mt-5 max-w-2xl font-display text-lg font-medium leading-snug tracking-tight text-on-dark sm:mt-6 sm:text-xl md:text-2xl lg:text-[1.7rem]"
+            className="mt-4 max-w-2xl font-display text-[1.05rem] font-medium leading-snug tracking-tight text-on-dark sm:mt-6 sm:text-xl md:text-2xl lg:text-[1.7rem]"
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.26, ease: [0.16, 1, 0.3, 1] }}
@@ -117,7 +117,7 @@ export function Hero() {
             {site.headline}
           </motion.p>
           <motion.p
-            className="mt-4 max-w-md text-[0.95rem] leading-relaxed text-on-dark-muted sm:mt-5 sm:text-base md:text-lg"
+            className="mt-3.5 max-w-md text-[0.92rem] leading-relaxed text-on-dark-muted sm:mt-5 sm:text-base md:text-lg"
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
@@ -125,7 +125,7 @@ export function Hero() {
             {site.subhead}
           </motion.p>
           <motion.div
-            className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:max-w-md sm:flex-row sm:items-stretch"
+            className="mt-7 flex w-full flex-col gap-3 sm:mt-10 sm:max-w-md sm:flex-row sm:items-stretch"
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}

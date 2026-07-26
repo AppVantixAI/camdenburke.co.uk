@@ -42,11 +42,11 @@ export function Offer() {
           {paths.body}
         </p>
 
-        <div className="mt-10 divide-y divide-line border-y border-line md:mt-14 md:grid md:grid-cols-2 md:gap-0 md:divide-x md:divide-y md:border md:border-line lg:grid-cols-3">
+        <div className="mt-8 divide-y divide-line border-y border-line sm:mt-10 md:mt-14 md:grid md:grid-cols-2 md:gap-0 md:divide-x md:divide-y md:border md:border-line lg:grid-cols-3">
           {paths.items.map((item, index) => (
             <motion.article
               key={item.label}
-              className="flex flex-col py-8 md:border-0 md:px-8 md:py-10"
+              className="flex flex-col py-6 sm:py-8 md:border-0 md:px-8 md:py-10"
               initial={reduce ? false : { opacity: 0, y: isMobile ? 16 : 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}

@@ -62,14 +62,14 @@ export function Letter() {
           </blockquote>
         </Reveal>
 
-        <div className="mt-10 space-y-7 sm:mt-14 sm:space-y-9 md:mt-16 md:space-y-10">
+        <div className="mt-8 space-y-6 sm:mt-14 sm:space-y-9 md:mt-16 md:space-y-10">
           {letter.paragraphs.map((paragraph) => (
             <LetterLine key={paragraph.slice(0, 28)} paragraph={paragraph} />
           ))}
         </div>
 
         <Reveal delay={0.1}>
-          <p className="mt-12 font-display text-lg font-semibold text-ink sm:mt-14 sm:text-xl md:mt-16 md:text-2xl">
+          <p className="mt-10 font-display text-lg font-semibold text-ink sm:mt-14 sm:text-xl md:mt-16 md:text-2xl">
             {letter.signoff}
           </p>
         </Reveal>

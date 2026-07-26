@@ -15,7 +15,6 @@ export const site = {
   emailHref: "mailto:hello@appvantix.com?subject=Work%20with%20Camden",
   linkedin: "https://www.linkedin.com/in/camdenburkedev",
   github: "https://github.com/cburke12",
-  location: "Knoxville · Remote worldwide",
   metaTitle: "Camden Burke — CEO & Founder, AppVantix",
   description:
     "Camden Burke — CEO & Founder of AppVantix. Coding since twelve: years of craft, AI and security software — FormForge, LifeVault, Snap2Text.",

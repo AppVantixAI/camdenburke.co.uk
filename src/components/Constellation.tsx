@@ -41,7 +41,7 @@ function ConstellationPanel({
   return (
     <article
       ref={ref}
-      className="relative min-h-[72svh] overflow-hidden border-t border-white/10 md:min-h-[88svh]"
+      className="relative min-h-[58svh] overflow-hidden border-t border-white/10 sm:min-h-[64svh] md:min-h-[88svh]"
     >
       <motion.div
         className="absolute inset-0"
@@ -51,8 +51,8 @@ function ConstellationPanel({
           src={item.image}
           alt={item.imageAlt}
           fill
-          className="object-cover object-top"
-          sizes="100vw"
+          className="object-cover object-[center_20%] md:object-top"
+          sizes="(max-width: 768px) 100vw, 100vw"
           priority={index === 0}
         />
       </motion.div>
@@ -67,22 +67,22 @@ function ConstellationPanel({
         aria-hidden
       />
 
-      <div className="page-pad relative mx-auto flex min-h-[72svh] max-w-6xl flex-col justify-end pb-14 pt-24 md:min-h-[88svh] md:pb-24 md:pt-28">
+      <div className="page-pad relative mx-auto flex min-h-[58svh] max-w-6xl flex-col justify-end pb-12 pt-20 sm:min-h-[64svh] sm:pb-14 sm:pt-24 md:min-h-[88svh] md:pb-24 md:pt-28">
         <Reveal>
-          <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-signal sm:text-xs sm:tracking-[0.32em]">
+          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-signal sm:text-xs sm:tracking-[0.32em]">
             {String(index + 1).padStart(2, "0")} · {item.role}
           </p>
-          <h3 className="mt-3 font-display text-4xl font-bold tracking-tight text-on-dark sm:mt-4 sm:text-5xl md:text-7xl">
+          <h3 className="mt-3 font-display text-[2rem] font-bold tracking-tight text-on-dark sm:mt-4 sm:text-5xl md:text-7xl">
             {item.name}
           </h3>
-          <p className="mt-4 max-w-lg text-[0.95rem] leading-relaxed text-on-dark-muted sm:mt-6 sm:text-base md:text-xl">
+          <p className="mt-3 max-w-lg text-[0.92rem] leading-relaxed text-on-dark-muted sm:mt-6 sm:text-base md:text-xl">
             {item.body}
           </p>
           <a
             href={item.href}
             target="_blank"
             rel="noreferrer"
-            className="btn-ghost-on-media tap-target mt-8 inline-flex w-full items-center justify-center px-6 py-3.5 font-mono text-xs uppercase tracking-[0.22em] sm:mt-10 sm:w-fit sm:px-7"
+            className="btn-ghost-on-media tap-target mt-6 inline-flex w-full items-center justify-center px-6 py-3.5 font-mono text-xs uppercase tracking-[0.22em] sm:mt-10 sm:w-fit sm:px-7"
           >
             {item.cta}
           </a>

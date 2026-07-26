@@ -22,11 +22,11 @@ export function Method() {
           </p>
         </Reveal>
 
-        <div className="mt-10 divide-y divide-line border-y border-line sm:mt-12 md:mt-14 md:grid md:grid-cols-3 md:gap-0 md:divide-x md:divide-y-0 md:border-0 md:divide-line">
+        <div className="mt-8 divide-y divide-line border-y border-line sm:mt-12 md:mt-14 md:grid md:grid-cols-3 md:gap-0 md:divide-x md:divide-y-0 md:border-0 md:divide-line">
           {method.items.map((item, index) => (
             <Reveal key={item.label} delay={index * 0.06}>
               <article
-                className={`flex flex-col py-8 md:px-8 md:py-0 ${
+                className={`flex flex-col py-6 sm:py-8 md:px-8 md:py-0 ${
                   index === 0 ? "md:pl-0" : ""
                 } ${
                   index === method.items.length - 1 ? "md:pr-0" : ""
@@ -47,21 +47,23 @@ export function Method() {
         </div>
 
         <Reveal delay={0.08}>
-          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-line pt-8 sm:mt-12 sm:pt-10">
+          <div className="mt-8 flex flex-col gap-3 border-t border-line pt-7 sm:mt-12 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-3 sm:pt-10">
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
               Verify
             </p>
-            {method.verify.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                className="tap-target font-mono text-[10px] uppercase tracking-[0.18em] text-ink transition hover:text-signal"
-              >
-                {item.label}
-              </a>
-            ))}
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1 sm:flex sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
+              {method.verify.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="tap-target-inline font-mono text-[10px] uppercase tracking-[0.18em] text-ink transition hover:text-signal"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
           </div>
         </Reveal>
       </div>
